@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
 import { ImageSlot } from "./ImageSlot";
+import { Reveal } from "./Reveal";
 
 const POINTS = [
   "Atendimento consultivo e personalizado",
@@ -9,43 +10,48 @@ const POINTS = [
 
 export function About() {
   return (
-    <section id="sobre" className="scroll-mt-24 bg-background py-20 md:py-28">
-      <div className="section-shell grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-        <ImageSlot path="/sobre-alex.webp" ratio="1 / 1" label="Foto do consultor" />
+    <section id="sobre" className="scroll-mt-24 bg-secondary py-24 md:py-36">
+      <div className="section-shell grid items-center gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
+        <Reveal>
+          <ImageSlot path="/sobre-alex.webp" ratio="4 / 5" label="Foto do consultor" />
+        </Reveal>
 
-        <div className="max-w-xl">
-          <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">Sobre</p>
-          <h2 className="mt-4 text-3xl font-extrabold text-primary md:text-4xl">
+        <Reveal delay={100} className="max-w-xl">
+          <p className="eyebrow">Sobre</p>
+          <h2 className="mt-5 text-3xl font-extrabold text-primary md:text-[2.5rem] md:leading-[1.15]">
             Prazer, sou Alex Martins.
           </h2>
-          <p className="mt-4 leading-relaxed text-muted-foreground">
+          <p className="measure mt-6 leading-[1.85] text-muted-foreground">
             Sou representante autorizado da Ademicon e ajudo pessoas e empresas a utilizar o
             consórcio de forma estratégica para realizar seus projetos.
           </p>
-          <p className="mt-4 leading-relaxed text-muted-foreground">
+          <p className="measure mt-4 leading-[1.85] text-muted-foreground">
             Meu trabalho é explicar, de forma simples e transparente, como o consórcio funciona,
             quais são suas vantagens, quais são suas limitações e, principalmente, se ele realmente
             faz sentido para o seu momento.
           </p>
-          <p className="mt-4 leading-relaxed text-muted-foreground">
+          <p className="measure mt-4 leading-[1.85] text-muted-foreground">
             Se essa for a melhor estratégia para você, terei satisfação em acompanhar toda a sua
             jornada.
           </p>
-          <p className="mt-4 leading-relaxed text-muted-foreground">
+          <p className="measure mt-6 border-l-2 border-gold pl-5 text-base leading-[1.8] font-semibold text-primary">
             Acredito que confiança se conquista com informação, clareza e respeito.
           </p>
 
-          <ul className="mt-8 space-y-4">
+          <ul className="mt-10 grid gap-4 sm:grid-cols-1">
             {POINTS.map((point) => (
-              <li key={point} className="flex items-start gap-3">
-                <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-muted">
+              <li
+                key={point}
+                className="flex items-center gap-3 rounded-2xl border border-border/70 bg-background px-5 py-4 shadow-soft"
+              >
+                <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-gold/15">
                   <Check className="h-3.5 w-3.5 text-gold" />
                 </span>
-                <span className="text-sm text-muted-foreground">{point}</span>
+                <span className="text-sm font-medium text-primary">{point}</span>
               </li>
             ))}
           </ul>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
