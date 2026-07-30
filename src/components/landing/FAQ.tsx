@@ -6,10 +6,14 @@ import {
 } from "@/components/ui/accordion";
 
 const FAQ_ITEMS = [
-  { q: "Como funciona a primeira conversa?", a: "Texto provisório sobre o formato do atendimento inicial." },
-  { q: "Preciso ter valor guardado?", a: "Texto provisório sobre requisitos e ponto de partida." },
-  { q: "Quanto tempo leva o planejamento?", a: "Texto provisório sobre prazos e acompanhamento." },
-  { q: "O atendimento é presencial ou online?", a: "Texto provisório sobre as formas de atendimento." },
+  { q: "O que é consórcio e como funciona?", a: "Texto provisório sobre o formato do atendimento inicial." },
+  { q: "Como acontece a contemplação?", a: "Texto provisório sobre requisitos e ponto de partida." },
+  { q: "O lance é obrigatório?", a: "Texto provisório sobre prazos e acompanhamento." },
+  { q: "Consórcio é melhor que financiamento?", a: "Texto provisório sobre as formas de atendimento." },
+  { q: "Posso utilizar FGTS?", a: "Texto provisório sobre as formas de atendimento." },
+  { q: "Como escolher o grupo ideal?", a: "Texto provisório sobre as formas de atendimento." },
+  { q: "O consórcio serve para o meu projeto?", a: "Texto provisório sobre as formas de atendimento." },
+  { q: "Quanto tempo leva para ser contemplado?", a: "Texto provisório sobre as formas de atendimento." },
 ];
 
 export function FAQ() {
