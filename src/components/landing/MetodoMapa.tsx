@@ -23,7 +23,6 @@ export function MetodoMapa() {
         </div>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3 md:justify-start">
- 3">
           {FLOW.map((step, index) => (
             <>
               <span
