@@ -14,9 +14,9 @@ type ImageSlotProps = {
 export function ImageSlot({ path, ratio = "4 / 3", className = "", label }: ImageSlotProps) {
   return (
     <div className={`image-slot ${className}`} style={{ aspectRatio: ratio }}>
-      <div className="space-y-1">
-        <p className="font-medium">{label ?? "Imagem"}</p>
-        <p className="font-mono text-[11px] opacity-70">{path}</p>
+      <div className="space-y-1.5">
+        <p className="font-display text-sm font-semibold text-primary/70">{label ?? "Imagem"}</p>
+        <p className="font-mono text-[11px] opacity-60">{path}</p>
       </div>
     </div>
   );
