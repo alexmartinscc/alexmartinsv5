@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { ImageSlot } from "./ImageSlot";
+import { Reveal } from "./Reveal";
 
 const ITEMS = [
   { title: "Conquistar", text: "Primeiro imóvel, construção, reforma e veículos.", image: "/conquistar.webp" },
@@ -11,27 +12,34 @@ const ITEMS = [
 
 export function Portfolio() {
   return (
-    <section id="portfolio" className="scroll-mt-24 bg-background py-20 md:py-28">
+    <section id="portfolio" className="scroll-mt-24 bg-background py-24 md:py-36">
       <div className="section-shell">
-        <div className="max-w-2xl">
-          <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">Portfólio</p>
-          <h2 className="mt-4 text-3xl font-extrabold text-primary md:text-4xl">
+        <Reveal className="mx-auto max-w-2xl text-center">
+          <p className="eyebrow justify-center">Portfólio</p>
+          <h2 className="mt-5 text-3xl font-extrabold text-primary md:text-[2.5rem] md:leading-[1.15]">
             Em qual projeto posso ajudar você?
           </h2>
-          <p className="mt-4 text-muted-foreground">
+          <p className="mt-5 leading-[1.8] text-muted-foreground">
             Cada objetivo pede uma estratégia diferente.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {ITEMS.map((item) => (
-            <Card key={item.title} className="overflow-hidden rounded-3xl border-border/70 shadow-soft">
-              <CardContent className="p-6">
-                <ImageSlot path={item.image} ratio="16 / 10" label={item.title} />
-                <h3 className="mt-6 text-lg font-bold text-primary">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.text}</p>
-              </CardContent>
-            </Card>
+        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {ITEMS.map((item, index) => (
+            <Reveal key={item.title} delay={index * 80} className="h-full">
+              <Card className="card-lift h-full overflow-hidden rounded-3xl border-border/70 p-0 shadow-soft">
+                <ImageSlot
+                  path={item.image}
+                  ratio="4 / 3"
+                  label={item.title}
+                  className="rounded-none border-0 shadow-none"
+                />
+                <CardContent className="p-8">
+                  <h3 className="text-lg font-bold text-primary">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-[1.8] text-muted-foreground">{item.text}</p>
+                </CardContent>
+              </Card>
+            </Reveal>
           ))}
         </div>
       </div>
