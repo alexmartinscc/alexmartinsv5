@@ -27,16 +27,13 @@ export function Portfolio() {
         <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {ITEMS.map((item, index) => (
             <Reveal key={item.title} delay={index * 80} className="h-full">
-              <Card className="card-lift h-full overflow-hidden rounded-3xl border-border/70 p-0 shadow-soft">
-                <ImageSlot
-                  path={item.image}
-                  ratio="4 / 3"
-                  label={item.title}
-                  className="rounded-none border-0 shadow-none"
-                />
-                <CardContent className="p-8">
-                  <h3 className="text-lg font-bold text-primary">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-[1.8] text-muted-foreground">{item.text}</p>
+              <Card className="card-lift h-full overflow-hidden rounded-3xl border-border/70 shadow-soft">
+                <CardContent className="p-6">
+                  <ImageSlot path={item.image} ratio="4 / 3" label={item.title} />
+                  <div className="px-2 pt-7 pb-2">
+                    <h3 className="text-lg font-bold text-primary">{item.title}</h3>
+                    <p className="mt-3 text-sm leading-[1.8] text-muted-foreground">{item.text}</p>
+                  </div>
                 </CardContent>
               </Card>
             </Reveal>
