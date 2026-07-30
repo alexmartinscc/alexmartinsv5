@@ -24,17 +24,14 @@ export function MetodoMapa() {
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3 md:justify-start">
           {FLOW.map((step, index) => (
-            <>
-              <span
-                key={step}
-                className="rounded-full bg-primary-deep px-5 py-2.5 text-sm font-semibold"
-              >
+            <div key={step} className="flex items-center gap-3">
+              <span className="rounded-full bg-primary-deep px-5 py-2.5 text-sm font-semibold">
                 {step}
               </span>
               {index < FLOW.length - 1 && (
                 <span className="text-gold">↓</span>
               )}
-            </>
+            </div>
           ))}
         </div>
 
