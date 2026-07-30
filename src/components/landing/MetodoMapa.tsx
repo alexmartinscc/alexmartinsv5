@@ -1,8 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 
+const FLOW = ["Projeto", "MAPA", "ROTA Personalizada", "Conquista"];
+
 const STEPS = [
   { letter: "M", title: "Mapear", text: "Entender o momento atual e os objetivos." },
-  { letter: "A", title: "Analisar", text: "Avaliar cenários e possibilidades reais." },
+  { letter: "A", title: "Ampliar", text: "Avaliar cenários e possibilidades reais." },
   { letter: "P", title: "Planejar", text: "Definir o caminho e as prioridades." },
   { letter: "A", title: "Acompanhar", text: "Revisar e ajustar ao longo do tempo." },
 ];
@@ -16,11 +18,25 @@ export function MetodoMapa() {
             Método MAPA
           </p>
           <h2 className="mt-4 text-3xl font-extrabold md:text-4xl">
-            Quatro etapas para sair da dúvida
+            Como funciona meu atendimento?
           </h2>
-          <p className="mt-4 text-primary-foreground/70">
-            Um processo simples e conduzido do início ao fim.
-          </p>
+        </div>
+
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-3 md:justify-start">
+ 3">
+          {FLOW.map((step, index) => (
+            <>
+              <span
+                key={step}
+                className="rounded-full bg-primary-deep px-5 py-2.5 text-sm font-semibold"
+              >
+                {step}
+              </span>
+              {index < FLOW.length - 1 && (
+                <span className="text-gold">↓</span>
+              )}
+            </>
+          ))}
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

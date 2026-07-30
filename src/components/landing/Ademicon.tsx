@@ -14,10 +14,12 @@ export function Ademicon() {
         <div className="max-w-xl">
           <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">Ademicon</p>
           <h2 className="mt-4 text-3xl font-extrabold text-primary md:text-4xl">
-            Uma parceria que dá respaldo ao plano
+            Segurança para transformar planejamento em conquistas.
           </h2>
           <p className="mt-4 leading-relaxed text-muted-foreground">
-            Texto provisório sobre a instituição e o papel do representante autorizado.
+            Quando o consórcio for a estratégia mais adequada para o seu projeto, você contará com
+            toda a credibilidade e segurança da Ademicon, referência nacional em administração de
+            consórcios.
           </p>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-3">
