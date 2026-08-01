@@ -1,6 +1,7 @@
 import { Check } from "lucide-react";
 import { ImageSlot } from "./ImageSlot";
 import { Reveal } from "./Reveal";
+import sobreAlex from "@/assets/sobre-alex.jpg";
 
 const POINTS = [
   "Atendimento consultivo e personalizado",
@@ -10,10 +11,16 @@ const POINTS = [
 
 export function About() {
   return (
-    <section id="sobre" className="scroll-mt-24 bg-secondary py-24 md:py-36">
-      <div className="section-shell grid items-center gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
+    <section id="sobre" className="scroll-mt-24 bg-secondary py-28 md:py-40">
+      <div className="section-shell grid items-center gap-16 lg:grid-cols-[0.95fr_1.05fr] lg:gap-24">
         <Reveal>
-          <ImageSlot path="/sobre-alex.webp" ratio="4 / 5" label="Foto do consultor" />
+          <ImageSlot
+            path="/sobre-alex.webp"
+            src={sobreAlex}
+            ratio="4 / 5"
+            alt="Alex Martins ouvindo uma cliente durante o atendimento"
+            label="Foto do consultor"
+          />
         </Reveal>
 
         <Reveal delay={100} className="max-w-xl">
