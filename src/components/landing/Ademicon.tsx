@@ -1,6 +1,7 @@
 import { Building2, ShieldCheck, Users } from "lucide-react";
 import { ImageSlot } from "./ImageSlot";
 import { Reveal } from "./Reveal";
+import parceria from "@/assets/ademicon-parceria.jpg";
 
 const HIGHLIGHTS = [
   { icon: Building2, title: "Solidez", text: "Instituição consolidada no mercado." },
@@ -10,10 +11,10 @@ const HIGHLIGHTS = [
 
 export function Ademicon() {
   return (
-    <section id="ademicon" className="scroll-mt-24 bg-secondary py-24 md:py-36">
-      <div className="section-shell grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
+    <section id="ademicon" className="scroll-mt-24 bg-secondary py-28 md:py-40">
+      <div className="section-shell grid items-center gap-16 lg:grid-cols-2 lg:gap-24">
         <Reveal className="max-w-xl">
-          <p className="eyebrow">Ademicon</p>
+          <p className="eyebrow">Parceria estratégica</p>
           <h2 className="mt-5 text-3xl font-extrabold text-primary md:text-[2.5rem] md:leading-[1.15]">
             Segurança para transformar planejamento em conquistas.
           </h2>
@@ -21,6 +22,10 @@ export function Ademicon() {
             Quando o consórcio for a estratégia mais adequada para o seu projeto, você contará com
             toda a credibilidade e segurança da Ademicon, referência nacional em administração de
             consórcios.
+          </p>
+          <p className="measure mt-4 text-sm leading-[1.85] text-muted-foreground">
+            O acompanhamento continua sendo meu: a Ademicon entra como parceira que sustenta a
+            estratégia definida junto com você.
           </p>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -40,7 +45,13 @@ export function Ademicon() {
         </Reveal>
 
         <Reveal delay={100}>
-          <ImageSlot path="/logo-ademicon.svg" ratio="4 / 3" label="Logotipo Ademicon" />
+          <ImageSlot
+            path="/ademicon-parceria.webp"
+            src={parceria}
+            ratio="4 / 3"
+            alt="Aperto de mãos selando uma parceria de confiança"
+            label="Parceria"
+          />
         </Reveal>
       </div>
     </section>
