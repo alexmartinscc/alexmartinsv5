@@ -16,8 +16,13 @@ export function Footer() {
             <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-background text-[9px] text-muted-foreground">
               logo
             </span>
-            <span className="font-display text-base font-extrabold text-primary">
-              Consultor Patrimonial
+            <span className="flex flex-col leading-tight">
+              <span className="font-display text-base font-extrabold text-primary">
+                Alex Martins
+              </span>
+              <span className="text-[11px] tracking-[0.14em] text-muted-foreground uppercase">
+                Entender. Planejar. Conquistar.
+              </span>
             </span>
           </div>
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground">

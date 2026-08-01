@@ -3,7 +3,7 @@ import { Reveal } from "./Reveal";
 
 export function CTA() {
   return (
-    <section id="cta" className="scroll-mt-24 bg-background pb-24 md:pb-36">
+    <section id="cta" className="scroll-mt-24 bg-background pb-28 md:pb-40">
       <div className="section-shell">
         <Reveal>
           <div className="relative overflow-hidden rounded-[2rem] bg-primary-deep px-6 py-20 text-center md:px-16 md:py-24">

@@ -21,8 +21,13 @@ export function Header() {
           <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-muted text-[9px] font-medium text-muted-foreground">
             logo
           </span>
-          <span className="truncate font-display text-base font-extrabold text-primary">
-            Consultor Patrimonial
+          <span className="flex min-w-0 flex-col leading-tight">
+            <span className="truncate font-display text-base font-extrabold text-primary">
+              Alex Martins
+            </span>
+            <span className="truncate text-[11px] tracking-[0.14em] text-muted-foreground uppercase">
+              Entender. Planejar. Conquistar.
+            </span>
           </span>
         </a>
 

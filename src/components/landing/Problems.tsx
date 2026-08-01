@@ -22,7 +22,7 @@ const ITEMS = [
 
 export function Problems() {
   return (
-    <section id="problema" className="scroll-mt-24 bg-background py-24 md:py-36">
+    <section id="problema" className="scroll-mt-24 bg-background py-28 md:py-40">
       <div className="section-shell">
         <Reveal className="mx-auto max-w-3xl text-center">
           <p className="eyebrow">O problema</p>
