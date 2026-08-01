@@ -19,7 +19,7 @@ const FAQ_ITEMS = [
 
 export function FAQ() {
   return (
-    <section id="faq" className="scroll-mt-24 bg-background py-24 md:py-36">
+    <section id="faq" className="scroll-mt-24 bg-background py-28 md:py-40">
       <div className="section-shell grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
         <Reveal>
           <div className="lg:sticky lg:top-28">

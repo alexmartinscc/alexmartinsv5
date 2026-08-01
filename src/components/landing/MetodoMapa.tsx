@@ -14,7 +14,7 @@ export function MetodoMapa() {
   return (
     <section
       id="metodo"
-      className="scroll-mt-24 bg-primary py-24 text-primary-foreground md:py-36"
+      className="scroll-mt-24 bg-primary py-28 text-primary-foreground md:py-40"
     >
       <div className="section-shell">
         <Reveal className="mx-auto max-w-2xl text-center">
@@ -22,6 +22,10 @@ export function MetodoMapa() {
           <h2 className="mt-5 text-3xl font-extrabold md:text-[2.5rem] md:leading-[1.15]">
             Como funciona meu atendimento?
           </h2>
+          <p className="mx-auto mt-7 max-w-xl leading-[1.85] text-primary-foreground/75">
+            Cada pessoa possui objetivos, recursos e expectativas diferentes. Por isso utilizo um
+            método para compreender sua realidade antes de definir qualquer estratégia.
+          </p>
         </Reveal>
 
         <Reveal delay={80}>
@@ -59,6 +63,13 @@ export function MetodoMapa() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={120}>
+          <p className="mx-auto mt-16 max-w-2xl border-t border-primary-foreground/15 pt-10 text-center text-lg leading-[1.8] font-semibold text-primary-foreground md:text-xl">
+            O resultado deste processo é uma ROTA personalizada construída exclusivamente para o seu
+            projeto.
+          </p>
+        </Reveal>
       </div>
     </section>
   );

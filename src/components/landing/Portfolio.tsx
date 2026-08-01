@@ -1,18 +1,53 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { ImageSlot } from "./ImageSlot";
 import { Reveal } from "./Reveal";
+import conquistar from "@/assets/conquistar.jpg";
+import evoluir from "@/assets/evoluir.jpg";
+import proteger from "@/assets/proteger.jpg";
+import gerarRenda from "@/assets/gerar-renda.jpg";
+import expandir from "@/assets/expandir.jpg";
 
 const ITEMS = [
-  { title: "Conquistar", text: "Primeiro imóvel, construção, reforma e veículos.", image: "/conquistar.webp" },
-  { title: "Evoluir", text: "Troca por imóvel maior, segunda aquisição e evolução patrimonial.", image: "/evoluir.webp" },
-  { title: "Proteger", text: "Quitação de financiamento, redução de custos financeiros e reorganização patrimonial.", image: "/proteger.webp" },
-  { title: "Gerar Renda", text: "Formação de patrimônio e aquisição de imóveis para renda.", image: "/gerar-renda.webp" },
-  { title: "Expandir seu Negócio", text: "Imóveis comerciais, máquinas, equipamentos e frota.", image: "/expandir.webp" },
+  {
+    title: "Conquistar",
+    text: "Primeiro imóvel, construção, reforma e veículos.",
+    image: "/conquistar.webp",
+    src: conquistar,
+    alt: "Família recebendo as chaves da primeira casa",
+  },
+  {
+    title: "Evoluir",
+    text: "Troca por imóvel maior, segunda aquisição e evolução patrimonial.",
+    image: "/evoluir.webp",
+    src: evoluir,
+    alt: "Casal planejando um novo projeto em casa",
+  },
+  {
+    title: "Proteger",
+    text: "Quitação de financiamento, redução de custos financeiros e reorganização patrimonial.",
+    image: "/proteger.webp",
+    src: proteger,
+    alt: "Profissional analisando documentos financeiros",
+  },
+  {
+    title: "Gerar Renda",
+    text: "Formação de patrimônio e aquisição de imóveis para renda.",
+    image: "/gerar-renda.webp",
+    src: gerarRenda,
+    alt: "Proprietária entregando as chaves de um imóvel alugado",
+  },
+  {
+    title: "Expandir seu Negócio",
+    text: "Imóveis comerciais, máquinas, equipamentos e frota.",
+    image: "/expandir.webp",
+    src: expandir,
+    alt: "Empresário conversando dentro da própria oficina",
+  },
 ];
 
 export function Portfolio() {
   return (
-    <section id="portfolio" className="scroll-mt-24 bg-background py-24 md:py-36">
+    <section id="portfolio" className="scroll-mt-24 bg-background py-28 md:py-40">
       <div className="section-shell">
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow justify-center">Portfólio</p>
@@ -24,13 +59,20 @@ export function Portfolio() {
           </p>
         </Reveal>
 
-        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
           {ITEMS.map((item, index) => (
             <Reveal key={item.title} delay={index * 80} className="h-full">
-              <Card className="card-lift h-full overflow-hidden rounded-3xl border-border/70 shadow-soft">
-                <CardContent className="p-6">
-                  <ImageSlot path={item.image} ratio="4 / 3" label={item.title} />
-                  <div className="px-2 pt-7 pb-2">
+              <Card className="card-lift h-full overflow-hidden rounded-3xl border-border/70 py-0 shadow-soft">
+                <CardContent className="p-0">
+                  <ImageSlot
+                    path={item.image}
+                    src={item.src}
+                    alt={item.alt}
+                    ratio="4 / 3"
+                    label={item.title}
+                    className="rounded-none border-0 shadow-none"
+                  />
+                  <div className="px-7 pt-7 pb-9">
                     <h3 className="text-lg font-bold text-primary">{item.title}</h3>
                     <p className="mt-3 text-sm leading-[1.8] text-muted-foreground">{item.text}</p>
                   </div>
