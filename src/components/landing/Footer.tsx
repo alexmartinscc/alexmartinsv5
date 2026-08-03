@@ -1,3 +1,5 @@
+import logo from "@/assets/alex-martins-logo.png.asset.json";
+
 const LINKS = [
   { label: "O Problema", href: "#problema" },
   { label: "Sobre", href: "#sobre" },
@@ -13,9 +15,14 @@ export function Footer() {
       <div className="section-shell grid gap-10 md:grid-cols-[1.2fr_1fr]">
         <div className="max-w-sm">
           <div className="flex items-center gap-3">
-            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-background text-[9px] text-muted-foreground">
-              logo
-            </span>
+            <img
+              src={logo.url}
+              alt="Logotipo Alex Martins"
+              width={40}
+              height={40}
+              loading="lazy"
+              className="h-10 w-10 shrink-0 object-contain"
+            />
             <span className="flex flex-col leading-tight">
               <span className="font-display text-base font-extrabold text-primary">
                 Alex Martins

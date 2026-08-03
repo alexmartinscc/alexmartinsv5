@@ -1,8 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Reveal } from "./Reveal";
 
-const FLOW = ["Projeto", "MAPA", "ROTA Personalizada", "Conquista"];
-
 const STEPS = [
   { letter: "M", title: "Mapear", text: "Entender o momento atual e os objetivos." },
   { letter: "A", title: "Ampliar", text: "Avaliar cenários e possibilidades reais." },
