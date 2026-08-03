@@ -1,8 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Reveal } from "./Reveal";
 
-const FLOW = ["Projeto", "MAPA", "ROTA Personalizada", "Conquista"];
-
 const STEPS = [
   { letter: "M", title: "Mapear", text: "Entender o momento atual e os objetivos." },
   { letter: "A", title: "Ampliar", text: "Avaliar cenários e possibilidades reais." },
@@ -28,21 +26,6 @@ export function MetodoMapa() {
           </p>
         </Reveal>
 
-        <Reveal delay={80}>
-          <div className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
-            {FLOW.map((step, index) => (
-              <div key={step} className="flex flex-col items-center gap-3 sm:flex-row">
-                <span className="rounded-full border border-primary-foreground/15 bg-primary-deep px-6 py-3 text-sm font-semibold">
-                  {step}
-                </span>
-                {index < FLOW.length - 1 && (
-                  <span className="text-gold sm:-rotate-90">↓</span>
-                )}
-              </div>
-            ))}
-          </div>
-        </Reveal>
-
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {STEPS.map((step, index) => (
             <Reveal key={step.title} delay={index * 90} className="h-full">
@@ -66,8 +49,8 @@ export function MetodoMapa() {
 
         <Reveal delay={120}>
           <p className="mx-auto mt-16 max-w-2xl border-t border-primary-foreground/15 pt-10 text-center text-lg leading-[1.8] font-semibold text-primary-foreground md:text-xl">
-            O resultado deste processo é uma ROTA personalizada construída exclusivamente para o seu
-            projeto.
+            O resultado desse processo é uma estratégia personalizada construída exclusivamente
+            para o seu projeto.
           </p>
         </Reveal>
       </div>

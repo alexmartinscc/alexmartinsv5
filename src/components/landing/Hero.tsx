@@ -2,7 +2,9 @@ import { ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ImageSlot } from "./ImageSlot";
 import { Reveal } from "./Reveal";
-import heroAlex from "@/assets/hero-alex.jpg";
+import heroAlexAsset from "@/assets/alex-martins-foto.png.asset.json";
+
+const heroAlex = heroAlexAsset.url;
 
 const BADGES = [
   "Representante Autorizado Ademicon",
@@ -59,7 +61,7 @@ export function Hero() {
               variant="outline"
               className="rounded-xl px-8 transition-colors duration-200"
             >
-              <a href="#metodo">Conhecer o Método MAPA</a>
+              <a href="#metodo">Como funciona meu atendimento</a>
             </Button>
           </div>
 

@@ -33,13 +33,12 @@ export function About() {
             consórcio de forma estratégica para realizar seus projetos.
           </p>
           <p className="measure mt-4 leading-[1.85] text-muted-foreground">
-            Meu trabalho é explicar, de forma simples e transparente, como o consórcio funciona,
-            quais são suas vantagens, quais são suas limitações e, principalmente, se ele realmente
-            faz sentido para o seu momento.
+            Meu trabalho é entender seus objetivos e mostrar como o consórcio pode ser utilizado de
+            forma estratégica para realizar seu projeto.
           </p>
           <p className="measure mt-4 leading-[1.85] text-muted-foreground">
-            Se essa for a melhor estratégia para você, terei satisfação em acompanhar toda a sua
-            jornada.
+            Explico cada detalhe com clareza e acompanho você em toda a jornada, do planejamento
+            inicial até a conquista.
           </p>
           <p className="measure mt-6 border-l-2 border-gold pl-5 text-base leading-[1.8] font-semibold text-primary">
             Acredito que confiança se conquista com informação, clareza e respeito.

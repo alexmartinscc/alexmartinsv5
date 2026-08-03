@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/alex-martins-logo.png.asset.json";
 
 const NAV = [
   { label: "O Problema", href: "#problema" },
@@ -18,9 +19,13 @@ export function Header() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur">
       <div className="section-shell grid h-20 grid-cols-[minmax(0,1fr)_auto] items-center gap-4">
         <a href="#hero" className="flex min-w-0 items-center gap-3">
-          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-muted text-[9px] font-medium text-muted-foreground">
-            logo
-          </span>
+          <img
+            src={logo.url}
+            alt="Logotipo Alex Martins"
+            width={40}
+            height={40}
+            className="h-10 w-10 shrink-0 object-contain"
+          />
           <span className="flex min-w-0 flex-col leading-tight">
             <span className="truncate font-display text-base font-extrabold text-primary">
               Alex Martins
