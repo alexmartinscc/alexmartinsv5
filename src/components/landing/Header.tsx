@@ -81,7 +81,12 @@ export function Header() {
               </a>
             ))}
             <Button asChild size="lg" className="mt-3 rounded-xl">
-              <a href="#cta" onClick={() => setOpen(false)}>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+              >
                 Falar com o consultor
               </a>
             </Button>

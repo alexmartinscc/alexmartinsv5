@@ -1,4 +1,6 @@
+import { Instagram, MessageCircle } from "lucide-react";
 import logo from "@/assets/alex-martins-logo.png.asset.json";
+import { INSTAGRAM_HANDLE, INSTAGRAM_URL, WHATSAPP_NUMBER, WHATSAPP_URL } from "@/lib/contact";
 
 const LINKS = [
   { label: "O Problema", href: "#problema" },
