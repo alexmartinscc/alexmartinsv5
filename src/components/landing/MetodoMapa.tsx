@@ -26,21 +26,6 @@ export function MetodoMapa() {
           </p>
         </Reveal>
 
-        <Reveal delay={80}>
-          <div className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
-            {FLOW.map((step, index) => (
-              <div key={step} className="flex flex-col items-center gap-3 sm:flex-row">
-                <span className="rounded-full border border-primary-foreground/15 bg-primary-deep px-6 py-3 text-sm font-semibold">
-                  {step}
-                </span>
-                {index < FLOW.length - 1 && (
-                  <span className="text-gold sm:-rotate-90">↓</span>
-                )}
-              </div>
-            ))}
-          </div>
-        </Reveal>
-
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {STEPS.map((step, index) => (
             <Reveal key={step.title} delay={index * 90} className="h-full">
