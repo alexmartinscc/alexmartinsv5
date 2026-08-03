@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/alex-martins-logo.png.asset.json";
+import { WHATSAPP_URL } from "@/lib/contact";
 
 const NAV = [
   { label: "O Problema", href: "#problema" },
@@ -50,7 +51,9 @@ export function Header() {
           </nav>
 
           <Button asChild size="lg" className="ml-3 hidden rounded-xl sm:inline-flex">
-            <a href="#cta">Falar com o consultor</a>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+              Falar com o consultor
+            </a>
           </Button>
 
           <button
@@ -78,7 +81,12 @@ export function Header() {
               </a>
             ))}
             <Button asChild size="lg" className="mt-3 rounded-xl">
-              <a href="#cta" onClick={() => setOpen(false)}>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+              >
                 Falar com o consultor
               </a>
             </Button>

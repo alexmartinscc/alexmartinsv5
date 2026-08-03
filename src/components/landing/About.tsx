@@ -4,9 +4,18 @@ import { Reveal } from "./Reveal";
 import sobreAlex from "@/assets/sobre-alex.jpg";
 
 const POINTS = [
-  "Atendimento consultivo e personalizado",
-  "Foco em planejamento de longo prazo",
-  "Acompanhamento em cada etapa",
+  {
+    title: "Entendimento completo do consórcio",
+    text: "Explico cada etapa para que você tome decisões com segurança.",
+  },
+  {
+    title: "Estratégia personalizada",
+    text: "Escolha dos grupos, cotas e definição da melhor estratégia de lances.",
+  },
+  {
+    title: "Acompanhamento até a conquista",
+    text: "Gestão contínua do contrato, suporte mensal e atendimento próximo durante toda a jornada.",
+  },
 ];
 
 export function About() {
@@ -29,31 +38,36 @@ export function About() {
             Prazer, sou Alex Martins.
           </h2>
           <p className="measure mt-6 leading-[1.85] text-muted-foreground">
-            Sou representante autorizado da Ademicon e ajudo pessoas e empresas a utilizar o
-            consórcio de forma estratégica para realizar seus projetos.
+            Sou representante autorizado da Ademicon e meu trabalho começa por entender os seus
+            objetivos. A partir daí, explico de forma simples e transparente como o consórcio
+            funciona.
           </p>
           <p className="measure mt-4 leading-[1.85] text-muted-foreground">
-            Meu trabalho é entender seus objetivos e mostrar como o consórcio pode ser utilizado de
-            forma estratégica para realizar seu projeto.
+            Em seguida, desenvolvo a estratégia mais adequada ao seu projeto: a escolha dos grupos,
+            das cotas e a definição da melhor estratégia de lances.
           </p>
           <p className="measure mt-4 leading-[1.85] text-muted-foreground">
-            Explico cada detalhe com clareza e acompanho você em toda a jornada, do planejamento
-            inicial até a conquista.
+            Depois da contratação, continuo ao seu lado durante toda a vigência do contrato, com
+            gestão mensal, orientação sobre lances, comunicação dos resultados, esclarecimento de
+            dúvidas e um atendimento próximo e rápido.
           </p>
           <p className="measure mt-6 border-l-2 border-gold pl-5 text-base leading-[1.8] font-semibold text-primary">
-            Acredito que confiança se conquista com informação, clareza e respeito.
+            Você nunca estará sozinho durante essa jornada.
           </p>
 
           <ul className="mt-10 grid gap-4 sm:grid-cols-1">
             {POINTS.map((point) => (
               <li
-                key={point}
-                className="flex items-center gap-3 rounded-2xl border border-border/70 bg-background px-5 py-4 shadow-soft"
+                key={point.title}
+                className="flex items-start gap-3 rounded-2xl border border-border/70 bg-background px-5 py-4 shadow-soft"
               >
-                <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-gold/15">
+                <span className="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-gold/15">
                   <Check className="h-3.5 w-3.5 text-gold" />
                 </span>
-                <span className="text-sm font-medium text-primary">{point}</span>
+                <span className="flex flex-col gap-1">
+                  <span className="text-sm font-semibold text-primary">{point.title}</span>
+                  <span className="text-sm leading-[1.7] text-muted-foreground">{point.text}</span>
+                </span>
               </li>
             ))}
           </ul>

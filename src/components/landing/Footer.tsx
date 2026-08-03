@@ -1,4 +1,6 @@
+import { Instagram, MessageCircle } from "lucide-react";
 import logo from "@/assets/alex-martins-logo.png.asset.json";
+import { INSTAGRAM_HANDLE, INSTAGRAM_URL, WHATSAPP_NUMBER, WHATSAPP_URL } from "@/lib/contact";
 
 const LINKS = [
   { label: "O Problema", href: "#problema" },
@@ -35,6 +37,27 @@ export function Footer() {
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
             Consultoria patrimonial e representante autorizado Ademicon.
           </p>
+
+          <div className="mt-5 flex flex-col gap-2 text-sm">
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-primary"
+            >
+              <MessageCircle className="h-4 w-4 text-gold" />
+              WhatsApp {WHATSAPP_NUMBER}
+            </a>
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-primary"
+            >
+              <Instagram className="h-4 w-4 text-gold" />
+              {INSTAGRAM_HANDLE}
+            </a>
+          </div>
         </div>
 
         <nav className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:justify-items-end">
