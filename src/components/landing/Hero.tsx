@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ImageSlot } from "./ImageSlot";
 import { Reveal } from "./Reveal";
 import heroAlexAsset from "@/assets/alex-martins-foto.png.asset.json";
+import { WHATSAPP_URL } from "@/lib/contact";
 
 const heroAlex = heroAlexAsset.url;
 
@@ -44,7 +45,7 @@ export function Hero() {
           </p>
           <p className="measure mt-4 text-sm leading-[1.85] text-muted-foreground md:text-base">
             Meu compromisso é explicar, de forma simples e transparente, como o consórcio funciona e
-            ajudar você a descobrir se essa estratégia realmente faz sentido para o seu projeto.
+            como essa estratégia pode ajudá-lo a realizar o seu projeto.
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
@@ -53,7 +54,9 @@ export function Hero() {
               size="lg"
               className="rounded-xl px-8 shadow-soft transition-transform duration-200 hover:-translate-y-0.5"
             >
-              <a href="#cta">Quero conversar sobre meu projeto</a>
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                Quero conversar sobre meu projeto
+              </a>
             </Button>
             <Button
               asChild

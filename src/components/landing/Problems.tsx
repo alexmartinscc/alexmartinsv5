@@ -38,8 +38,8 @@ export function Problems() {
             criaram expectativas irreais.
           </p>
           <p className="mx-auto mt-4 max-w-2xl leading-[1.8] text-muted-foreground">
-            Meu objetivo é ajudar você a entender como ele realmente funciona para decidir com
-            segurança se faz sentido para o seu projeto.
+            Meu objetivo é ajudar você a entender como o consórcio funciona e como ele pode ajudá-lo
+            a realizar o seu projeto.
           </p>
         </Reveal>
 
