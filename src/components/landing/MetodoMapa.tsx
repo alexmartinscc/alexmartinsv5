@@ -49,8 +49,8 @@ export function MetodoMapa() {
 
         <Reveal delay={120}>
           <p className="mx-auto mt-16 max-w-2xl border-t border-primary-foreground/15 pt-10 text-center text-lg leading-[1.8] font-semibold text-primary-foreground md:text-xl">
-            O resultado deste processo é uma ROTA personalizada construída exclusivamente para o seu
-            projeto.
+            O resultado desse processo é uma estratégia personalizada construída exclusivamente
+            para o seu projeto.
           </p>
         </Reveal>
       </div>

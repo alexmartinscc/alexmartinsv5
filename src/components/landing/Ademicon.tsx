@@ -18,6 +18,15 @@ export function Ademicon() {
           <h2 className="mt-5 text-3xl font-extrabold text-primary md:text-[2.5rem] md:leading-[1.15]">
             Segurança para transformar planejamento em conquistas.
           </h2>
+          <div className="mt-6 inline-flex items-center gap-3 rounded-full border border-border/70 bg-background px-4 py-2 shadow-soft">
+            <span className="text-[10px] tracking-[0.16em] text-muted-foreground uppercase">
+              Parceira
+            </span>
+            <span className="h-4 w-px bg-border" />
+            <span className="font-display text-sm font-extrabold tracking-tight text-primary">
+              ademicon
+            </span>
+          </div>
           <p className="measure mt-6 leading-[1.85] text-muted-foreground">
             Quando o consórcio for a estratégia mais adequada para o seu projeto, você contará com
             toda a credibilidade e segurança da Ademicon, referência nacional em administração de
