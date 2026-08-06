@@ -1,16 +1,17 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/alex-martins-logo.png.asset.json";
 import { WHATSAPP_URL } from "@/lib/contact";
 
 const NAV = [
-  { label: "O Problema", href: "#problema" },
-  { label: "Sobre", href: "#sobre" },
-  { label: "Método MAPA", href: "#metodo" },
-  { label: "Portfólio", href: "#portfolio" },
-  { label: "Ademicon", href: "#ademicon" },
-  { label: "FAQ", href: "#faq" },
+  { label: "O Problema", href: "/#problema" },
+  { label: "Sobre", href: "/#sobre" },
+  { label: "Método MAPA", href: "/#metodo" },
+  { label: "Portfólio", href: "/#portfolio" },
+  { label: "Ademicon", href: "/#ademicon" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 export function Header() {
@@ -19,7 +20,7 @@ export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur">
       <div className="section-shell grid h-20 grid-cols-[minmax(0,1fr)_auto] items-center gap-4">
-        <a href="#hero" className="flex min-w-0 items-center gap-3">
+        <a href="/#hero" className="flex min-w-0 items-center gap-3">
           <img
             src={logo.url}
             alt="Logotipo Alex Martins"
@@ -48,6 +49,12 @@ export function Header() {
                 {item.label}
               </a>
             ))}
+            <Link
+              to="/como-funciona-o-consorcio"
+              className="text-sm text-muted-foreground transition-colors hover:text-primary"
+            >
+              Central de Conhecimento
+            </Link>
           </nav>
 
           <Button asChild size="lg" className="ml-3 hidden rounded-xl sm:inline-flex">
