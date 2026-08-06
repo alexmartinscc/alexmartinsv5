@@ -1,7 +1,9 @@
-import { Check } from "lucide-react";
+import { Check, ShieldCheck } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { ImageSlot } from "./ImageSlot";
 import { Reveal } from "./Reveal";
 import sobreAlex from "@/assets/sobre-alex.jpg";
+import { ADEMICON_CREDENTIAL_URL } from "@/lib/contact";
 
 const POINTS = [
   {
@@ -71,6 +73,28 @@ export function About() {
               </li>
             ))}
           </ul>
+
+          <div className="mt-8 flex flex-col gap-4 rounded-2xl border border-border/70 bg-background px-5 py-5 shadow-soft sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-start gap-3">
+              <span className="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full bg-gold/15">
+                <ShieldCheck className="h-4 w-4 text-gold" />
+              </span>
+              <span className="flex flex-col gap-1">
+                <span className="text-sm font-semibold text-primary">
+                  Representante Autorizado Ademicon
+                </span>
+                <span className="text-sm leading-[1.7] text-muted-foreground">
+                  Sua segurança é muito importante. Você pode verificar minha credencial oficial
+                  diretamente no portal da Ademicon.
+                </span>
+              </span>
+            </div>
+            <Button asChild variant="outline" className="shrink-0 rounded-xl">
+              <a href={ADEMICON_CREDENTIAL_URL} target="_blank" rel="noopener noreferrer">
+                Verificar credencial
+              </a>
+            </Button>
+          </div>
         </Reveal>
       </div>
     </section>

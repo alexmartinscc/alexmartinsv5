@@ -13,7 +13,7 @@ const ITEMS = [
     text: "Primeiro imóvel, construção, reforma e veículos.",
     image: "/conquistar.webp",
     src: conquistar,
-    alt: "Família recebendo as chaves da primeira casa",
+    alt: "Casal em frente à fachada da sua primeira casa própria",
   },
   {
     title: "Evoluir",
@@ -34,7 +34,7 @@ const ITEMS = [
     text: "Aquisição de imóveis para renda, independência financeira, investimento e planejamento para aposentadoria.",
     image: "/gerar-renda.webp",
     src: gerarRenda,
-    alt: "Proprietária revisando o contrato de locação do seu imóvel",
+    alt: "Casa residencial bem cuidada em bairro tranquilo, adquirida como investimento",
   },
   {
     title: "Expandir seu Negócio",

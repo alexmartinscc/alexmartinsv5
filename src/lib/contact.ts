@@ -7,3 +7,6 @@ export const INSTAGRAM_HANDLE = "@alexmartins_ademicon";
 export const INSTAGRAM_URL = "https://www.instagram.com/alexmartins_ademicon";
 
 export const ADEMICON_URL = "https://www.ademicon.com.br";
+
+export const ADEMICON_CREDENTIAL_URL =
+  "https://www.ademicon.com.br/licensed/984100/alexsandro-martins";
