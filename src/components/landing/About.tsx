@@ -40,24 +40,48 @@ export function About() {
             Prazer, sou Alex Martins.
           </h2>
           <p className="measure mt-6 leading-[1.85] text-muted-foreground">
-            Sou representante autorizado da Ademicon e meu trabalho começa por entender os seus
-            objetivos. A partir daí, explico de forma simples e transparente como o consórcio
-            funciona.
+            Atuo como Representante Autorizado Ademicon, unindo um atendimento próximo e
+            personalizado à estrutura, segurança e credibilidade de uma das maiores administradoras
+            independentes de consórcio do Brasil.
           </p>
           <p className="measure mt-4 leading-[1.85] text-muted-foreground">
-            Em seguida, desenvolvo a estratégia mais adequada ao seu projeto: a escolha dos grupos,
-            das cotas e a definição da melhor estratégia de lances.
+            Meu compromisso é entender seus objetivos, explicar de forma clara como funcionam as
+            soluções disponíveis e ajudá-lo a definir a melhor estratégia para realizar o seu
+            projeto.
           </p>
           <p className="measure mt-4 leading-[1.85] text-muted-foreground">
-            Depois da contratação, continuo ao seu lado durante toda a vigência do contrato, com
-            gestão mensal, orientação sobre lances, comunicação dos resultados, esclarecimento de
-            dúvidas e um atendimento próximo e rápido.
+            Após a contratação, continuo acompanhando toda a sua jornada, realizando a gestão do
+            contrato, orientando sobre estratégias de lances, comunicando os resultados das
+            assembleias e oferecendo suporte sempre que necessário.
           </p>
           <p className="measure mt-6 border-l-2 border-gold pl-5 text-base leading-[1.8] font-semibold text-primary">
             Você nunca estará sozinho durante essa jornada.
           </p>
 
-          <ul className="mt-10 grid gap-4 sm:grid-cols-1">
+          <div className="mt-8 flex flex-col gap-4 rounded-2xl border border-border/70 bg-background px-5 py-5 shadow-soft sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-start gap-3">
+              <span className="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full bg-gold/15">
+                <ShieldCheck className="h-4 w-4 text-gold" />
+              </span>
+              <span className="flex flex-col gap-1">
+                <span className="text-sm font-semibold text-primary">
+                  Representante Autorizado Ademicon
+                </span>
+                <span className="text-sm leading-[1.7] text-muted-foreground">
+                  Você pode confirmar minha credencial oficial diretamente no portal da Ademicon.
+                  Essa é uma forma simples de garantir que está sendo atendido por um representante
+                  credenciado.
+                </span>
+              </span>
+            </div>
+            <Button asChild variant="outline" className="shrink-0 rounded-xl">
+              <a href={ADEMICON_CREDENTIAL_URL} target="_blank" rel="noopener noreferrer">
+                Verificar credencial oficial
+              </a>
+            </Button>
+          </div>
+
+          <ul className="mt-8 grid gap-4 sm:grid-cols-1">
             {POINTS.map((point) => (
               <li
                 key={point.title}
@@ -74,27 +98,6 @@ export function About() {
             ))}
           </ul>
 
-          <div className="mt-8 flex flex-col gap-4 rounded-2xl border border-border/70 bg-background px-5 py-5 shadow-soft sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex items-start gap-3">
-              <span className="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full bg-gold/15">
-                <ShieldCheck className="h-4 w-4 text-gold" />
-              </span>
-              <span className="flex flex-col gap-1">
-                <span className="text-sm font-semibold text-primary">
-                  Representante Autorizado Ademicon
-                </span>
-                <span className="text-sm leading-[1.7] text-muted-foreground">
-                  Sua segurança é muito importante. Você pode verificar minha credencial oficial
-                  diretamente no portal da Ademicon.
-                </span>
-              </span>
-            </div>
-            <Button asChild variant="outline" className="shrink-0 rounded-xl">
-              <a href={ADEMICON_CREDENTIAL_URL} target="_blank" rel="noopener noreferrer">
-                Verificar credencial
-              </a>
-            </Button>
-          </div>
         </Reveal>
       </div>
     </section>

@@ -1,4 +1,3 @@
-import { Building2, ShieldCheck, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ImageSlot } from "./ImageSlot";
 import { Reveal } from "./Reveal";
@@ -6,11 +5,11 @@ import parceria from "@/assets/ademicon-parceria.jpg";
 import ademiconLogo from "@/assets/ademicon-logo.png.asset.json";
 import { ADEMICON_URL } from "@/lib/contact";
 
-const HIGHLIGHTS = [
-  { icon: Building2, title: "Solidez", text: "Instituição consolidada no mercado." },
-  { icon: ShieldCheck, title: "Segurança", text: "Operação regulada e transparente." },
-  { icon: Users, title: "Estrutura", text: "Rede de atendimento em todo o país." },
+const SOLUTIONS = [
+  { solution: "Consórcio", company: "Ademicon" },
+  { solution: "Home Equity", company: "Ademicon" },
 ];
+
 
 export function Ademicon() {
   return (
@@ -19,7 +18,7 @@ export function Ademicon() {
         <Reveal className="max-w-xl">
           <p className="eyebrow">Parceria estratégica</p>
           <h2 className="mt-5 text-3xl font-extrabold text-primary md:text-[2.5rem] md:leading-[1.15]">
-            A estratégia é minha. A solidez é da Ademicon.
+            Parceria Estratégica com a Ademicon
           </h2>
           <div className="mt-6 inline-flex items-center gap-3 rounded-full border border-border/70 bg-background px-4 py-2 shadow-soft">
             <span className="text-[10px] tracking-[0.16em] text-muted-foreground uppercase">
@@ -36,14 +35,37 @@ export function Ademicon() {
             />
           </div>
           <p className="measure mt-6 leading-[1.85] text-muted-foreground">
-            Para garantir o sucesso do seu projeto, trabalho com a Ademicon, a maior administradora
-            independente de consórcios do Brasil.
+            Para oferecer soluções com segurança, transparência e respaldo, atuo em parceria com a
+            Ademicon, a maior administradora independente de consórcios do Brasil e autorizada pelo
+            Banco Central.
           </p>
           <p className="measure mt-4 leading-[1.85] text-muted-foreground">
-            Com um portfólio completo de soluções para pessoas físicas, empresas e produtores
-            rurais, ela oferece a segurança e a solidez necessárias para transformar planejamento em
-            conquistas.
+            Essa parceria une um atendimento personalizado à estrutura, tecnologia e solidez de uma
+            empresa reconhecida nacionalmente.
           </p>
+
+          <div className="mt-10 overflow-hidden rounded-3xl border border-border/70 bg-background shadow-soft">
+            <table className="w-full text-left text-sm">
+              <thead>
+                <tr className="border-b border-border/70">
+                  <th className="px-6 py-4 text-[11px] font-semibold tracking-[0.14em] text-muted-foreground uppercase">
+                    Solução
+                  </th>
+                  <th className="px-6 py-4 text-[11px] font-semibold tracking-[0.14em] text-muted-foreground uppercase">
+                    Empresa
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {SOLUTIONS.map((row) => (
+                  <tr key={row.solution} className="border-b border-border/50 last:border-0">
+                    <td className="px-6 py-4 font-semibold text-primary">{row.solution}</td>
+                    <td className="px-6 py-4 text-muted-foreground">{row.company}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
 
           <Button
             asChild
@@ -56,26 +78,6 @@ export function Ademicon() {
             </a>
           </Button>
 
-          <p className="measure mt-8 text-sm leading-[1.85] text-muted-foreground">
-            Após ajudá-lo na definição do seu projeto, na escolha da melhor estratégia e da solução
-            mais adequada, continuarei acompanhando seu contrato, realizando a gestão mensal,
-            estratégias de lance e todo o suporte necessário durante a sua jornada.
-          </p>
-
-          <div className="mt-10 grid gap-4 sm:grid-cols-3">
-            {HIGHLIGHTS.map((item) => (
-              <div
-                key={item.title}
-                className="card-lift rounded-3xl border border-border/70 bg-background p-6 shadow-soft"
-              >
-                <span className="grid h-11 w-11 place-items-center rounded-2xl bg-gold/12">
-                  <item.icon className="h-5 w-5 text-gold" />
-                </span>
-                <h3 className="mt-5 text-sm font-bold text-primary">{item.title}</h3>
-                <p className="mt-2 text-sm leading-[1.7] text-muted-foreground">{item.text}</p>
-              </div>
-            ))}
-          </div>
         </Reveal>
 
         <Reveal delay={100}>

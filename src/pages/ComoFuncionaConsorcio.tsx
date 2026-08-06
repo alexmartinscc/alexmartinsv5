@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Header } from "@/components/landing/Header";
 import { Footer } from "@/components/landing/Footer";
 import { Reveal } from "@/components/landing/Reveal";
-import { WHATSAPP_URL } from "@/lib/contact";
+import { ADEMICON_CREDENTIAL_URL, WHATSAPP_URL } from "@/lib/contact";
 
 type NoteProps = {
   icon: typeof Info;
@@ -353,8 +353,50 @@ export function ComoFuncionaConsorcio() {
                 solução — se ela realmente fizer sentido.
               </P>
             </article>
+
+            <Reveal>
+              <aside className="measure mt-16 rounded-3xl border border-border/70 bg-secondary p-8 shadow-soft md:p-10">
+                <div className="flex items-start gap-3">
+                  <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-full bg-gold/15">
+                    <ShieldCheck className="h-4 w-4 text-gold" />
+                  </span>
+                  <div>
+                    <h2 className="text-lg font-bold text-primary">Sobre o autor</h2>
+                    <p className="mt-3 text-sm leading-[1.85] text-muted-foreground">
+                      Sou Alex Martins, Representante Autorizado Ademicon.
+                    </p>
+                    <p className="mt-3 text-sm leading-[1.85] text-muted-foreground">
+                      Meu trabalho é ajudar pessoas e empresas a entenderem as diferentes
+                      estratégias financeiras disponíveis para realizar seus projetos com
+                      planejamento, segurança e tranquilidade.
+                    </p>
+                    <p className="mt-3 text-sm leading-[1.85] text-muted-foreground">
+                      Acredito que boas decisões começam com informação de qualidade.
+                    </p>
+                    <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                      <Button asChild className="rounded-xl">
+                        <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                          <MessageCircle className="h-4 w-4" />
+                          Conversar pelo WhatsApp
+                        </a>
+                      </Button>
+                      <Button asChild variant="outline" className="rounded-xl">
+                        <a
+                          href={ADEMICON_CREDENTIAL_URL}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Verificar credencial oficial
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </aside>
+            </Reveal>
           </div>
         </section>
+
 
         {/* CTA final */}
         <section className="bg-background pb-28 md:pb-40">

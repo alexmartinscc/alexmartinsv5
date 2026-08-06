@@ -1,7 +1,14 @@
-import { Instagram, MessageCircle } from "lucide-react";
+import { Instagram, MessageCircle, ShieldCheck } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import logo from "@/assets/alex-martins-logo.png.asset.json";
-import { INSTAGRAM_HANDLE, INSTAGRAM_URL, WHATSAPP_NUMBER, WHATSAPP_URL } from "@/lib/contact";
+import {
+  ADEMICON_CREDENTIAL_URL,
+  INSTAGRAM_HANDLE,
+  INSTAGRAM_URL,
+  WHATSAPP_NUMBER,
+  WHATSAPP_URL,
+} from "@/lib/contact";
+
 
 const LINKS = [
   { label: "O Problema", href: "/#problema" },
@@ -80,9 +87,22 @@ export function Footer() {
         </nav>
       </div>
 
-      <div className="section-shell mt-10 border-t border-border pt-6">
+      <div className="section-shell mt-10 flex flex-col gap-3 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs text-muted-foreground">
           © {new Date().getFullYear()} — Todos os direitos reservados.
+        </p>
+        <p className="flex items-center gap-2 text-xs text-muted-foreground">
+          <ShieldCheck className="h-3.5 w-3.5 text-gold" />
+          Representante Autorizado Ademicon
+          <span className="h-3 w-px bg-border" />
+          <a
+            href={ADEMICON_CREDENTIAL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-4 transition-colors hover:text-primary"
+          >
+            Verificar credencial
+          </a>
         </p>
       </div>
     </footer>
