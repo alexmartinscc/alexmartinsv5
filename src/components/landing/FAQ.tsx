@@ -132,27 +132,6 @@ export function FAQ() {
               </AccordionPrimitive.Item>
             ))}
           </AccordionPrimitive.Root>
-
-          <div className="mt-10 rounded-2xl border border-gold/20 bg-primary-deep px-6 py-10 text-center md:px-10 md:py-12">
-            <h3 className="text-xl font-bold text-primary-foreground md:text-2xl">
-              Ainda ficou com alguma dúvida?
-            </h3>
-            <p className="mx-auto mt-4 max-w-lg leading-[1.8] text-primary-foreground/80">
-              Cada projeto é único e merece uma estratégia personalizada.
-            </p>
-            <p className="mx-auto mt-3 max-w-lg leading-[1.8] text-primary-foreground/80">
-              Se preferir, converse diretamente comigo. Será um prazer entender seus objetivos, esclarecer suas dúvidas e mostrar como o consórcio pode ajudá-lo a realizar seus projetos.
-            </p>
-            <Button
-              asChild
-              size="lg"
-              className="mt-8 rounded-xl bg-gold px-8 text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90"
-            >
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                Conversar pelo WhatsApp
-              </a>
-            </Button>
-          </div>
         </Reveal>
       </div>
     </section>
