@@ -87,6 +87,13 @@ export function Header() {
                 {item.label}
               </a>
             ))}
+            <Link
+              to="/como-funciona-o-consorcio"
+              onClick={() => setOpen(false)}
+              className="rounded-xl px-2 py-3 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-primary"
+            >
+              Central de Conhecimento
+            </Link>
             <Button asChild size="lg" className="mt-3 rounded-xl">
               <a
                 href={WHATSAPP_URL}
