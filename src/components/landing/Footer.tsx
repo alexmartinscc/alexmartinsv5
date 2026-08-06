@@ -1,7 +1,14 @@
-import { Instagram, MessageCircle } from "lucide-react";
+import { Instagram, MessageCircle, ShieldCheck } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import logo from "@/assets/alex-martins-logo.png.asset.json";
-import { INSTAGRAM_HANDLE, INSTAGRAM_URL, WHATSAPP_NUMBER, WHATSAPP_URL } from "@/lib/contact";
+import {
+  ADEMICON_CREDENTIAL_URL,
+  INSTAGRAM_HANDLE,
+  INSTAGRAM_URL,
+  WHATSAPP_NUMBER,
+  WHATSAPP_URL,
+} from "@/lib/contact";
+
 
 const LINKS = [
   { label: "O Problema", href: "/#problema" },
