@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CentralDeConhecimentoRouteImport } from './routes/central-de-conhecimento'
 import { Route as ComoFuncionaOConsorcioRouteImport } from './routes/como-funciona-o-consorcio'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CentralDeConhecimentoRoute = CentralDeConhecimentoRouteImport.update({
+  id: '/central-de-conhecimento',
+  path: '/central-de-conhecimento',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ComoFuncionaOConsorcioRoute = ComoFuncionaOConsorcioRouteImport.update({
@@ -25,27 +31,32 @@ const ComoFuncionaOConsorcioRoute = ComoFuncionaOConsorcioRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/central-de-conhecimento': typeof CentralDeConhecimentoRoute
   '/como-funciona-o-consorcio': typeof ComoFuncionaOConsorcioRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/central-de-conhecimento': typeof CentralDeConhecimentoRoute
   '/como-funciona-o-consorcio': typeof ComoFuncionaOConsorcioRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/central-de-conhecimento': typeof CentralDeConhecimentoRoute
   '/como-funciona-o-consorcio': typeof ComoFuncionaOConsorcioRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/como-funciona-o-consorcio'
+  fullPaths: '/' | '/central-de-conhecimento' | '/como-funciona-o-consorcio'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/como-funciona-o-consorcio'
-  id: '__root__' | '/' | '/como-funciona-o-consorcio'
+  to: '/' | '/central-de-conhecimento' | '/como-funciona-o-consorcio'
+  id:
+    '__root__' | '/' | '/central-de-conhecimento' | '/como-funciona-o-consorcio'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CentralDeConhecimentoRoute: typeof CentralDeConhecimentoRoute
   ComoFuncionaOConsorcioRoute: typeof ComoFuncionaOConsorcioRoute
 }
 
@@ -56,6 +67,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/central-de-conhecimento': {
+      id: '/central-de-conhecimento'
+      path: '/central-de-conhecimento'
+      fullPath: '/central-de-conhecimento'
+      preLoaderRoute: typeof CentralDeConhecimentoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/como-funciona-o-consorcio': {
@@ -70,6 +88,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CentralDeConhecimentoRoute: CentralDeConhecimentoRoute,
   ComoFuncionaOConsorcioRoute: ComoFuncionaOConsorcioRoute,
 }
 export const routeTree = rootRouteImport
