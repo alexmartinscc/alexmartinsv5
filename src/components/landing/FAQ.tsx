@@ -103,7 +103,7 @@ export function FAQ() {
         </Reveal>
 
         <Reveal delay={100}>
-          <Accordion type="single" collapsible className="w-full space-y-4">
+          <AccordionPrimitive.Root type="single" collapsible className="w-full space-y-4">
             {FAQ_ITEMS.map((item) => (
               <AccordionPrimitive.Item
                 key={item.q}
@@ -120,7 +120,7 @@ export function FAQ() {
                 </FaqContent>
               </AccordionPrimitive.Item>
             ))}
-          </Accordion>
+          </AccordionPrimitive.Root>
 
           <div className="mt-10 rounded-2xl border border-gold/20 bg-primary-deep px-6 py-10 text-center md:px-10 md:py-12">
             <h3 className="text-xl font-bold text-primary-foreground md:text-2xl">
