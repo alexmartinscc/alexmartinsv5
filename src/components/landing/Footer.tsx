@@ -71,6 +71,12 @@ export function Footer() {
               {link.label}
             </a>
           ))}
+          <Link
+            to="/como-funciona-o-consorcio"
+            className="text-sm text-muted-foreground transition-colors hover:text-primary"
+          >
+            Central de Conhecimento
+          </Link>
         </nav>
       </div>
 
