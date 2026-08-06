@@ -80,9 +80,22 @@ export function Footer() {
         </nav>
       </div>
 
-      <div className="section-shell mt-10 border-t border-border pt-6">
+      <div className="section-shell mt-10 flex flex-col gap-3 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs text-muted-foreground">
           © {new Date().getFullYear()} — Todos os direitos reservados.
+        </p>
+        <p className="flex items-center gap-2 text-xs text-muted-foreground">
+          <ShieldCheck className="h-3.5 w-3.5 text-gold" />
+          Representante Autorizado Ademicon
+          <span className="h-3 w-px bg-border" />
+          <a
+            href={ADEMICON_CREDENTIAL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-4 transition-colors hover:text-primary"
+          >
+            Verificar credencial
+          </a>
         </p>
       </div>
     </footer>
