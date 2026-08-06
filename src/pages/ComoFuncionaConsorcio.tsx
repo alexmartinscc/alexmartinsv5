@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Header } from "@/components/landing/Header";
 import { Footer } from "@/components/landing/Footer";
 import { Reveal } from "@/components/landing/Reveal";
-import { WHATSAPP_URL } from "@/lib/contact";
+import { ADEMICON_CREDENTIAL_URL, WHATSAPP_URL } from "@/lib/contact";
 
 type NoteProps = {
   icon: typeof Info;
