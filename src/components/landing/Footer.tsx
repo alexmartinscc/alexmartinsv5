@@ -21,8 +21,26 @@ const LINKS = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-secondary py-14">
-      <div className="section-shell grid gap-10 md:grid-cols-[1.2fr_1fr]">
+    <footer className="border-t border-border bg-secondary">
+      <div className="section-shell py-14">
+        <div className="rounded-2xl border border-border/70 bg-card px-7 py-9 shadow-soft md:flex md:items-center md:justify-between md:gap-8 md:px-10">
+          <div className="max-w-xl">
+            <h2 className="font-display text-xl font-extrabold text-primary md:text-2xl">
+              Continue aprendendo
+            </h2>
+            <p className="mt-3 text-[15px] leading-[1.8] text-muted-foreground">
+              Conhecimento gera decisões melhores. Acesse a Central de Conhecimento e descubra como
+              o consórcio e outras estratégias financeiras podem ajudar você a realizar seus
+              projetos.
+            </p>
+          </div>
+          <Button asChild size="lg" className="mt-6 rounded-xl md:mt-0 md:shrink-0">
+            <Link to="/central-de-conhecimento">Acessar Central de Conhecimento</Link>
+          </Button>
+        </div>
+      </div>
+
+      <div className="section-shell grid gap-10 border-t border-border pt-14 pb-14 md:grid-cols-[1.2fr_1fr]">
         <div className="max-w-sm">
           <div className="flex items-center gap-3">
             <img
