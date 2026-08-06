@@ -10,33 +10,43 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ComoFuncionaOConsorcioRouteImport } from './routes/como-funciona-o-consorcio'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ComoFuncionaOConsorcioRoute = ComoFuncionaOConsorcioRouteImport.update({
+  id: '/como-funciona-o-consorcio',
+  path: '/como-funciona-o-consorcio',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/como-funciona-o-consorcio': typeof ComoFuncionaOConsorcioRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/como-funciona-o-consorcio': typeof ComoFuncionaOConsorcioRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/como-funciona-o-consorcio': typeof ComoFuncionaOConsorcioRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/como-funciona-o-consorcio'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/como-funciona-o-consorcio'
+  id: '__root__' | '/' | '/como-funciona-o-consorcio'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ComoFuncionaOConsorcioRoute: typeof ComoFuncionaOConsorcioRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +58,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/como-funciona-o-consorcio': {
+      id: '/como-funciona-o-consorcio'
+      path: '/como-funciona-o-consorcio'
+      fullPath: '/como-funciona-o-consorcio'
+      preLoaderRoute: typeof ComoFuncionaOConsorcioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ComoFuncionaOConsorcioRoute: ComoFuncionaOConsorcioRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

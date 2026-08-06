@@ -1,14 +1,15 @@
 import { Instagram, MessageCircle } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import logo from "@/assets/alex-martins-logo.png.asset.json";
 import { INSTAGRAM_HANDLE, INSTAGRAM_URL, WHATSAPP_NUMBER, WHATSAPP_URL } from "@/lib/contact";
 
 const LINKS = [
-  { label: "O Problema", href: "#problema" },
-  { label: "Sobre", href: "#sobre" },
-  { label: "Método MAPA", href: "#metodo" },
-  { label: "Portfólio", href: "#portfolio" },
-  { label: "Ademicon", href: "#ademicon" },
-  { label: "FAQ", href: "#faq" },
+  { label: "O Problema", href: "/#problema" },
+  { label: "Sobre", href: "/#sobre" },
+  { label: "Método MAPA", href: "/#metodo" },
+  { label: "Portfólio", href: "/#portfolio" },
+  { label: "Ademicon", href: "/#ademicon" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 export function Footer() {
@@ -70,6 +71,12 @@ export function Footer() {
               {link.label}
             </a>
           ))}
+          <Link
+            to="/como-funciona-o-consorcio"
+            className="text-sm text-muted-foreground transition-colors hover:text-primary"
+          >
+            Central de Conhecimento
+          </Link>
         </nav>
       </div>
 
