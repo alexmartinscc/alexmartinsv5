@@ -98,7 +98,7 @@ export function Footer() {
             </a>
           ))}
           <Link
-            to="/como-funciona-o-consorcio"
+            to="/central-de-conhecimento"
             className="text-sm text-muted-foreground transition-colors hover:text-primary"
           >
             Central de Conhecimento
