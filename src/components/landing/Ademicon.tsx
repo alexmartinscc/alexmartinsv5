@@ -1,4 +1,3 @@
-import { Building2, ShieldCheck, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ImageSlot } from "./ImageSlot";
 import { Reveal } from "./Reveal";
@@ -6,11 +5,11 @@ import parceria from "@/assets/ademicon-parceria.jpg";
 import ademiconLogo from "@/assets/ademicon-logo.png.asset.json";
 import { ADEMICON_URL } from "@/lib/contact";
 
-const HIGHLIGHTS = [
-  { icon: Building2, title: "Solidez", text: "Instituição consolidada no mercado." },
-  { icon: ShieldCheck, title: "Segurança", text: "Operação regulada e transparente." },
-  { icon: Users, title: "Estrutura", text: "Rede de atendimento em todo o país." },
+const SOLUTIONS = [
+  { solution: "Consórcio", company: "Ademicon" },
+  { solution: "Home Equity", company: "Ademicon" },
 ];
+
 
 export function Ademicon() {
   return (
