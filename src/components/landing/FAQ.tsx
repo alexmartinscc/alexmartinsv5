@@ -104,7 +104,7 @@ export function FAQ() {
 
         <Reveal delay={100}>
           <AccordionPrimitive.Root type="single" collapsible className="w-full space-y-4">
-            {FAQ_ITEMS.map((item) => (
+            {FAQ_ITEMS.map((item, index) => (
               <AccordionPrimitive.Item
                 key={item.q}
                 value={item.q}
@@ -113,9 +113,20 @@ export function FAQ() {
                 <FaqTrigger>{item.q}</FaqTrigger>
                 <FaqContent>
                   <div className="max-w-2xl space-y-4 leading-[1.9] text-muted-foreground">
-                    {item.a.split("\n\n").map((paragraph, index) => (
-                      <p key={index}>{paragraph}</p>
+                    {item.a.split("\n\n").map((paragraph, pIndex) => (
+                      <p key={pIndex}>{paragraph}</p>
                     ))}
+                    {index === FAQ_ITEMS.length - 1 && (
+                      <Button
+                        asChild
+                        size="lg"
+                        className="mt-4 rounded-xl bg-gold px-8 text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90"
+                      >
+                        <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                          Conversar pelo WhatsApp
+                        </a>
+                      </Button>
+                    )}
                   </div>
                 </FaqContent>
               </AccordionPrimitive.Item>
