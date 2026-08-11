@@ -77,7 +77,7 @@ export function About() {
                 <Reveal key={item.title} delay={150 + index * 80}>
                   <div className="flex h-full flex-col gap-3 rounded-2xl border border-border/70 bg-background px-5 py-5 shadow-soft">
                     <span className="grid h-9 w-9 place-items-center rounded-full bg-gold/15">
-                      <Icon className="h-4.5 w-4.5 text-gold" />
+                      <Icon className="h-5 w-5 text-gold" />
                     </span>
                     <div>
                       <h3 className="text-sm font-bold text-primary">{item.title}</h3>
