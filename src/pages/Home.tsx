@@ -19,6 +19,7 @@ export function Home() {
         <Problems />
         <About />
         <MetodoMapa />
+        <WhyConsorcio />
         <Portfolio />
         <Ademicon />
         <FAQ />
