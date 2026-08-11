@@ -2,10 +2,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Reveal } from "./Reveal";
 
 const STEPS = [
-  { letter: "M", title: "Mapear", text: "Entender o momento atual e os objetivos." },
-  { letter: "A", title: "Ampliar", text: "Avaliar cenários e possibilidades reais." },
-  { letter: "P", title: "Planejar", text: "Definir o caminho e as prioridades." },
-  { letter: "A", title: "Acompanhar", text: "Revisar e ajustar ao longo do tempo." },
+  { letter: "M", title: "Mapear", text: "Entender seu momento atual, seus objetivos, prioridades e expectativas." },
+  { letter: "A", title: "Analisar Opções", text: "Avaliar as alternativas disponíveis e identificar os caminhos mais adequados para o seu projeto." },
+  { letter: "P", title: "Planejar a Estratégia", text: "Definir a melhor estrutura, incluindo grupos, cotas e estratégias de lance quando aplicáveis." },
+  { letter: "A", title: "Acompanhar a Jornada", text: "Oferecer suporte contínuo, orientação e acompanhamento até a utilização do crédito." },
 ];
 
 export function MetodoMapa() {
@@ -18,11 +18,19 @@ export function MetodoMapa() {
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow justify-center">Método MAPA</p>
           <h2 className="mt-5 text-3xl font-extrabold md:text-[2.5rem] md:leading-[1.15]">
-            Como funciona meu atendimento?
+            Como funciona meu atendimento
           </h2>
           <p className="mx-auto mt-7 max-w-xl leading-[1.85] text-primary-foreground/75">
-            Cada pessoa possui objetivos, recursos e expectativas diferentes. Por isso utilizo um
-            método para compreender sua realidade antes de definir qualquer estratégia.
+            Cada pessoa possui objetivos, prazos e uma realidade financeira diferente.
+          </p>
+          <p className="mx-auto mt-5 max-w-xl leading-[1.85] text-primary-foreground/75">
+            Por isso, não acredito em soluções prontas.
+          </p>
+          <p className="mx-auto mt-5 max-w-xl leading-[1.85] text-primary-foreground/75">
+            Antes de sugerir qualquer estratégia, procuro compreender o seu momento, seus objetivos e o que você deseja realizar. A partir desse entendimento, construímos juntos um caminho mais claro para transformar o seu projeto em realidade.
+          </p>
+          <p className="mx-auto mt-5 max-w-xl leading-[1.85] text-primary-foreground/90 font-medium">
+            Para tornar esse processo simples e organizado, utilizo um método próprio de atendimento: o Método MAPA.
           </p>
         </Reveal>
 
