@@ -12,10 +12,10 @@ import {
 
 
 const LINKS = [
-  { label: "O Problema", href: "/#problema" },
+  { label: "Consórcio", href: "/#problema" },
   { label: "Sobre", href: "/#sobre" },
-  { label: "Método MAPA", href: "/#metodo" },
-  { label: "Portfólio", href: "/#portfolio" },
+  { label: "Como funciona", href: "/#metodo" },
+  { label: "Objetivos", href: "/#portfolio" },
   { label: "Ademicon", href: "/#ademicon" },
   { label: "FAQ", href: "/#faq" },
 ];
@@ -30,9 +30,8 @@ export function Footer() {
               Continue aprendendo
             </h2>
             <p className="mt-3 text-[15px] leading-[1.8] text-muted-foreground">
-              Conhecimento gera decisões melhores. Acesse a Central de Conhecimento e descubra como
-              o consórcio e outras estratégias financeiras podem ajudar você a realizar seus
-              projetos.
+              Entenda o consórcio de forma simples e descubra como usá-lo para conquistar
+              imóveis, patrimônio e novos projetos.
             </p>
           </div>
           <Button asChild size="lg" className="mt-6 rounded-xl md:mt-0 md:shrink-0">
@@ -62,7 +61,7 @@ export function Footer() {
             </span>
           </div>
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-            Consultoria patrimonial e representante autorizado Ademicon.
+            Consultor Autorizado Ademicon. Especialista em Conquista Patrimonial.
           </p>
 
           <div className="mt-5 flex flex-col gap-2 text-sm">
