@@ -29,35 +29,30 @@ export function Hero() {
           <p className="eyebrow">Especialista em Conquista Patrimonial</p>
 
           <h1 className="mt-6 text-[2.5rem] leading-[1.05] font-extrabold text-primary md:text-[3.5rem]">
-            Conquiste seu patrimônio com consórcio
+            Conquiste seu próximo patrimônio com estratégia.
           </h1>
 
-          <p className="mt-5 font-display text-xl font-bold tracking-tight text-gold md:text-2xl">
-            Entender. Planejar. Conquistar.
-          </p>
-
-          <p className="measure mt-4 text-base leading-[1.8] text-muted-foreground md:text-lg">
-            Sou Alex Martins, Consultor Autorizado Ademicon. Ajudo pessoas e empresas a conquistar
-            imóveis e patrimônio de forma planejada.
+          <p className="measure mt-5 text-base leading-[1.8] text-muted-foreground md:text-lg">
+            Imóveis, veículos, investimentos e soluções inteligentes para transformar seus projetos em realidade.
           </p>
 
           <p className="measure mt-8 text-base leading-[1.8] font-semibold text-primary">
-            O consórcio vai muito além de casa e carro.
+            Alex Martins
           </p>
-          <p className="measure mt-4 text-sm leading-[1.85] text-muted-foreground md:text-base">
-            Ele pode ser usado para comprar, construir ou reformar imóveis, quitar financiamentos,
-            gerar renda com aluguel e investir no seu negócio. Eu mostro o caminho certo para o seu
-            objetivo.
+          <p className="measure text-sm leading-[1.85] text-muted-foreground md:text-base">
+            Consultor Autorizado Ademicon
+            <br />
+            Especialista em Conquista Patrimonial
           </p>
 
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button
               asChild
               size="lg"
               className="rounded-xl px-8 shadow-soft transition-transform duration-200 hover:-translate-y-0.5"
             >
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                Quero conquistar meu imóvel
+                Quero conversar sobre meu projeto
               </a>
             </Button>
             <Button
@@ -66,9 +61,17 @@ export function Hero() {
               variant="outline"
               className="rounded-xl px-8 transition-colors duration-200"
             >
-              <a href="#metodo">Ver como funciona</a>
+              <a href="#metodo">Conheça o Método MAPA</a>
             </Button>
           </div>
+
+          <p className="measure mt-5 text-sm leading-[1.85] text-muted-foreground">
+            Uma conversa para entender seu projeto e apresentar as melhores possibilidades para o seu objetivo.
+          </p>
+
+          <p className="measure mt-3 text-sm font-medium tracking-wide text-gold">
+            Imóveis • Veículos • Investimentos • Crédito Inteligente
+          </p>
 
           <div className="mt-10 flex flex-wrap gap-2">
             {BADGES.map((badge) => (
