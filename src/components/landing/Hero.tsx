@@ -8,9 +8,9 @@ import { WHATSAPP_URL } from "@/lib/contact";
 const heroAlex = heroAlexAsset.url;
 
 const BADGES = [
-  "Representante Autorizado Ademicon",
-  "Atendimento Personalizado",
-  "Método MAPA",
+  "Consultor Autorizado Ademicon",
+  "Consórcio Imobiliário",
+  "Estratégia Personalizada",
 ];
 
 export function Hero() {
@@ -26,10 +26,10 @@ export function Hero() {
 
       <div className="section-shell relative grid items-center gap-16 lg:grid-cols-[0.95fr_1.05fr] lg:gap-24">
         <Reveal className="max-w-xl">
-          <p className="eyebrow">Consultoria patrimonial</p>
+          <p className="eyebrow">Especialista em Conquista Patrimonial</p>
 
           <h1 className="mt-6 text-[2.5rem] leading-[1.05] font-extrabold text-primary md:text-[3.5rem]">
-            Alex Martins
+            Conquiste seu patrimônio com consórcio
           </h1>
 
           <p className="mt-5 font-display text-xl font-bold tracking-tight text-gold md:text-2xl">
@@ -37,15 +37,17 @@ export function Hero() {
           </p>
 
           <p className="measure mt-4 text-base leading-[1.8] text-muted-foreground md:text-lg">
-            Estratégias financeiras para realizar seus projetos.
+            Sou Alex Martins, Consultor Autorizado Ademicon. Ajudo pessoas e empresas a conquistar
+            imóveis e patrimônio de forma planejada.
           </p>
 
           <p className="measure mt-8 text-base leading-[1.8] font-semibold text-primary">
-            Cada projeto tem um caminho ideal — e meu trabalho é ajudar você a encontrá-lo.
+            O consórcio vai muito além de casa e carro.
           </p>
           <p className="measure mt-4 text-sm leading-[1.85] text-muted-foreground md:text-base">
-            Meu compromisso é explicar, de forma simples e transparente, como o consórcio funciona e
-            como essa estratégia pode ajudá-lo a realizar o seu projeto.
+            Ele pode ser usado para comprar, construir ou reformar imóveis, quitar financiamentos,
+            gerar renda com aluguel e investir no seu negócio. Eu mostro o caminho certo para o seu
+            objetivo.
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
@@ -55,7 +57,7 @@ export function Hero() {
               className="rounded-xl px-8 shadow-soft transition-transform duration-200 hover:-translate-y-0.5"
             >
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                Quero conversar sobre meu projeto
+                Quero conquistar meu imóvel
               </a>
             </Button>
             <Button
@@ -64,7 +66,7 @@ export function Hero() {
               variant="outline"
               className="rounded-xl px-8 transition-colors duration-200"
             >
-              <a href="#metodo">Como funciona meu atendimento</a>
+              <a href="#metodo">Ver como funciona</a>
             </Button>
           </div>
 
