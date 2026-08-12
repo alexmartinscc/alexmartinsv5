@@ -2,10 +2,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Reveal } from "./Reveal";
 
 const STEPS = [
-  { letter: "M", title: "Mapear", text: "Entender seu momento atual, seus objetivos, prioridades e expectativas." },
-  { letter: "A", title: "Analisar Opções", text: "Avaliar as alternativas disponíveis e identificar os caminhos mais adequados para o seu projeto." },
-  { letter: "P", title: "Planejar a Estratégia", text: "Definir a melhor estrutura, incluindo grupos, cotas e estratégias de lance quando aplicáveis." },
-  { letter: "A", title: "Acompanhar a Jornada", text: "Oferecer suporte contínuo, orientação e acompanhamento até a utilização do crédito." },
+  { letter: "M", title: "Mapear o objetivo", text: "Entender o que você quer conquistar, em quanto tempo e quanto cabe no orçamento." },
+  { letter: "A", title: "Analisar as opções", text: "Comparar prazos, valores e modalidades de consórcio para o seu objetivo." },
+  { letter: "P", title: "Planejar a estratégia", text: "Definir grupo, cota e estratégia de lance para acelerar sua contemplação." },
+  { letter: "A", title: "Acompanhar a conquista", text: "Suporte em assembleias, lances e uso do crédito até o objetivo virar realidade." },
 ];
 
 export function MetodoMapa() {
@@ -18,19 +18,13 @@ export function MetodoMapa() {
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow justify-center">Método MAPA</p>
           <h2 className="mt-5 text-3xl font-extrabold md:text-[2.5rem] md:leading-[1.15]">
-            Como funciona meu atendimento
+            Como funciona na prática
           </h2>
           <p className="mx-auto mt-7 max-w-xl leading-[1.85] text-primary-foreground/75">
-            Cada pessoa possui objetivos, prazos e uma realidade financeira diferente.
-          </p>
-          <p className="mx-auto mt-5 max-w-xl leading-[1.85] text-primary-foreground/75">
-            Por isso, não acredito em soluções prontas.
-          </p>
-          <p className="mx-auto mt-5 max-w-xl leading-[1.85] text-primary-foreground/75">
-            Antes de sugerir qualquer estratégia, procuro compreender o seu momento, seus objetivos e o que você deseja realizar. A partir desse entendimento, construímos juntos um caminho mais claro para transformar o seu projeto em realidade.
+            Nada de solução pronta. Cada pessoa tem um objetivo, um prazo e um orçamento.
           </p>
           <p className="mx-auto mt-5 max-w-xl leading-[1.85] text-primary-foreground/90 font-medium">
-            Para tornar esse processo simples e organizado, utilizo um método próprio de atendimento: o Método MAPA.
+            Por isso sigo quatro passos simples: o Método MAPA.
           </p>
         </Reveal>
 
@@ -57,8 +51,7 @@ export function MetodoMapa() {
 
         <Reveal delay={120}>
           <p className="mx-auto mt-16 max-w-2xl border-t border-primary-foreground/15 pt-10 text-center text-lg leading-[1.8] font-semibold text-primary-foreground md:text-xl">
-            O resultado desse processo é uma estratégia personalizada construída exclusivamente
-            para o seu projeto.
+            No final, você tem um plano claro e feito sob medida para a sua conquista.
           </p>
         </Reveal>
       </div>
