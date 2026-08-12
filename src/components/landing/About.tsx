@@ -9,7 +9,7 @@ const DIFFERENTIALS = [
   {
     icon: ShieldCheck,
     title: "Credencial Verificada",
-    text: "Representante Autorizado Ademicon.",
+    text: "Consultor Autorizado Ademicon.",
     action: {
       label: "Verificar Profissional",
       href: ADEMICON_CREDENTIAL_URL,
@@ -17,13 +17,13 @@ const DIFFERENTIALS = [
   },
   {
     icon: Target,
-    title: "Planejamento Personalizado",
-    text: "Estratégia alinhada aos seus objetivos e ao momento da sua vida.",
+    title: "Estratégia Personalizada",
+    text: "Plano montado para o seu objetivo, seu prazo e seu orçamento.",
   },
   {
     icon: Handshake,
-    title: "Acompanhamento Completo",
-    text: "Do planejamento à conquista, com suporte próximo durante toda a jornada.",
+    title: "Do início à conquista",
+    text: "Acompanhamento em lances, assembleias e uso do crédito.",
   },
 ];
 
@@ -49,24 +49,20 @@ export function About() {
 
           <div className="measure mt-6 space-y-4 leading-[1.85] text-muted-foreground">
             <p>
-              Como Representante Autorizado Ademicon, uno a segurança e a credibilidade de uma das
-              maiores administradoras de consórcio do Brasil a um atendimento próximo, humano e
-              focado no que realmente importa: o seu projeto.
+              Sou Consultor Autorizado Ademicon e especialista em Conquista Patrimonial. Trabalho
+              com consórcio, principalmente imobiliário, ajudando pessoas e empresas a conquistar
+              patrimônio com planejamento.
             </p>
             <p>
-              Meu trabalho não é apenas apresentar uma solução financeira. É entender seus
-              objetivos, esclarecer suas dúvidas e ajudá-lo a construir a melhor estratégia para
-              transformar seus planos em realidade.
+              Não vendo cota. Eu entendo o seu objetivo, mostro as opções com números na mesa e
+              monto a estratégia que faz sentido para o seu momento.
             </p>
             <p>
-              E o diferencial não termina na contratação. Após a adesão, continuo ao seu lado
-              acompanhando toda a jornada. Auxilio na definição das estratégias de lance, acompanho
-              os resultados das assembleias, ofereço suporte nas etapas burocráticas e estou
-              disponível para orientar você sempre que necessário.
+              Depois da contratação, continuo ao seu lado: estratégia de lances, acompanhamento das
+              assembleias, apoio na parte burocrática e orientação até você usar o crédito.
             </p>
             <p className="font-semibold text-primary">
-              Do planejamento à conquista, você conta com um profissional comprometido em tornar
-              esse processo mais simples, seguro e transparente.
+              Meu compromisso é simples: tornar sua conquista mais rápida, segura e clara.
             </p>
           </div>
 

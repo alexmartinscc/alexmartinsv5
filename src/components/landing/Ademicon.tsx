@@ -16,9 +16,9 @@ export function Ademicon() {
     <section id="ademicon" className="scroll-mt-24 bg-secondary py-28 md:py-40">
       <div className="section-shell grid items-center gap-16 lg:grid-cols-2 lg:gap-24">
         <Reveal className="max-w-xl">
-          <p className="eyebrow">Parceria estratégica</p>
+          <p className="eyebrow">Segurança</p>
           <h2 className="mt-5 text-3xl font-extrabold text-primary md:text-[2.5rem] md:leading-[1.15]">
-            Parceria Estratégica com a Ademicon
+            Consultor Autorizado Ademicon
           </h2>
           <div className="mt-6 inline-flex items-center gap-3 rounded-full border border-border/70 bg-background px-4 py-2 shadow-soft">
             <span className="text-[10px] tracking-[0.16em] text-muted-foreground uppercase">
@@ -35,13 +35,12 @@ export function Ademicon() {
             />
           </div>
           <p className="measure mt-6 leading-[1.85] text-muted-foreground">
-            Para oferecer soluções com segurança, transparência e respaldo, atuo em parceria com a
-            Ademicon, a maior administradora independente de consórcios do Brasil e autorizada pelo
-            Banco Central.
+            Atuo com a Ademicon, a maior administradora independente de consórcios do Brasil,
+            autorizada pelo Banco Central. Isso significa solidez, transparência e regras claras.
           </p>
           <p className="measure mt-4 leading-[1.85] text-muted-foreground">
-            Essa parceria une um atendimento personalizado à estrutura, tecnologia e solidez de uma
-            empresa reconhecida nacionalmente.
+            Você tem a estrutura de uma empresa nacional com o atendimento próximo de um consultor
+            dedicado ao seu objetivo.
           </p>
 
           <div className="mt-10 overflow-hidden rounded-3xl border border-border/70 bg-background shadow-soft">

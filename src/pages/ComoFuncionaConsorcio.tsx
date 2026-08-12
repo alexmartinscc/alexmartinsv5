@@ -363,7 +363,7 @@ export function ComoFuncionaConsorcio() {
                   <div>
                     <h2 className="text-lg font-bold text-primary">Sobre o autor</h2>
                     <p className="mt-3 text-sm leading-[1.85] text-muted-foreground">
-                      Sou Alex Martins, Representante Autorizado Ademicon.
+                      Sou Alex Martins, Consultor Autorizado Ademicon.
                     </p>
                     <p className="mt-3 text-sm leading-[1.85] text-muted-foreground">
                       Meu trabalho é ajudar pessoas e empresas a entenderem as diferentes

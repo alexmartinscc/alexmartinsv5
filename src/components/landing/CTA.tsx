@@ -15,10 +15,10 @@ export function CTA() {
             />
             <div className="relative">
               <h2 className="mx-auto max-w-2xl text-3xl font-extrabold text-primary-foreground md:text-[2.5rem] md:leading-[1.15]">
-                Vamos conversar sobre o seu projeto?
+                Qual é a sua próxima conquista?
               </h2>
               <p className="mx-auto mt-5 max-w-xl leading-[1.8] text-primary-foreground/70">
-                Antes de tomar qualquer decisão, conheça todas as possibilidades.
+                Me conte seu objetivo e eu mostro o caminho com consórcio. Conversa sem compromisso.
               </p>
               <Button
                 asChild

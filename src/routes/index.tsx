@@ -4,17 +4,22 @@ import { Home } from "@/pages/Home";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Consultor Patrimonial | Planejamento com método" },
+      { title: "Alex Martins | Consórcio Imobiliário e Conquista Patrimonial" },
       {
         name: "description",
         content:
-          "Consultoria patrimonial com método claro. Representante autorizado Ademicon.",
+          "Consultor Autorizado Ademicon. Conquiste imóveis e patrimônio com consórcio: sem juros, com estratégia e acompanhamento.",
       },
-      { property: "og:title", content: "Consultor Patrimonial | Planejamento com método" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      {
+        property: "og:title",
+        content: "Alex Martins | Consórcio Imobiliário e Conquista Patrimonial",
+      },
       {
         property: "og:description",
         content:
-          "Consultoria patrimonial com método claro. Representante autorizado Ademicon.",
+          "Consultor Autorizado Ademicon. Conquiste imóveis e patrimônio com consórcio: sem juros, com estratégia e acompanhamento.",
       },
     ],
   }),

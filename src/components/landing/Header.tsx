@@ -6,10 +6,10 @@ import logo from "@/assets/alex-martins-logo.png.asset.json";
 import { WHATSAPP_URL } from "@/lib/contact";
 
 const NAV = [
-  { label: "O Problema", href: "/#problema" },
+  { label: "Consórcio", href: "/#problema" },
   { label: "Sobre", href: "/#sobre" },
-  { label: "Método MAPA", href: "/#metodo" },
-  { label: "Portfólio", href: "/#portfolio" },
+  { label: "Como funciona", href: "/#metodo" },
+  { label: "Objetivos", href: "/#portfolio" },
   { label: "Ademicon", href: "/#ademicon" },
   { label: "FAQ", href: "/#faq" },
 ];
@@ -53,7 +53,7 @@ export function Header() {
 
           <Button asChild size="lg" className="ml-3 hidden rounded-xl sm:inline-flex">
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-              Falar com o consultor
+              Falar com Alex
             </a>
           </Button>
 
@@ -88,7 +88,7 @@ export function Header() {
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
               >
-                Falar com o consultor
+                Falar com Alex
               </a>
             </Button>
           </nav>
