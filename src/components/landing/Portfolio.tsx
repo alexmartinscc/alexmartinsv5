@@ -89,13 +89,13 @@ export function Portfolio() {
     <section id="portfolio" className="scroll-mt-24 bg-background py-28 md:py-40">
       <div className="section-shell">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <p className="eyebrow justify-center">Portfólio</p>
+          <p className="eyebrow justify-center">O que você pode conquistar</p>
           <h2 className="mt-5 text-3xl font-extrabold text-primary md:text-[2.5rem] md:leading-[1.15]">
-            Em qual projeto posso ajudar você?
+            O consórcio vai muito além de casa e carro
           </h2>
           <p className="mt-5 leading-[1.8] text-muted-foreground">
-            Cada projeto possui objetivos, prazos e necessidades diferentes. Conheça algumas das
-            estratégias que podem ajudá-lo a transformar planos em realidade.
+            Veja o que já ajudei pessoas e empresas a conquistar. Escolha o objetivo mais parecido
+            com o seu.
           </p>
         </Reveal>
 
