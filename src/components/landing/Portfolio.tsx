@@ -1,86 +1,50 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { ImageSlot } from "./ImageSlot";
 import { Reveal } from "./Reveal";
-import conquistar from "@/assets/conquistar.jpg";
-import evoluir from "@/assets/evoluir.jpg";
-import proteger from "@/assets/proteger.jpg";
-import gerarRenda from "@/assets/gerar-renda.jpg";
-import expandir from "@/assets/expandir.jpg";
-import grandesSonhos from "@/assets/grandes-sonhos.jpg";
+import { Home, Car, TrendingUp, Wallet } from "lucide-react";
 
 const ITEMS = [
   {
-    title: "Conquistar seu Espaço",
-    text: "Ideal para quem deseja dar os primeiros passos na construção do patrimônio, transformando projetos importantes em realidade de forma planejada.",
-    tags: ["Primeiro imóvel", "Construir ou reformar", "Comprar um terreno", "Primeiro carro ou moto"],
-    image: "/conquistar.webp",
-    src: conquistar,
-    alt: "Casal em frente à fachada da sua primeira casa própria",
+    title: "Imóvel",
+    icon: Home,
+    tags: [
+      "Comprar",
+      "Construir",
+      "Reformar",
+      "Terrenos",
+      "Investimento",
+      "Comercial",
+    ],
   },
   {
-    title: "Evoluir seu Patrimônio",
-    text: "Para quem já conquistou as primeiras metas e deseja ampliar patrimônio, conforto e qualidade de vida para a família.",
+    title: "Veículo",
+    icon: Car,
     tags: [
-      "Trocar por um imóvel maior",
-      "Segundo imóvel ou casa de praia",
-      "Segundo veículo da família",
-      "Imóvel comercial próprio",
+      "Carros",
+      "Motos",
+      "Utilitários",
+      "Caminhões",
+      "Frotas",
     ],
-    image: "/evoluir.webp",
-    src: evoluir,
-    alt: "Casal com os filhos em frente à nova casa da família",
   },
   {
-    title: "Proteger suas Finanças",
-    text: "Estratégias para reduzir custos financeiros, reorganizar as finanças e utilizar o patrimônio de forma inteligente.",
+    title: "Investimento e Renda",
+    icon: TrendingUp,
     tags: [
-      "Quitar financiamentos",
-      "Reduzir gastos com juros",
-      "Crédito com garantia de imóvel",
-      "Reorganização financeira",
+      "Patrimônio",
+      "Investir",
+      "Gerar renda",
+      "Longo prazo",
     ],
-    image: "/proteger.webp",
-    src: proteger,
-    alt: "Profissional analisando documentos financeiros",
   },
   {
-    title: "Gerar Renda e Futuro",
-    text: "Construa patrimônio com foco em geração de renda, independência financeira e tranquilidade no longo prazo.",
+    title: "Crédito Inteligente",
+    icon: Wallet,
     tags: [
-      "Imóveis para locação",
-      "Planejamento de aposentadoria",
-      "Independência financeira",
-      "Formação de renda recorrente",
+      "Quitar financiamento",
+      "Obter crédito",
+      "Novos projetos",
+      "Expandir negócios",
     ],
-    image: "/gerar-renda.webp",
-    src: gerarRenda,
-    alt: "Casa residencial de bom padrão adquirida como investimento para geração de renda",
-  },
-  {
-    title: "Expandir seu Negócio",
-    text: "Invista no crescimento da empresa ou da propriedade rural sem comprometer o capital de giro.",
-    tags: [
-      "Renovação de frota",
-      "Máquinas e equipamentos",
-      "Tecnologia e infraestrutura",
-      "Soluções para o agronegócio",
-    ],
-    image: "/expandir.webp",
-    src: expandir,
-    alt: "Empresário observando a frota da própria empresa",
-  },
-  {
-    title: "Realizar Grandes Sonhos",
-    text: "Porque alguns dos momentos mais importantes da vida também merecem planejamento.",
-    tags: [
-      "Casamento e formatura",
-      "Intercâmbio",
-      "Estudos e especializações",
-      "Fertilização e procedimentos médicos",
-    ],
-    image: "/grandes-sonhos.webp",
-    src: grandesSonhos,
-    alt: "Casal comemorando juntos uma conquista importante",
   },
 ];
 
@@ -88,34 +52,28 @@ export function Portfolio() {
   return (
     <section id="portfolio" className="scroll-mt-24 bg-background py-28 md:py-40">
       <div className="section-shell">
-        <Reveal className="mx-auto max-w-2xl text-center">
-          <p className="eyebrow justify-center">O que você pode conquistar</p>
+        <Reveal className="mx-auto max-w-3xl text-center">
+          <p className="eyebrow justify-center">Áreas de atuação</p>
           <h2 className="mt-5 text-3xl font-extrabold text-primary md:text-[2.5rem] md:leading-[1.15]">
-            O consórcio vai muito além de casa e carro
+            Qual é a sua próxima conquista?
           </h2>
           <p className="mt-5 leading-[1.8] text-muted-foreground">
-            Veja o que já ajudei pessoas e empresas a conquistar. Escolha o objetivo mais parecido
-            com o seu.
+            Seja para conquistar um imóvel, ampliar seu patrimônio, investir ou impulsionar seu negócio, o consórcio oferece muito mais possibilidades do que a maioria das pessoas imagina.
           </p>
         </Reveal>
 
-        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
-          {ITEMS.map((item, index) => (
-            <Reveal key={item.title} delay={index * 80} className="h-full">
-              <Card className="card-lift h-full overflow-hidden rounded-3xl border-border/70 py-0 shadow-soft">
-                <CardContent className="flex h-full flex-col p-0">
-                  <ImageSlot
-                    path={item.image}
-                    src={item.src}
-                    alt={item.alt}
-                    ratio="4 / 3"
-                    label={item.title}
-                    className="rounded-none border-0 shadow-none"
-                  />
-                  <div className="flex flex-1 flex-col px-7 pt-7 pb-9">
-                    <h3 className="text-lg font-bold text-primary">{item.title}</h3>
-                    <p className="mt-3 text-sm leading-[1.8] text-muted-foreground">{item.text}</p>
-                    <ul className="mt-6 flex flex-wrap gap-2">
+        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
+          {ITEMS.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <Reveal key={item.title} delay={index * 80} className="h-full">
+                <Card className="card-lift h-full overflow-hidden rounded-3xl border-border/70 py-0 shadow-soft">
+                  <CardContent className="flex h-full flex-col items-center p-8 text-center">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-accent/30 bg-accent/10">
+                      <Icon className="h-8 w-8 text-primary/80" strokeWidth={1.5} />
+                    </div>
+                    <h3 className="mt-6 text-lg font-bold text-primary">{item.title}</h3>
+                    <ul className="mt-5 flex flex-wrap justify-center gap-2">
                       {item.tags.map((tag) => (
                         <li
                           key={tag}
@@ -125,12 +83,24 @@ export function Portfolio() {
                         </li>
                       ))}
                     </ul>
-                  </div>
-                </CardContent>
-              </Card>
-            </Reveal>
-          ))}
+                  </CardContent>
+                </Card>
+              </Reveal>
+            );
+          })}
         </div>
+
+        <Reveal className="mt-16 text-center" delay={320}>
+          <p className="text-muted-foreground">
+            E isso é apenas parte das possibilidades que o consórcio oferece.
+          </p>
+          <a
+            href="#contato"
+            className="mt-6 inline-flex items-center justify-center rounded-full bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.02] active:scale-[0.98]"
+          >
+            Quero conversar sobre meu projeto
+          </a>
+        </Reveal>
       </div>
     </section>
   );
