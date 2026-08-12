@@ -4,29 +4,29 @@ import { Reveal } from "./Reveal";
 
 const BENEFITS = [
   {
-    icon: Target,
-    title: "Planejamento Estratégico",
-    text: "Transforme objetivos de longo prazo em metas concretas. O consórcio incentiva a disciplina financeira e a construção organizada de patrimônio.",
-  },
-  {
     icon: Calculator,
-    title: "Previsibilidade de Custos",
-    text: "Sem juros compostos. O custo é composto principalmente pela taxa de administração, distribuída ao longo do plano de forma previsível.",
-  },
-  {
-    icon: CheckCircle2,
-    title: "Flexibilidade na Escolha",
-    text: "Na contemplação, você escolhe livremente o bem, serviço ou fornecedor que melhor atende ao seu projeto.",
+    title: "Sem juros",
+    text: "Você paga taxa de administração, não juros. O custo é previsível do começo ao fim do plano.",
   },
   {
     icon: Banknote,
-    title: "Poder de Compra à Vista",
-    text: "A carta de crédito permite negociar como comprador à vista, ampliando seu poder de negociação e acesso a melhores condições.",
+    title: "Poder de compra à vista",
+    text: "Com a carta de crédito você negocia como comprador à vista e conquista melhores condições.",
+  },
+  {
+    icon: CheckCircle2,
+    title: "Liberdade de escolha",
+    text: "Contemplado, você escolhe o imóvel, o bem ou o fornecedor que fizer mais sentido para o seu projeto.",
+  },
+  {
+    icon: Target,
+    title: "Patrimônio no seu ritmo",
+    text: "Parcelas que cabem no orçamento e disciplina para transformar um objetivo grande em conquista real.",
   },
   {
     icon: TrendingUp,
-    title: "Preservação do Capital",
-    text: "O valor do crédito é atualizado periodicamente, ajudando a preservar o poder de compra ao longo do tempo.",
+    title: "Crédito que acompanha o mercado",
+    text: "O valor do crédito é atualizado periodicamente, preservando seu poder de compra ao longo do tempo.",
   },
 ];
 
@@ -37,11 +37,11 @@ export function WhyConsorcio() {
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow justify-center">Benefícios</p>
           <h2 className="mt-5 text-3xl font-extrabold text-primary md:text-[2.5rem] md:leading-[1.15]">
-            Por que o consórcio é uma estratégia tão utilizada?
+            Por que tanta gente conquista patrimônio com consórcio?
           </h2>
           <p className="mx-auto mt-6 max-w-xl leading-[1.85] text-muted-foreground">
-            Mais do que uma forma de compra, o consórcio é uma estratégia utilizada por milhões de
-            brasileiros para realizar projetos, construir patrimônio e planejar o futuro.
+            Milhões de brasileiros usam o consórcio para comprar imóveis, ampliar patrimônio e
+            crescer com planejamento. Estes são os motivos.
           </p>
         </Reveal>
 
