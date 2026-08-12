@@ -111,7 +111,7 @@ export function Footer() {
         </p>
         <p className="flex items-center gap-2 text-xs text-muted-foreground">
           <ShieldCheck className="h-3.5 w-3.5 text-gold" />
-          Representante Autorizado Ademicon
+          Consultor Autorizado Ademicon
           <span className="h-3 w-px bg-border" />
           <a
             href={ADEMICON_CREDENTIAL_URL}
