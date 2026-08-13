@@ -49,10 +49,19 @@ export function MetodoMapa() {
           ))}
         </div>
 
-        <Reveal delay={120}>
+        <Reveal delay={120} className="text-center">
           <p className="mx-auto mt-16 max-w-2xl border-t border-primary-foreground/15 pt-10 text-center text-lg leading-[1.8] font-semibold text-primary-foreground md:text-xl">
-            No final, você tem um plano claro e feito sob medida para a sua conquista.
+            Não existe uma solução única para todos.
           </p>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-[1.8] text-primary-foreground/80">
+            Cada projeto possui características, objetivos e desafios diferentes. Por isso, a estratégia mais adequada depende do seu momento e daquilo que você deseja conquistar.
+          </p>
+          <a
+            href="#contato"
+            className="mt-8 inline-flex items-center justify-center rounded-full bg-gold px-8 py-3.5 text-sm font-semibold text-gold-foreground transition-transform hover:scale-[1.02] active:scale-[0.98]"
+          >
+            Quero conversar sobre meu projeto
+          </a>
         </Reveal>
       </div>
     </section>
