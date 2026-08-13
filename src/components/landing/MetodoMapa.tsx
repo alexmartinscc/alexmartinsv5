@@ -2,10 +2,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Reveal } from "./Reveal";
 
 const STEPS = [
-  { letter: "M", title: "Mapear o objetivo", text: "Entender o que você quer conquistar, em quanto tempo e quanto cabe no orçamento." },
-  { letter: "A", title: "Analisar as opções", text: "Comparar prazos, valores e modalidades de consórcio para o seu objetivo." },
-  { letter: "P", title: "Planejar a estratégia", text: "Definir grupo, cota e estratégia de lance para acelerar sua contemplação." },
-  { letter: "A", title: "Acompanhar a conquista", text: "Suporte em assembleias, lances e uso do crédito até o objetivo virar realidade." },
+  { letter: "M", title: "Mapear seu objetivo", text: "Entender o que você deseja conquistar, seus prazos, prioridades e expectativas." },
+  { letter: "A", title: "Avaliar as opções", text: "Analisar as alternativas disponíveis, pesquisar oportunidades e identificar condições que possam tornar seu projeto mais eficiente e vantajoso." },
+  { letter: "P", title: "Planejar a melhor estratégia", text: "Estruturar uma solução alinhada ao seu momento, capacidade financeira e objetivos de curto, médio e longo prazo." },
+  { letter: "A", title: "Aplicar e acompanhar seu projeto", text: "Auxilio você na contratação da solução escolhida de forma simples e segura. Depois disso, mantenho um canal direto de atendimento e acompanho a evolução do seu projeto ao longo do tempo." },
 ];
 
 export function MetodoMapa() {
@@ -18,13 +18,13 @@ export function MetodoMapa() {
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow justify-center">Método MAPA</p>
           <h2 className="mt-5 text-3xl font-extrabold md:text-[2.5rem] md:leading-[1.15]">
-            Como funciona na prática
+            Seu próximo patrimônio começa com um bom planejamento.
           </h2>
           <p className="mx-auto mt-7 max-w-xl leading-[1.85] text-primary-foreground/75">
-            Nada de solução pronta. Cada pessoa tem um objetivo, um prazo e um orçamento.
+            Cada pessoa possui objetivos, prazos e condições diferentes.
           </p>
           <p className="mx-auto mt-5 max-w-xl leading-[1.85] text-primary-foreground/90 font-medium">
-            Por isso sigo quatro passos simples: o Método MAPA.
+            Por isso, antes de indicar qualquer solução, utilizo o Método MAPA para identificar as melhores possibilidades e construir uma estratégia adequada ao seu projeto.
           </p>
         </Reveal>
 
@@ -49,10 +49,19 @@ export function MetodoMapa() {
           ))}
         </div>
 
-        <Reveal delay={120}>
+        <Reveal delay={120} className="text-center">
           <p className="mx-auto mt-16 max-w-2xl border-t border-primary-foreground/15 pt-10 text-center text-lg leading-[1.8] font-semibold text-primary-foreground md:text-xl">
-            No final, você tem um plano claro e feito sob medida para a sua conquista.
+            Não existe uma solução única para todos.
           </p>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-[1.8] text-primary-foreground/80">
+            Cada projeto possui características, objetivos e desafios diferentes. Por isso, a estratégia mais adequada depende do seu momento e daquilo que você deseja conquistar.
+          </p>
+          <a
+            href="#contato"
+            className="mt-8 inline-flex items-center justify-center rounded-full bg-gold px-8 py-3.5 text-sm font-semibold text-gold-foreground transition-transform hover:scale-[1.02] active:scale-[0.98]"
+          >
+            Quero conversar sobre meu projeto
+          </a>
         </Reveal>
       </div>
     </section>
