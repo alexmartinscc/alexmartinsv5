@@ -1,11 +1,9 @@
 import { Header } from "@/components/landing/Header";
 import { Hero } from "@/components/landing/Hero";
-import { Problems } from "@/components/landing/Problems";
-import { About } from "@/components/landing/About";
-import { MetodoMapa } from "@/components/landing/MetodoMapa";
-import { WhyConsorcio } from "@/components/landing/WhyConsorcio";
 import { Portfolio } from "@/components/landing/Portfolio";
-import { Ademicon } from "@/components/landing/Ademicon";
+import { WhyConsorcio } from "@/components/landing/WhyConsorcio";
+import { MetodoMapa } from "@/components/landing/MetodoMapa";
+import { About } from "@/components/landing/About";
 import { FAQ } from "@/components/landing/FAQ";
 import { CTA } from "@/components/landing/CTA";
 import { Footer } from "@/components/landing/Footer";
@@ -16,12 +14,10 @@ export function Home() {
       <Header />
       <main>
         <Hero />
-        <Problems />
-        <About />
-        <MetodoMapa />
-        <WhyConsorcio />
         <Portfolio />
-        <Ademicon />
+        <WhyConsorcio />
+        <MetodoMapa />
+        <About />
         <FAQ />
         <CTA />
       </main>
