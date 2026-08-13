@@ -88,16 +88,13 @@ export function About() {
               const Icon = item.icon;
               return (
                 <Reveal key={item.title} delay={150 + index * 80}>
-                  <div className="flex h-full flex-col gap-3 rounded-2xl border border-border/70 bg-background px-5 py-5 shadow-soft">
+                  <div className="flex flex-col gap-3 rounded-2xl border border-border/70 bg-background px-5 py-4 shadow-soft">
                     <span className="grid h-9 w-9 place-items-center rounded-full bg-gold/15">
                       <Icon className="h-5 w-5 text-gold" />
                     </span>
-                    <div>
-                      <h3 className="text-sm font-bold text-primary">{item.title}</h3>
-                      <p className="mt-1 text-sm leading-[1.65] text-muted-foreground">
-                        {item.text}
-                      </p>
-                    </div>
+                    <h3 className="text-sm font-bold text-primary leading-snug">
+                      {item.title}
+                    </h3>
                   </div>
                 </Reveal>
               );
