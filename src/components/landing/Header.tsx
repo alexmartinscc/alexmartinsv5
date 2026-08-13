@@ -6,11 +6,10 @@ import logo from "@/assets/alex-martins-logo.png.asset.json";
 import { WHATSAPP_URL } from "@/lib/contact";
 
 const NAV = [
-  { label: "Consórcio", href: "/#problema" },
-  { label: "Sobre", href: "/#sobre" },
-  { label: "Como funciona", href: "/#metodo" },
   { label: "Objetivos", href: "/#portfolio" },
-  { label: "Ademicon", href: "/#ademicon" },
+  { label: "Consórcio", href: "/#por-que-consorcio" },
+  { label: "Como funciona", href: "/#metodo" },
+  { label: "Sobre", href: "/#sobre" },
   { label: "FAQ", href: "/#faq" },
 ];
 
