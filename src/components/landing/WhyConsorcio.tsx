@@ -1,32 +1,37 @@
-import { Target, Calculator, CheckCircle2, Banknote, TrendingUp } from "lucide-react";
+import { CalendarDays, ArrowLeftRight, Layers, Users, Banknote, Compass } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Reveal } from "./Reveal";
 
 const BENEFITS = [
   {
-    icon: Calculator,
-    title: "Sem juros",
-    text: "Você paga taxa de administração, não juros. O custo é previsível do começo ao fim do plano.",
+    icon: CalendarDays,
+    title: "Planejamento",
+    text: "Ideal para quem deseja conquistar patrimônio com organização e visão de longo prazo.",
+  },
+  {
+    icon: ArrowLeftRight,
+    title: "Flexibilidade",
+    text: "Utilize o crédito para comprar, construir, reformar, investir ou atender outros objetivos, conforme as regras da modalidade.",
+  },
+  {
+    icon: Layers,
+    title: "Mais possibilidades",
+    text: "Uma única solução pode atender diferentes projetos pessoais, familiares ou empresariais.",
+  },
+  {
+    icon: Users,
+    title: "Para pessoas e empresas",
+    text: "Uma alternativa utilizada tanto por quem deseja conquistar patrimônio quanto por empresas que querem crescer.",
   },
   {
     icon: Banknote,
-    title: "Poder de compra à vista",
-    text: "Com a carta de crédito você negocia como comprador à vista e conquista melhores condições.",
+    title: "Negociação à vista",
+    text: "Após a contemplação, você pode negociar como comprador à vista, ampliando seu poder de negociação.",
   },
   {
-    icon: CheckCircle2,
-    title: "Liberdade de escolha",
-    text: "Contemplado, você escolhe o imóvel, o bem ou o fornecedor que fizer mais sentido para o seu projeto.",
-  },
-  {
-    icon: Target,
-    title: "Patrimônio no seu ritmo",
-    text: "Parcelas que cabem no orçamento e disciplina para transformar um objetivo grande em conquista real.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Crédito que acompanha o mercado",
-    text: "O valor do crédito é atualizado periodicamente, preservando seu poder de compra ao longo do tempo.",
+    icon: Compass,
+    title: "Estratégia",
+    text: "Quando utilizada no momento certo, pode ser uma excelente alternativa para conquistar patrimônio.",
   },
 ];
 
@@ -37,11 +42,10 @@ export function WhyConsorcio() {
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow justify-center">Benefícios</p>
           <h2 className="mt-5 text-3xl font-extrabold text-primary md:text-[2.5rem] md:leading-[1.15]">
-            Por que tanta gente conquista patrimônio com consórcio?
+            Por que tantas pessoas estão escolhendo o consórcio?
           </h2>
           <p className="mx-auto mt-6 max-w-xl leading-[1.85] text-muted-foreground">
-            Milhões de brasileiros usam o consórcio para comprar imóveis, ampliar patrimônio e
-            crescer com planejamento. Estes são os motivos.
+            O consórcio deixou de ser apenas uma forma de comprar imóveis ou veículos. Hoje, é utilizado por quem deseja conquistar patrimônio com planejamento, flexibilidade e visão de longo prazo.
           </p>
         </Reveal>
 
@@ -60,7 +64,20 @@ export function WhyConsorcio() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal className="mt-16 text-center" delay={540}>
+          <p className="text-muted-foreground">
+            Cada projeto possui características diferentes. Entender qual estratégia faz mais sentido é o primeiro passo.
+          </p>
+          <a
+            href="#contato"
+            className="mt-6 inline-flex items-center justify-center rounded-full bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.02] active:scale-[0.98]"
+          >
+            Quero conversar sobre meu projeto
+          </a>
+        </Reveal>
       </div>
     </section>
   );
 }
+
