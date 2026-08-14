@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Link } from "@tanstack/react-router";
-import { Button } from "@/components/ui/button";
+
+
 import logo from "@/assets/alex-martins-logo.png.asset.json";
 
 const NAV = [
   { label: "Objetivos", href: "/#portfolio" },
-  { label: "Consórcio", href: "/#por-que-consorcio" },
+  { label: "Possibilidades", href: "/#por-que-consorcio" },
   { label: "Como funciona", href: "/#metodo" },
   { label: "Sobre", href: "/#sobre" },
   { label: "FAQ", href: "/#faq" },
@@ -49,9 +49,6 @@ export function Header() {
             ))}
           </nav>
 
-          <Button asChild size="lg" className="ml-3 hidden rounded-xl sm:inline-flex">
-            <a href="/#cta">Falar com Alex</a>
-          </Button>
 
           <button
             type="button"
@@ -77,11 +74,6 @@ export function Header() {
                 {item.label}
               </a>
             ))}
-            <Button asChild size="lg" className="mt-3 rounded-xl">
-              <a href="/#cta" onClick={() => setOpen(false)}>
-                Falar com Alex
-              </a>
-            </Button>
           </nav>
         </div>
       ) : null}
