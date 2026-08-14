@@ -74,11 +74,6 @@ export function Header() {
                 {item.label}
               </a>
             ))}
-            <Button asChild size="lg" className="mt-3 rounded-xl">
-              <a href="/#cta" onClick={() => setOpen(false)}>
-                Falar com Alex
-              </a>
-            </Button>
           </nav>
         </div>
       ) : null}
