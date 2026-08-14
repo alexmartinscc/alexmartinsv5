@@ -52,15 +52,19 @@ export function WhyConsorcio() {
         <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
           {BENEFITS.map((item, index) => (
             <Reveal key={item.title} delay={index * 90} className="h-full">
-              <Card className="card-lift h-full rounded-3xl border-border/70 bg-background shadow-soft">
-                <CardContent className="p-5 md:p-6">
-                  <span className="grid h-10 w-10 place-items-center rounded-2xl bg-secondary">
-                    <item.icon className="h-5 w-5 text-gold" />
-                  </span>
-                  <h3 className="mt-4 text-base font-bold md:text-lg text-primary">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-[1.65] text-muted-foreground">{item.text}</p>
-                </CardContent>
-              </Card>
+              <a href="#cta" className="block h-full">
+                <Card className="card-lift h-full rounded-3xl border-border/70 bg-background shadow-soft">
+                  <CardContent className="p-4 md:p-5">
+                    <span className="grid h-11 w-11 place-items-center rounded-2xl bg-secondary">
+                      <item.icon className="h-6 w-6 fill-gold/20 text-gold" />
+                    </span>
+                    <h3 className="mt-3 text-lg font-extrabold tracking-tight text-primary md:text-xl">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-[1.6] text-muted-foreground">{item.text}</p>
+                  </CardContent>
+                </Card>
+              </a>
             </Reveal>
           ))}
         </div>
