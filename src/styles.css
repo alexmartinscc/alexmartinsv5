@@ -187,14 +187,21 @@
 
 /* Profundidade discreta + hover elegante nos cartões */
 @utility card-lift {
+  cursor: pointer;
   transition:
-    transform 220ms ease,
-    box-shadow 220ms ease,
-    border-color 220ms ease;
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
 
   &:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px) scale(1.02);
     box-shadow: var(--shadow-card);
+    border-color: color-mix(in oklab, var(--color-gold) 45%, transparent);
+  }
+
+  &:active {
+    transform: translateY(0) scale(0.99);
+    box-shadow: var(--shadow-soft);
     border-color: color-mix(in oklab, var(--color-gold) 45%, transparent);
   }
 }
