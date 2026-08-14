@@ -6,7 +6,7 @@ import logo from "@/assets/alex-martins-logo.png.asset.json";
 
 const NAV = [
   { label: "Objetivos", href: "/#portfolio" },
-  { label: "Consórcio", href: "/#por-que-consorcio" },
+  { label: "Possibilidades", href: "/#por-que-consorcio" },
   { label: "Como funciona", href: "/#metodo" },
   { label: "Sobre", href: "/#sobre" },
   { label: "FAQ", href: "/#faq" },
