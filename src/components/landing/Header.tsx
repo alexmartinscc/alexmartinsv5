@@ -49,9 +49,6 @@ export function Header() {
             ))}
           </nav>
 
-          <Button asChild size="lg" className="ml-3 hidden rounded-xl sm:inline-flex">
-            <a href="/#cta">Falar com Alex</a>
-          </Button>
 
           <button
             type="button"
