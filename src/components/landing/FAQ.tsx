@@ -190,9 +190,7 @@ export function FAQ() {
                         size="lg"
                         className="mt-4 rounded-xl bg-gold px-8 text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90"
                       >
-                        <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                          Quero conversar sobre meu projeto
-                        </a>
+                        <a href="#cta">Quero conversar sobre meu projeto</a>
                       </Button>
                     )}
                   </div>

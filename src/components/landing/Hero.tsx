@@ -33,7 +33,7 @@ export function Hero() {
           </h1>
 
           <p className="measure mt-3 text-base leading-[1.7] text-muted-foreground md:text-lg">
-            Imóveis, veículos, investimentos e soluções inteligentes para transformar seus projetos em realidade.
+            Planejamento para conquistar imóveis, veículos, investimentos e outros projetos com mais estratégia e menor custo financeiro.
           </p>
 
           <p className="measure mt-5 text-base leading-[1.6] font-semibold text-primary">
@@ -51,9 +51,7 @@ export function Hero() {
               size="lg"
               className="rounded-xl px-8 shadow-soft transition-transform duration-200 hover:-translate-y-0.5"
             >
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                Quero conversar sobre meu projeto
-              </a>
+              <a href="#cta">Quero conversar sobre meu projeto</a>
             </Button>
             <Button
               asChild
