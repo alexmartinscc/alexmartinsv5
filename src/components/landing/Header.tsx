@@ -51,9 +51,7 @@ export function Header() {
           </nav>
 
           <Button asChild size="lg" className="ml-3 hidden rounded-xl sm:inline-flex">
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-              Falar com Alex
-            </a>
+            <a href="/#cta">Falar com Alex</a>
           </Button>
 
           <button
@@ -81,12 +79,7 @@ export function Header() {
               </a>
             ))}
             <Button asChild size="lg" className="mt-3 rounded-xl">
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setOpen(false)}
-              >
+              <a href="/#cta" onClick={() => setOpen(false)}>
                 Falar com Alex
               </a>
             </Button>
