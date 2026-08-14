@@ -35,8 +35,8 @@ const DIFFERENTIALS = [
 
 export function About() {
   return (
-    <section id="sobre" className="scroll-mt-24 bg-secondary py-20 md:py-28">
-      <div className="section-shell grid items-start gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
+    <section id="sobre" className="scroll-mt-24 bg-secondary py-16 md:py-24">
+      <div className="section-shell grid items-start gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
         <Reveal>
           <ImageSlot
             path="/sobre-alex.webp"
@@ -44,19 +44,20 @@ export function About() {
             ratio="4 / 5"
             alt="Alex Martins ouvindo uma cliente durante o atendimento"
             label="Foto do consultor"
+            className="mx-auto w-full max-w-[300px] sm:max-w-[360px] lg:max-w-none"
           />
         </Reveal>
 
         <Reveal delay={100} className="flex flex-col justify-center">
           <p className="eyebrow">Sobre mim</p>
-          <h2 className="mt-4 text-3xl font-extrabold text-primary md:text-[2.5rem] md:leading-[1.15]">
+          <h2 className="mt-3 text-3xl font-extrabold text-primary md:text-[2.5rem] md:leading-[1.15]">
             Prazer, sou Alex Martins.
           </h2>
-          <p className="mt-4 text-base font-semibold text-primary md:text-lg">
+          <p className="mt-3 text-base font-semibold text-primary md:text-lg">
             Consultor Autorizado Ademicon e Especialista em Conquista Patrimonial.
           </p>
 
-          <div className="measure mt-6 space-y-4 leading-[1.85] text-muted-foreground">
+          <div className="measure mt-4 space-y-3 leading-[1.7] text-muted-foreground">
             <p>
               Acredito que conquistar patrimônio não deve ser resultado de improviso, mas de decisões bem planejadas ao longo do tempo.
             </p>
@@ -65,7 +66,7 @@ export function About() {
             </p>
           </div>
 
-          <div className="mt-8 rounded-2xl border border-border/70 border-l-4 border-l-gold bg-background px-6 py-6 shadow-soft">
+          <div className="mt-6 rounded-2xl border border-border/70 border-l-4 border-l-gold bg-background px-5 py-4 shadow-soft">
             <div className="flex items-start gap-4">
               <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-gold/15">
                 <Lightbulb className="h-5 w-5 text-gold" />
@@ -79,16 +80,16 @@ export function About() {
             </div>
           </div>
 
-          <h3 className="mt-10 text-xl font-bold text-primary">
+          <h3 className="mt-8 text-lg font-bold md:text-xl text-primary">
             O que você pode esperar ao trabalhar comigo
           </h3>
 
-          <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-4 grid grid-cols-2 gap-3 lg:grid-cols-3">
             {DIFFERENTIALS.map((item, index) => {
               const Icon = item.icon;
               return (
                 <Reveal key={item.title} delay={150 + index * 80}>
-                  <div className="flex flex-col gap-3 rounded-2xl border border-border/70 bg-background px-5 py-4 shadow-soft">
+                  <div className="flex flex-col gap-2 rounded-2xl border border-border/70 bg-background px-4 py-3 shadow-soft">
                     <span className="grid h-9 w-9 place-items-center rounded-full bg-gold/15">
                       <Icon className="h-5 w-5 text-gold" />
                     </span>
@@ -101,11 +102,11 @@ export function About() {
             })}
           </div>
 
-          <p className="mt-10 text-base font-semibold text-primary">
+          <p className="mt-8 text-base font-semibold text-primary">
             Meu compromisso é ajudar você a transformar projetos em conquistas, com orientação, acompanhamento e suporte em cada etapa da jornada.
           </p>
 
-          <div className="mt-8">
+          <div className="mt-6">
             <Button
               asChild
               size="lg"

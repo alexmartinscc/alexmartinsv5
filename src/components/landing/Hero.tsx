@@ -17,35 +17,35 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative scroll-mt-24 overflow-hidden bg-background pt-36 pb-28 md:pt-48 md:pb-40"
+      className="relative scroll-mt-24 overflow-hidden bg-background pt-28 pb-14 md:pt-40 md:pb-24"
     >
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 top-0 h-[70%] bg-secondary/70"
       />
 
-      <div className="section-shell relative grid items-center gap-16 lg:grid-cols-[0.95fr_1.05fr] lg:gap-24">
+      <div className="section-shell relative grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
         <Reveal className="max-w-xl">
           <p className="eyebrow">Especialista em Conquista Patrimonial</p>
 
-          <h1 className="mt-6 text-[2.5rem] leading-[1.05] font-extrabold text-primary md:text-[3.5rem]">
+          <h1 className="mt-4 text-[2.5rem] leading-[1.05] font-extrabold text-primary md:text-[3.5rem]">
             Conquiste seu próximo patrimônio com estratégia.
           </h1>
 
-          <p className="measure mt-5 text-base leading-[1.8] text-muted-foreground md:text-lg">
+          <p className="measure mt-3 text-base leading-[1.7] text-muted-foreground md:text-lg">
             Imóveis, veículos, investimentos e soluções inteligentes para transformar seus projetos em realidade.
           </p>
 
-          <p className="measure mt-8 text-base leading-[1.8] font-semibold text-primary">
+          <p className="measure mt-5 text-base leading-[1.6] font-semibold text-primary">
             Alex Martins
           </p>
-          <p className="measure text-sm leading-[1.85] text-muted-foreground md:text-base">
+          <p className="measure text-sm leading-[1.6] text-muted-foreground md:text-base">
             Consultor Autorizado Ademicon
             <br />
             Especialista em Conquista Patrimonial
           </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <Button
               asChild
               size="lg"
@@ -65,15 +65,15 @@ export function Hero() {
             </Button>
           </div>
 
-          <p className="measure mt-5 text-sm leading-[1.85] text-muted-foreground">
+          <p className="measure mt-4 text-sm leading-[1.7] text-muted-foreground">
             Uma conversa para entender seu projeto e apresentar as melhores possibilidades para o seu objetivo.
           </p>
 
-          <p className="measure mt-3 text-sm font-medium tracking-wide text-gold">
+          <p className="measure mt-2 text-sm font-medium tracking-wide text-gold">
             Imóveis • Veículos • Investimentos • Crédito Inteligente
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-2">
+          <div className="mt-6 flex flex-wrap gap-2">
             {BADGES.map((badge) => (
               <span
                 key={badge}
@@ -94,7 +94,7 @@ export function Hero() {
             ratio="4 / 5"
             alt="Alex Martins, consultor patrimonial"
             label="Alex Martins"
-            className="w-full"
+            className="mx-auto w-full max-w-[300px] sm:max-w-[360px] lg:max-w-none"
           />
         </Reveal>
       </div>
