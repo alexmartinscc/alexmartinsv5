@@ -4,7 +4,6 @@ import { Minus, Plus } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { WHATSAPP_URL } from "@/lib/contact";
 
 type FaqBlock = string | { list: string[] };
 
@@ -190,9 +189,7 @@ export function FAQ() {
                         size="lg"
                         className="mt-4 rounded-xl bg-gold px-8 text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90"
                       >
-                        <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                          Quero conversar sobre meu projeto
-                        </a>
+                        <a href="#cta">Quero conversar sobre meu projeto</a>
                       </Button>
                     )}
                   </div>

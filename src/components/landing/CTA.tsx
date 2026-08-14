@@ -15,10 +15,10 @@ export function CTA() {
             />
             <div className="relative">
               <h2 className="mx-auto max-w-2xl text-3xl font-extrabold text-primary-foreground md:text-[2.5rem] md:leading-[1.15]">
-                Qual é a sua próxima conquista?
+                Vamos conversar sobre o seu projeto?
               </h2>
               <p className="mx-auto mt-4 max-w-xl leading-[1.7] text-primary-foreground/70">
-                Me conte seu objetivo e eu mostro o caminho com consórcio. Conversa sem compromisso.
+                Agende uma conversa sem compromisso para entender as possibilidades e encontrar a estratégia mais adequada para o seu objetivo.
               </p>
               <Button
                 asChild
@@ -27,7 +27,7 @@ export function CTA() {
               >
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="h-4 w-4" />
-                  Falar no WhatsApp
+                  Quero conversar sobre meu projeto
                 </a>
               </Button>
 
