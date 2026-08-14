@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { ImageSlot } from "./ImageSlot";
 import { Reveal } from "./Reveal";
 import heroAlexAsset from "@/assets/alex-martins-foto.png.asset.json";
-import { WHATSAPP_URL } from "@/lib/contact";
 
 const heroAlex = heroAlexAsset.url;
 

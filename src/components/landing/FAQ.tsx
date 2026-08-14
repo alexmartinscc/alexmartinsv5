@@ -4,7 +4,6 @@ import { Minus, Plus } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { WHATSAPP_URL } from "@/lib/contact";
 
 type FaqBlock = string | { list: string[] };
 

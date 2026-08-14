@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { ImageSlot } from "./ImageSlot";
 import { Reveal } from "./Reveal";
 import sobreAlex from "@/assets/sobre-alex.jpg";
-import { WHATSAPP_URL } from "@/lib/contact";
 
 const DIFFERENTIALS = [
   { icon: User, title: "Atendimento personalizado" },
