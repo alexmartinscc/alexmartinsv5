@@ -6,31 +6,11 @@ import sobreAlex from "@/assets/sobre-alex.jpg";
 import { WHATSAPP_URL } from "@/lib/contact";
 
 const DIFFERENTIALS = [
-  {
-    icon: User,
-    title: "Atendimento personalizado",
-    text: "Cada projeto possui objetivos, prazos e prioridades diferentes.",
-  },
-  {
-    icon: Target,
-    title: "Estratégia para seu objetivo",
-    text: "Avaliação das possibilidades e construção da melhor estratégia para o seu momento.",
-  },
-  {
-    icon: MessageSquare,
-    title: "Canal direto comigo",
-    text: "Você terá um canal de comunicação direto comigo para um atendimento humano e objetivo.",
-  },
-  {
-    icon: Calendar,
-    title: "Acompanhamento contínuo",
-    text: "Informações sobre sorteios, oportunidades de lance, revisão de estratégia e apoio no processo de liberação do crédito após a contemplação.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Credibilidade e segurança",
-    text: "Você será atendido por um profissional certificado e autorizado pela Ademicon, com acesso às melhores condições e oportunidades que só a maior administradora de consórcios do Brasil pode oferecer.",
-  },
+  { icon: User, title: "Atendimento personalizado" },
+  { icon: Target, title: "Estratégia para seu objetivo" },
+  { icon: MessageSquare, title: "Canal direto comigo" },
+  { icon: Calendar, title: "Acompanhamento contínuo" },
+  { icon: ShieldCheck, title: "Credibilidade e segurança" },
 ];
 
 export function About() {
