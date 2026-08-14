@@ -1,6 +1,4 @@
 import { Instagram, MessageCircle, ShieldCheck } from "lucide-react";
-import { Link } from "@tanstack/react-router";
-import { Button } from "@/components/ui/button";
 import logo from "@/assets/alex-martins-logo.png.asset.json";
 import {
   ADEMICON_CREDENTIAL_URL,
@@ -78,16 +76,10 @@ export function Footer() {
               {link.label}
             </a>
           ))}
-          <Link
-            to="/central-de-conhecimento"
-            className="text-sm text-muted-foreground transition-colors hover:text-primary"
-          >
-            Central de Conhecimento
-          </Link>
         </nav>
       </div>
 
-      <div className="section-shell mt-10 flex flex-col gap-3 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
+      <div className="section-shell flex flex-col gap-3 border-t border-border pt-6 pb-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs text-muted-foreground">
           © {new Date().getFullYear()} — Todos os direitos reservados.
         </p>
