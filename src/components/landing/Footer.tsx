@@ -1,5 +1,5 @@
 import { Instagram, MessageCircle, ShieldCheck } from "lucide-react";
-import logo from "@/assets/alex-martins-logo.png.asset.json";
+import logo from "@/assets/alex-martins-logo.png";
 import {
   ADEMICON_CREDENTIAL_URL,
   INSTAGRAM_HANDLE,

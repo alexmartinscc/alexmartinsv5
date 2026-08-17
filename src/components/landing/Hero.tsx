@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ImageSlot } from "./ImageSlot";
 import { Reveal } from "./Reveal";
 import { ADEMICON_CREDENTIAL_URL } from "@/lib/contact";
-import heroAlexAsset from "@/assets/alex-martins-foto.png.asset.json";
+import heroAlex from "@/assets/alex-martins-foto.png";
 
 const heroAlex = heroAlexAsset.url;
 
