@@ -5,7 +5,6 @@ import { Reveal } from "./Reveal";
 import { ADEMICON_CREDENTIAL_URL } from "@/lib/contact";
 import heroAlex from "@/assets/alex-martins-foto.png";
 
-const heroAlex = heroAlexAsset.url;
 
 export function Hero() {
   return (

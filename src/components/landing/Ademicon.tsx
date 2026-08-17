@@ -26,7 +26,7 @@ export function Ademicon() {
             </span>
             <span className="h-4 w-px bg-border" />
             <img
-              src={ademiconLogo.url}
+              src={ademiconLogo}
               alt="Logotipo Ademicon"
               width={96}
               height={24}

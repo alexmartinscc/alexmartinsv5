@@ -20,7 +20,7 @@ export function Header() {
       <div className="section-shell grid h-20 grid-cols-[minmax(0,1fr)_auto] items-center gap-4">
         <a href="/#hero" className="flex min-w-0 items-center gap-3">
           <img
-            src={logo.url}
+            src={logo}
             alt="Logotipo Alex Martins"
             width={40}
             height={40}

@@ -24,7 +24,7 @@ export function Footer() {
         <div className="max-w-sm">
           <div className="flex items-center gap-3">
             <img
-              src={logo.url}
+              src={logo}
               alt="Logotipo Alex Martins"
               width={40}
               height={40}
