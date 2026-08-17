@@ -1,5 +1,5 @@
 import { Instagram, MessageCircle, ShieldCheck } from "lucide-react";
-import logo from "@/assets/alex-martins-logo.png.asset.json";
+import logo from "@/assets/alex-martins-logo.png";
 import {
   ADEMICON_CREDENTIAL_URL,
   INSTAGRAM_HANDLE,
@@ -24,7 +24,7 @@ export function Footer() {
         <div className="max-w-sm">
           <div className="flex items-center gap-3">
             <img
-              src={logo.url}
+              src={logo}
               alt="Logotipo Alex Martins"
               width={40}
               height={40}

@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ImageSlot } from "./ImageSlot";
 import { Reveal } from "./Reveal";
 import parceria from "@/assets/ademicon-parceria.jpg";
-import ademiconLogo from "@/assets/ademicon-logo.png.asset.json";
+import ademiconLogo from "@/assets/ademicon-logo.png";
 import { ADEMICON_URL } from "@/lib/contact";
 
 const SOLUTIONS = [
@@ -26,7 +26,7 @@ export function Ademicon() {
             </span>
             <span className="h-4 w-px bg-border" />
             <img
-              src={ademiconLogo.url}
+              src={ademiconLogo}
               alt="Logotipo Ademicon"
               width={96}
               height={24}
