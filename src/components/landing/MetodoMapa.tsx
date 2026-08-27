@@ -89,7 +89,7 @@ export function MetodoMapa() {
           <div className="relative space-y-10">
             {STEPS.map((step, index) => (
               <Reveal
-                key={step.letter}
+                key={`${step.letter}-${step.title}`}
                 delay={index * 100}
                 className="relative pl-12"
               >
