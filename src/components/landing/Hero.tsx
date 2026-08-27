@@ -86,7 +86,7 @@ export function Hero() {
             ratio="4 / 5"
             alt="Alex Martins, consultor patrimonial"
             label="Alex Martins"
-            className="w-full max-w-[240px] sm:max-w-[280px] lg:max-w-[320px]"
+            className="w-full max-w-[220px] sm:max-w-[260px] lg:max-w-[300px]"
           />
         </Reveal>
       </div>
