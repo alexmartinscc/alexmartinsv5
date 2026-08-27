@@ -1,46 +1,62 @@
-import { ExternalLink, ShieldCheck } from "lucide-react";
+import { ExternalLink, MessageCircle, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ImageSlot } from "./ImageSlot";
 import { Reveal } from "./Reveal";
-import { ADEMICON_CREDENTIAL_URL } from "@/lib/contact";
+import { ADEMICON_CREDENTIAL_URL, WHATSAPP_URL } from "@/lib/contact";
 import heroAlex from "@/assets/alex-martins-foto.png";
-
 
 export function Hero() {
   return (
     <section
       id="hero"
-      className="relative scroll-mt-24 overflow-hidden bg-secondary/70 pt-24 pb-12 md:pt-36 md:pb-20"
+      className="relative scroll-mt-24 overflow-hidden bg-secondary/70 pt-24 pb-12 md:pt-32 md:pb-16"
     >
-      <div className="section-shell relative grid items-center gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
-        <Reveal className="max-w-xl">
+      <div className="section-shell relative grid items-start gap-8 lg:grid-cols-[1.16fr_0.84fr] lg:gap-12">
+        <Reveal className="max-w-xl pt-2 lg:pt-6">
           <p className="eyebrow">Planejamento Patrimonial</p>
 
-          <h1 className="mt-3 text-[2.5rem] leading-[1.05] font-extrabold text-primary md:text-[3.5rem]">
-            Conquiste seu próximo patrimônio com estratégia.
+          <h1 className="mt-4 text-[2.25rem] leading-[1.08] font-extrabold text-primary md:text-[3rem] lg:text-[3.25rem]">
+            Construa hoje seu patrimônio.
+            <br />
+            Gere renda para o futuro.
           </h1>
 
-          <p className="measure mt-3 text-base leading-[1.7] text-muted-foreground md:text-lg">
-            Planejamento para conquistar imóveis, veículos, investimentos e outros projetos com mais estratégia e menor custo.
+          <p className="measure mt-4 text-base leading-[1.7] text-muted-foreground md:text-lg">
+            Ajudo pessoas, profissionais autônomos e empresários a usar o consórcio para conquistar imóveis, construir patrimônio e gerar renda para ter mais independência financeira e segurança no futuro.
           </p>
 
           <div className="mt-6">
             <Button
               asChild
               size="lg"
-              className="rounded-xl px-8 shadow-soft transition-transform duration-200 hover:-translate-y-0.5"
+              className="w-full rounded-xl px-8 shadow-soft transition-transform duration-200 hover:-translate-y-0.5 sm:w-auto"
             >
-              <a href="#cta">Quero conversar sobre meu projeto</a>
+              <a href="#cta">Conte-me sobre o seu projeto</a>
             </Button>
           </div>
 
-          <p className="measure mt-4 text-sm font-medium tracking-wide text-gold">
-            Imóveis • Veículos • Investimentos • Crédito Inteligente
+          <p className="measure mt-3 text-xs leading-[1.6] text-muted-foreground/80 md:text-sm">
+            Leva menos de 2 minutos. Você não precisa falar comigo agora.
           </p>
 
-          <p className="measure mt-2 text-sm leading-[1.7] text-muted-foreground">
-            Uma conversa para entender seu projeto e apresentar as melhores possibilidades para o seu objetivo.
-          </p>
+          <div className="mt-4">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="w-full rounded-xl px-6 text-primary/90 transition-transform duration-200 hover:-translate-y-0.5 sm:w-auto"
+            >
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Falar pelo WhatsApp"
+              >
+                <MessageCircle className="h-4 w-4 text-gold" />
+                Prefiro falar pelo WhatsApp
+              </a>
+            </Button>
+          </div>
 
           <div className="mt-5 flex flex-wrap gap-2">
             <a
@@ -62,7 +78,7 @@ export function Hero() {
           </div>
         </Reveal>
 
-        <Reveal delay={120}>
+        <Reveal delay={120} className="flex items-start justify-center lg:justify-end">
           <ImageSlot
             path="/hero-alex.webp"
             src={heroAlex}
@@ -70,7 +86,7 @@ export function Hero() {
             ratio="4 / 5"
             alt="Alex Martins, consultor patrimonial"
             label="Alex Martins"
-            className="mx-auto w-full max-w-[280px] sm:max-w-[340px] lg:max-w-none"
+            className="w-full max-w-[220px] sm:max-w-[260px] lg:max-w-[300px]"
           />
         </Reveal>
       </div>
