@@ -1,107 +1,175 @@
 import * as React from "react";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { Minus, Plus } from "lucide-react";
+import { ChevronDown, Minus, Plus } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
-type FaqBlock = string | { list: string[] };
+type FaqBlock = string | { list: string[] } | { sub: string; text: string };
 
-const FAQ_ITEMS: { q: string; content: FaqBlock[] }[] = [
+type FaqItem = {
+  q: string;
+  content: FaqBlock[];
+  /** Destaque + CTA de simulação ao final da resposta */
+  highlight?: string;
+  cta?: string;
+};
+
+type FaqGroup = {
+  label: string;
+  items: FaqItem[];
+};
+
+const FAQ_GROUPS: FaqGroup[] = [
   {
-    q: "E se eu não tiver certeza de que o consórcio é a melhor opção para mim?",
-    content: [
-      "Perfeito.",
-      "É justamente para isso que serve nossa primeira conversa.",
-      "Vamos entender seu objetivo, esclarecer suas dúvidas e avaliar juntos as alternativas antes de qualquer decisão.",
-      "Muitas pessoas descobrem possibilidades que nunca haviam considerado.",
-    ],
-  },
-  {
-    q: "O consórcio demora?",
-    content: [
-      "Depende da estratégia escolhida.",
-      "O consórcio oferece alternativas para quem possui objetivos de curto, médio ou longo prazo.",
-      "Na nossa conversa, vou entender o seu momento e apresentar as estratégias mais adequadas para que você conquiste seu patrimônio da forma mais inteligente.",
-    ],
-  },
-  {
-    q: "Prefiro financiar para sair do aluguel. Vale a pena considerar o consórcio?",
-    content: [
-      "Pode valer muito a pena.",
-      "Embora o financiamento permita a compra imediata, ele normalmente possui um custo financeiro maior ao longo do contrato.",
-      "Dependendo do seu objetivo e do seu planejamento, pode ser mais vantajoso continuar pagando aluguel por um período e utilizar o consórcio para conquistar o imóvel com um custo total menor.",
-      "Na nossa conversa, podemos comparar as alternativas e identificar qual faz mais sentido para o seu momento.",
-    ],
-  },
-  {
-    q: "O consórcio é indicado apenas para quem quer comprar um imóvel?",
-    content: [
-      "Não.",
-      "O consórcio pode ser utilizado para muito mais do que imóveis e veículos.",
-      "Dependendo da modalidade, ele também pode atender objetivos como construção, reforma, viagens, festas, intercâmbio, fertilização in vitro, cirurgia estética, aquisição de equipamentos agrícolas, médicos, hospitalares, industriais, maquinários e diversos outros projetos.",
-      "Na nossa conversa, posso mostrar quais possibilidades fazem sentido para o seu objetivo.",
-    ],
-  },
-  {
-    q: "O consórcio é vantajoso para empresas de qualquer porte?",
-    content: [
-      "Sim.",
-      "O consórcio pode ser uma excelente estratégia para empresas que desejam crescer preservando o caixa da operação.",
-      "Para pequenas e médias empresas:",
+    label: "Mais procuradas",
+    items: [
       {
-        list: [
-          "Renovação de frotas, máquinas, equipamentos e imóveis.",
-          "Preservação do capital de giro.",
-          "Planejamento da expansão sem recorrer aos juros bancários.",
+        q: "O consórcio é seguro?",
+        content: [
+          "Sim. O sistema de consórcios é regulamentado e fiscalizado pelo Banco Central do Brasil, que também é responsável por autorizar e supervisionar as administradoras. Por isso, um dos primeiros cuidados é verificar se a empresa escolhida está devidamente autorizada.",
+          "No meu atendimento, você conta com a estrutura da Ademicon e também pode verificar minha autorização como consultor diretamente no site oficial da empresa.",
         ],
       },
-      "Para empresas tributadas pelo Lucro Real:",
-      "Dependendo da operação e da forma de contabilização, o consórcio pode oferecer vantagens fiscais previstas na legislação. Esse ponto deve ser avaliado juntamente com a contabilidade da empresa.",
-      "Na nossa conversa, posso mostrar exemplos práticos de aplicação para o seu negócio.",
+      {
+        q: "Consórcio realmente custa menos que financiamento?",
+        content: [
+          "O consórcio não cobra juros de financiamento. Seu custo inclui a taxa de administração e os demais componentes previstos no contrato. No financiamento, além dos juros sobre o saldo devedor, podem existir TR, seguros, tarifas e outros componentes do CET.",
+          "Por isso, a melhor comparação não é somente entre parcelas, mas entre quanto você precisa desembolsar ao longo de todo o projeto.",
+        ],
+        highlight: "Quer saber como essa diferença ficaria no seu caso?",
+        cta: "Quero simular meu projeto",
+      },
+      {
+        q: "Preciso dar entrada para fazer um consórcio?",
+        content: [
+          "Não. No consórcio você pode começar seu plano sem entrada. Isso é diferente do financiamento imobiliário tradicional, no qual normalmente uma parte do valor do imóvel precisa ser paga com recursos próprios.",
+          "E existe uma diferença importante: lance não é entrada. Se você já possui algum capital disponível, podemos avaliar se é melhor mantê-lo investido, preservá-lo para outros projetos ou utilizá-lo posteriormente dentro de uma estratégia de lance.",
+        ],
+      },
+      {
+        q: "Como funciona a contemplação?",
+        content: [
+          "A contemplação é o momento em que o crédito fica disponível para utilização e pode acontecer de duas formas: sorteio ou lance, nas assembleias do grupo. Não existe promessa de uma data específica para contemplação.",
+          "Meu trabalho é ajudar você a acompanhar esse processo, entender as possibilidades e organizar estratégias de lance de acordo com seu projeto, para que esteja preparado para aproveitar as oportunidades ao longo do plano.",
+        ],
+      },
+      {
+        q: "Posso usar meu FGTS no consórcio?",
+        content: [
+          "Sim. No consórcio imobiliário, o FGTS pode ser uma ferramenta importante dentro da estratégia, desde que sejam atendidas as regras aplicáveis ao uso do Fundo.",
+          "Dependendo da situação, o saldo pode ser utilizado para:",
+          {
+            list: [
+              "ofertar lance;",
+              "complementar o valor da carta de crédito para aquisição do imóvel;",
+              "amortizar ou quitar o saldo devedor;",
+              "pagar parte das prestações, conforme as regras vigentes.",
+            ],
+          },
+          "Se você tem saldo de FGTS, podemos analisar como utilizá-lo dentro do seu projeto.",
+        ],
+      },
+      {
+        q: "E se eu precisar do imóvel ou do crédito em menos tempo?",
+        content: [
+          "O prazo do projeto é uma das primeiras coisas que precisamos entender.",
+          "Dependendo da sua situação, podemos avaliar estratégias de lance e outras formas de estruturar o consórcio. Também existem operações com cotas já contempladas, sujeitas à disponibilidade, análise e aprovação da administradora.",
+          "Por isso, antes de definir uma estratégia, precisamos entender quanto você precisa, para quê e em qual prazo.",
+        ],
+      },
     ],
   },
   {
-    q: "Posso utilizar o consórcio para investir?",
-    content: [
-      "Sim.",
-      "Muitas pessoas utilizam o consórcio como estratégia para construir patrimônio.",
-      "Dependendo do objetivo, ele pode ser utilizado para adquirir imóveis destinados à geração de renda, ampliar o patrimônio ou aproveitar oportunidades com uma carta contemplada.",
-      "Na nossa conversa, posso mostrar algumas estratégias utilizadas por investidores.",
+    label: "Imóveis e patrimônio",
+    items: [
+      {
+        q: "Posso usar o consórcio para comprar um imóvel e colocar para alugar?",
+        content: [
+          "Sim. A carta de crédito imobiliário pode ser utilizada para aquisição de imóvel dentro das condições previstas no contrato. Depois da aquisição, o imóvel pode fazer parte da sua estratégia patrimonial e ser destinado à locação.",
+          "Esse é um dos caminhos que podemos trabalhar para transformar renda de hoje em patrimônio capaz de gerar renda no futuro.",
+        ],
+      },
+      {
+        q: "Posso comprar mais de um imóvel com a mesma carta contemplada?",
+        content: [
+          "Sim, desde que a operação esteja dentro das regras da modalidade contratada e do limite do crédito disponível.",
+          "Uma carta de maior valor, por exemplo, pode permitir a aquisição de dois ou mais imóveis de menor valor, dependendo da documentação, dos valores envolvidos e da aprovação da operação.",
+        ],
+      },
+      {
+        q: "Posso usar o crédito para quitar um financiamento imobiliário?",
+        content: [
+          "Sim. Depois da contemplação, o crédito pode ser utilizado para quitar um financiamento imobiliário existente, desde que a operação esteja de acordo com as regras aplicáveis e com as condições do contrato.",
+          "Essa possibilidade pode ser interessante para quem já possui um financiamento e quer avaliar uma estratégia para reduzir sua exposição aos juros ao longo do tempo.",
+        ],
+      },
+      {
+        q: "O que acontece se eu for contemplado e não quiser usar o crédito naquele momento?",
+        content: [
+          "Você não precisa comprar o bem imediatamente.",
+          "Depois da contemplação, o crédito pode permanecer disponível de acordo com as regras do plano até que você decida quando e como utilizá-lo. Enquanto isso, os recursos seguem o tratamento financeiro previsto contratualmente.",
+          "Isso oferece mais liberdade para escolher o momento e a oportunidade de compra.",
+        ],
+      },
+      {
+        q: "Posso vender ou transferir minha cota contemplada?",
+        content: [
+          "Sim. A cota pode ser transferida para outra pessoa, desde que sejam cumpridas as regras aplicáveis e o novo titular seja aprovado pela administradora.",
+          "Na Ademicon, também existe a possibilidade de encaminhar a cota contemplada para avaliação por meio da Contemplay, parceira exclusiva da Ademicon.",
+          "A eventual proposta depende das características da cota e das condições de mercado no momento da análise.",
+        ],
+      },
     ],
   },
   {
-    q: "As parcelas do consórcio sobem muito?",
-    content: [
-      "O seu crédito é atualizado anualmente para preservar o seu poder de compra.",
-      "Por isso, as parcelas também recebem reajustes previstos em contrato.",
-      "Na prática, essa atualização mantém o valor da sua carta de crédito alinhado ao mercado, permitindo que você continue tendo condições de adquirir o bem desejado.",
-      "Durante nossa conversa, explicarei como esse reajuste funciona e por que, na maioria dos casos, ele representa uma vantagem para o consorciado.",
+    label: "Empresas",
+    items: [
+      {
+        q: "Como o consórcio pode ajudar minha empresa?",
+        content: [
+          "O consórcio pode ajudar sua empresa a adquirir patrimônio e ativos de forma planejada, sem os juros de um financiamento tradicional e sem precisar comprometer uma grande parcela do caixa com entrada.",
+          "Dependendo da modalidade contratada, o crédito pode ser utilizado para ativos como:",
+          {
+            list: [
+              "imóveis comerciais;",
+              "veículos e utilitários;",
+              "caminhões;",
+              "máquinas;",
+              "equipamentos;",
+              "máquinas agrícolas;",
+              "outros bens compatíveis com a modalidade contratada.",
+            ],
+          },
+          {
+            sub: "Preservação de caixa",
+            text: "Em vez de descapitalizar a empresa com uma entrada elevada, o capital pode continuar disponível para estoque, pessoas, marketing, capital de giro ou outras necessidades do negócio.",
+          },
+          {
+            sub: "Planejamento patrimonial e contábil",
+            text: "Quando o bem adquirido atende aos critérios contábeis, ele pode passar a integrar o ativo da empresa. Bens do ativo imobilizado utilizados na operação podem estar sujeitos ao reconhecimento contábil de depreciação ao longo de sua vida útil.",
+          },
+          {
+            sub: "Possíveis efeitos tributários",
+            text: "Dependendo do regime tributário, do tipo de ativo e da forma como ele é utilizado pela empresa, podem existir efeitos fiscais relacionados à depreciação ou a outros tratamentos previstos na legislação.",
+          },
+          "O tratamento contábil e tributário depende da realidade de cada empresa, do regime de tributação e do ativo adquirido. Essas questões devem ser avaliadas com o contador da empresa. Meu papel é ajudar a estruturar a estratégia de aquisição e trabalhar de forma alinhada com essa orientação contábil.",
+        ],
+      },
     ],
   },
   {
-    q: "E se eu tiver um imprevisto e não puder pagar?",
-    content: [
-      "Imprevistos podem acontecer.",
-      "O regulamento do consórcio prevê alternativas que oferecem flexibilidade para ajudar o cliente em diferentes situações.",
-      "Se isso acontecer, vou orientar você sobre as opções disponíveis para encontrar a melhor solução.",
-    ],
-  },
-  {
-    q: "Existem taxas ou custos escondidos?",
-    content: [
-      "Não.",
-      "Os custos do consórcio são simples, previsíveis e apresentados com total transparência.",
-      "Durante nossa conversa, explicarei cada item para que você tome sua decisão com segurança.",
-    ],
-  },
-  {
-    q: "A primeira conversa tem algum custo ou compromisso?",
-    content: [
-      "Nenhum.",
-      "A primeira conversa é gratuita e sem compromisso.",
-      "Meu objetivo é entender seu projeto, esclarecer suas dúvidas e avaliar quais estratégias fazem sentido para o seu momento.",
-      "Depois disso, a decisão será totalmente sua.",
+    label: "Meu atendimento",
+    items: [
+      {
+        q: "O que acontece depois que eu contrato?",
+        content: [
+          "Meu trabalho não termina com a assinatura do contrato.",
+          "Cada cliente da minha carteira conta com um canal direto comigo para tirar dúvidas, receber informações importantes e acompanhar o andamento do plano.",
+          "Também ajudo na organização de boletos, assembleias e estratégias de lance e, quando previamente combinado, faço a aplicação do lance para que você não perca uma oportunidade por falta de tempo ou esquecimento.",
+          "Você continua cuidando da sua família, profissão ou negócio, enquanto eu ajudo a acompanhar os detalhes do seu projeto de consórcio.",
+        ],
+      },
     ],
   },
 ];
@@ -129,7 +197,7 @@ function FaqTrigger({ className, children, ...props }: React.ComponentPropsWitho
 function FaqContent({ className, children, ...props }: React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>) {
   return (
     <AccordionPrimitive.Content
-      className="overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+      className="overflow-hidden text-sm motion-safe:data-[state=closed]:animate-accordion-up motion-safe:data-[state=open]:animate-accordion-down"
       {...props}
     >
       <div className={cn("px-5 pb-5 pt-0 md:px-6 md:pb-6", className)}>{children}</div>
@@ -137,25 +205,73 @@ function FaqContent({ className, children, ...props }: React.ComponentPropsWitho
   );
 }
 
-function FaqAnswer({ blocks }: { blocks: FaqBlock[] }) {
+function FaqAnswer({ blocks, highlight, cta }: { blocks: FaqBlock[]; highlight?: string; cta?: string }) {
   return (
     <div className="max-w-2xl space-y-3 leading-[1.8] text-muted-foreground">
-      {blocks.map((block, index) =>
-        typeof block === "string" ? (
-          <p key={index}>{block}</p>
-        ) : (
-          <ul key={index} className="list-disc space-y-1 pl-5">
-            {block.list.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        )
+      {blocks.map((block, index) => {
+        if (typeof block === "string") {
+          return <p key={index}>{block}</p>;
+        }
+        if ("list" in block) {
+          return (
+            <ul key={index} className="list-disc space-y-1 pl-5">
+              {block.list.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
+          );
+        }
+        return (
+          <div key={index} className="pt-1">
+            <p className="font-semibold text-primary">{block.sub}</p>
+            <p className="mt-1">{block.text}</p>
+          </div>
+        );
+      })}
+      {highlight && cta && (
+        <div className="pt-2">
+          <p className="font-semibold text-primary">{highlight}</p>
+          <Button
+            asChild
+            size="lg"
+            className="mt-3 rounded-xl bg-gold px-8 text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90"
+          >
+            <a href="#cta">{cta}</a>
+          </Button>
+        </div>
       )}
     </div>
   );
 }
 
+function FaqGroupBlock({ group }: { group: FaqGroup }) {
+  return (
+    <div>
+      <h3 className="mb-3 mt-2 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+        {group.label}
+      </h3>
+      <AccordionPrimitive.Root type="single" collapsible className="w-full space-y-3">
+        {group.items.map((item) => (
+          <AccordionPrimitive.Item
+            key={item.q}
+            value={item.q}
+            className="rounded-2xl border border-border/70 bg-card shadow-soft transition-all duration-200 hover:border-gold/40 hover:shadow-card data-[state=open]:border-gold/50 data-[state=open]:bg-card"
+          >
+            <FaqTrigger>{item.q}</FaqTrigger>
+            <FaqContent>
+              <FaqAnswer blocks={item.content} highlight={item.highlight} cta={item.cta} />
+            </FaqContent>
+          </AccordionPrimitive.Item>
+        ))}
+      </AccordionPrimitive.Root>
+    </div>
+  );
+}
+
 export function FAQ() {
+  const [showAll, setShowAll] = React.useState(false);
+  const [firstGroup, ...extraGroups] = FAQ_GROUPS;
+
   return (
     <section id="faq" className="scroll-mt-24 bg-background py-16 md:py-24">
       <div className="section-shell grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:gap-14">
@@ -163,40 +279,42 @@ export function FAQ() {
           <div className="lg:sticky lg:top-28">
             <p className="eyebrow">FAQ</p>
             <h2 className="mt-5 text-3xl font-extrabold text-primary md:text-[2.5rem] md:leading-[1.15]">
-              Tire suas dúvidas antes de decidir.
+              Dúvidas frequentes
             </h2>
             <p className="mt-5 leading-[1.8] text-muted-foreground">
-              Estas são algumas das perguntas que mais recebo de pessoas que estão avaliando um consórcio pela primeira vez.
+              Encontre respostas para as principais dúvidas sobre consórcio, imóveis, empresas e meu acompanhamento.
             </p>
           </div>
         </Reveal>
 
         <Reveal delay={100}>
-          <AccordionPrimitive.Root type="single" collapsible className="w-full space-y-3">
-            {FAQ_ITEMS.map((item, index) => (
-              <AccordionPrimitive.Item
-                key={item.q}
-                value={item.q}
-                className="rounded-2xl border border-border/70 bg-card shadow-soft transition-all duration-200 hover:border-gold/40 hover:shadow-card data-[state=open]:border-gold/50 data-[state=open]:bg-card"
+          <div className="space-y-8">
+            <FaqGroupBlock group={firstGroup} />
+
+            <div className="flex justify-center">
+              <Button
+                type="button"
+                variant="outline"
+                size="lg"
+                aria-expanded={showAll}
+                aria-controls="faq-grupos-extras"
+                onClick={() => setShowAll((v) => !v)}
+                className="rounded-xl border-gold/40 px-8 text-primary transition-colors hover:border-gold hover:bg-gold/10"
               >
-                <FaqTrigger>{item.q}</FaqTrigger>
-                <FaqContent>
-                  <div className="space-y-4">
-                    <FaqAnswer blocks={item.content} />
-                    {index === FAQ_ITEMS.length - 1 && (
-                      <Button
-                        asChild
-                        size="lg"
-                        className="mt-4 rounded-xl bg-gold px-8 text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90"
-                      >
-                        <a href="#cta">Quero conversar sobre meu projeto</a>
-                      </Button>
-                    )}
-                  </div>
-                </FaqContent>
-              </AccordionPrimitive.Item>
-            ))}
-          </AccordionPrimitive.Root>
+                {showAll ? "Mostrar menos perguntas" : "Ver todas as perguntas"}
+                <ChevronDown
+                  className={cn("h-4 w-4 text-gold transition-transform duration-200", showAll && "rotate-180")}
+                  aria-hidden="true"
+                />
+              </Button>
+            </div>
+
+            <div id="faq-grupos-extras" className={cn("space-y-8", !showAll && "hidden")}>
+              {extraGroups.map((group) => (
+                <FaqGroupBlock key={group.label} group={group} />
+              ))}
+            </div>
+          </div>
         </Reveal>
       </div>
     </section>
