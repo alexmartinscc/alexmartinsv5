@@ -25,7 +25,7 @@ export function Hero() {
             Ajudo pessoas, profissionais autônomos e empresários a usar o consórcio para conquistar imóveis, construir patrimônio e gerar renda para ter mais independência financeira e segurança no futuro.
           </p>
 
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="mt-6">
             <Button
               asChild
               size="lg"
@@ -33,7 +33,13 @@ export function Hero() {
             >
               <a href="#cta">Conte-me sobre o seu projeto</a>
             </Button>
+          </div>
 
+          <p className="measure mt-3 text-xs leading-[1.6] text-muted-foreground/80 md:text-sm">
+            Leva menos de 2 minutos. Você não precisa falar comigo agora.
+          </p>
+
+          <div className="mt-4">
             <Button
               asChild
               variant="outline"
@@ -51,10 +57,6 @@ export function Hero() {
               </a>
             </Button>
           </div>
-
-          <p className="measure mt-3 text-xs leading-[1.6] text-muted-foreground/80 md:text-sm">
-            Leva menos de 2 minutos. Você não precisa falar comigo agora.
-          </p>
 
           <div className="mt-5 flex flex-wrap gap-2">
             <a
@@ -84,7 +86,7 @@ export function Hero() {
             ratio="4 / 5"
             alt="Alex Martins, consultor patrimonial"
             label="Alex Martins"
-            className="w-full max-w-[260px] sm:max-w-[300px] lg:max-w-[360px]"
+            className="w-full max-w-[240px] sm:max-w-[280px] lg:max-w-[320px]"
           />
         </Reveal>
       </div>
