@@ -54,7 +54,7 @@ export function MetodoMapa() {
           <div className="relative grid grid-cols-4 gap-6">
             {STEPS.map((step, index) => (
               <Reveal
-                key={step.letter}
+                key={`${step.letter}-${step.title}`}
                 delay={index * 120}
                 className="text-center"
               >
