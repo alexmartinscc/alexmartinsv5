@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 import { Reveal } from "./Reveal";
 import { OBJETIVOS_CONQUISTAR, PUBLICOS } from "./objetivos";
 
