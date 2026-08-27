@@ -1,12 +1,31 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Reveal } from "./Reveal";
-import { Compass, Search, Target, Handshake } from "lucide-react";
 
 const STEPS = [
-  { letter: "M", title: "Mapear", subtitle: "Seu objetivo", icon: Compass },
-  { letter: "A", title: "Avaliar", subtitle: "As opções", icon: Search },
-  { letter: "P", title: "Planejar", subtitle: "A estratégia", icon: Target },
-  { letter: "A", title: "Aplicar", subtitle: "E acompanhar", icon: Handshake },
+  {
+    letter: "M",
+    title: "Mapear",
+    description: "Entender onde você está e o que quer conquistar.",
+    details: "Objetivos, prazo, capacidade financeira e prioridades.",
+  },
+  {
+    letter: "A",
+    title: "Analisar opções",
+    description: "Avaliar os caminhos possíveis para o seu projeto.",
+    details: "Crédito, prazo, parcelas, possibilidades de lance e alternativas disponíveis.",
+  },
+  {
+    letter: "P",
+    title: "Planejar a estratégia",
+    description: "Transformar as opções em um plano.",
+    details: "Definir como estruturar o consórcio de acordo com seu objetivo e seu momento.",
+  },
+  {
+    letter: "A",
+    title: "Acompanhar a jornada",
+    description: "Estar ao seu lado durante o caminho.",
+    details: "Acompanhar o plano, orientar nas decisões e apoiar você até a utilização do crédito.",
+  },
 ];
 
 export function MetodoMapa() {
@@ -19,38 +38,99 @@ export function MetodoMapa() {
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow justify-center">Método MAPA</p>
           <h2 className="mt-4 text-3xl font-extrabold md:text-[2.5rem] md:leading-[1.15]">
-            Como funciona o Método MAPA
+            Cada projeto precisa de um plano
           </h2>
           <p className="mx-auto mt-4 max-w-xl leading-[1.7] text-primary-foreground/80">
-            Um processo simples para transformar seu projeto em uma conquista.
+            Antes de falar em valores ou parcelas, eu procuro entender o que você
+            quer conquistar, seu momento e seus objetivos. A partir daí, usamos o
+            Método MAPA para estruturar o caminho.
           </p>
         </Reveal>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {STEPS.map((step, index) => {
-            const Icon = step.icon;
-            return (
-              <Reveal key={step.title} delay={index * 90} className="h-full">
-                <Card className="card-lift h-full rounded-3xl border-primary-foreground/12 bg-primary-deep shadow-none">
-                  <CardContent className="flex flex-col items-center p-5 text-center md:p-6">
-                    <span className="grid h-12 w-12 place-items-center rounded-2xl bg-gold font-display text-xl font-extrabold text-gold-foreground">
+        {/* Desktop: jornada horizontal */}
+        <div className="relative mt-12 hidden lg:block">
+          <div className="absolute top-[3.25rem] left-0 right-0 h-px bg-primary-foreground/20" />
+
+          <div className="relative grid grid-cols-4 gap-6">
+            {STEPS.map((step, index) => (
+              <Reveal
+                key={`${step.letter}-${step.title}`}
+                delay={index * 120}
+                className="text-center"
+              >
+                <div className="flex flex-col items-center">
+                  <div className="flex h-[6.5rem] items-center justify-center">
+                    <span className="bg-primary px-2 font-display text-6xl font-extrabold text-gold">
                       {step.letter}
                     </span>
-                    <span className="mt-4 grid h-9 w-9 place-items-center rounded-full bg-primary-foreground/10">
-                      <Icon className="h-5 w-5 text-gold" />
-                    </span>
-                    <h3 className="mt-3 text-base font-bold md:text-lg text-primary-foreground">
-                      {step.title}
-                    </h3>
-                    <p className="mt-1 text-sm font-medium text-primary-foreground/65">
-                      {step.subtitle}
-                    </p>
-                  </CardContent>
-                </Card>
+                  </div>
+                  <span className="text-xs font-semibold uppercase tracking-widest text-gold/80">
+                    {step.letter} — {step.title}
+                  </span>
+                  <h3 className="mt-5 text-lg font-bold text-primary-foreground">
+                    {step.title}
+                  </h3>
+                  <p className="mt-2 text-sm font-medium leading-relaxed text-primary-foreground/90">
+                    {step.description}
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-primary-foreground/65">
+                    {step.details}
+                  </p>
+                </div>
               </Reveal>
-            );
-          })}
+            ))}
+          </div>
         </div>
+
+        {/* Mobile / tablet: timeline vertical */}
+        <div className="relative mt-10 lg:hidden">
+          <div className="absolute top-5 bottom-5 left-[1.375rem] w-px bg-primary-foreground/20" />
+
+          <div className="relative space-y-10">
+            {STEPS.map((step, index) => (
+              <Reveal
+                key={`${step.letter}-${step.title}`}
+                delay={index * 100}
+                className="relative pl-12"
+              >
+                <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center bg-primary">
+                  <span className="font-display text-3xl font-extrabold text-gold">
+                    {step.letter}
+                  </span>
+                </div>
+
+                <div>
+                  <span className="text-xs font-semibold uppercase tracking-widest text-gold/80">
+                    {step.letter} — {step.title}
+                  </span>
+                  <h3 className="mt-0.5 text-lg font-bold text-primary-foreground">
+                    {step.title}
+                  </h3>
+                  <p className="mt-1 text-sm font-medium leading-relaxed text-primary-foreground/90">
+                    {step.description}
+                  </p>
+                  <p className="mt-1 text-sm leading-relaxed text-primary-foreground/65">
+                    {step.details}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+
+        <Reveal className="mt-14 text-center md:mt-16" delay={200}>
+          <p className="mx-auto max-w-2xl text-lg font-semibold leading-relaxed text-primary-foreground md:text-xl">
+            Você não recebe apenas uma simulação. Construímos juntos um plano
+            para o seu objetivo.
+          </p>
+          <Button
+            asChild
+            size="lg"
+            className="mt-6 rounded-xl bg-gold px-8 text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5"
+          >
+            <a href="#cta">Conte-me sobre o seu projeto</a>
+          </Button>
+        </Reveal>
       </div>
     </section>
   );
