@@ -59,14 +59,18 @@ export function Portfolio() {
               Quem pode se beneficiar
             </h3>
           </div>
-          <div className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-3">
-            {PUBLICOS.map((publico) => {
+          <div className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-4">
+            {PUBLICOS.map((publico, index) => {
               const Icon = publico.icon;
+              const isLast = index === PUBLICOS.length - 1;
               return (
                 <a
                   key={publico.id}
                   href="#cta"
-                  className="group flex flex-col items-center gap-3 rounded-2xl px-4 py-4 transition-colors hover:bg-secondary/30"
+                  className={cn(
+                    "group flex flex-col items-center gap-2 rounded-2xl px-3 py-3 transition-colors hover:bg-secondary/30",
+                    isLast && "col-span-2 justify-self-center sm:col-span-1"
+                  )}
                 >
                   <span className="grid h-10 w-10 place-items-center rounded-xl bg-secondary">
                     <Icon className="h-5 w-5 fill-gold/20 text-gold transition-colors group-hover:fill-gold/30" />
