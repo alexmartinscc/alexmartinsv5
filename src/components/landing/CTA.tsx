@@ -1,5 +1,5 @@
 import { useMemo, useState, type FormEvent } from "react";
-import { CheckCircle2, Instagram, MessageCircle, Send } from "lucide-react";
+import { CheckCircle2, Mail, MessageCircle, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/select";
 import { Reveal } from "./Reveal";
 import { ValueStepper, buildScale } from "./ValueStepper";
-import { INSTAGRAM_HANDLE, INSTAGRAM_URL, WHATSAPP_NUMBER, WHATSAPP_URL } from "@/lib/contact";
+import { CONTACT_EMAIL, WHATSAPP_NUMBER, WHATSAPP_URL } from "@/lib/contact";
 import { getLeadOrigin } from "@/lib/lead-tracking";
 
 const OBJETIVOS = [
@@ -120,27 +120,26 @@ export function CTA() {
                   Preencha algumas informações sobre o seu projeto. Vou analisar seu cenário e entrar em contato para
                   combinarmos os próximos passos.
                 </p>
-                <p className="mt-4 text-sm font-semibold text-gold">Você não precisa falar comigo agora.</p>
-
-                <div className="mt-6 hidden flex-col gap-3 text-sm text-primary-foreground/70 lg:flex">
-                  <a
-                    href={WHATSAPP_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 transition-colors hover:text-primary-foreground"
-                  >
-                    <MessageCircle className="h-4 w-4 text-gold" aria-hidden />
-                    {WHATSAPP_NUMBER}
-                  </a>
-                  <a
-                    href={INSTAGRAM_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 transition-colors hover:text-primary-foreground"
-                  >
-                    <Instagram className="h-4 w-4 text-gold" aria-hidden />
-                    {INSTAGRAM_HANDLE}
-                  </a>
+                <div className="mt-6">
+                  <h3 className="text-sm font-semibold text-gold">Como posso falar com você?</h3>
+                  <div className="mt-3 flex flex-col gap-2 text-sm text-primary-foreground/70">
+                    <a
+                      href={`mailto:${CONTACT_EMAIL}`}
+                      className="inline-flex w-fit items-center gap-2 transition-colors hover:text-primary-foreground"
+                    >
+                      <Mail className="h-4 w-4 text-gold" aria-hidden />
+                      {CONTACT_EMAIL}
+                    </a>
+                    <a
+                      href={WHATSAPP_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex w-fit items-center gap-2 transition-colors hover:text-primary-foreground"
+                    >
+                      <MessageCircle className="h-4 w-4 text-gold" aria-hidden />
+                      {WHATSAPP_NUMBER}
+                    </a>
+                  </div>
                 </div>
               </div>
 
