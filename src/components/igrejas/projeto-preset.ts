@@ -11,5 +11,7 @@ export function selecionarProjeto(tipo: ProjetoTipo) {
 
 export function onSelecionarProjeto(fn: Listener) {
   listeners.add(fn);
-  return () => listeners.delete(fn);
+  return () => {
+    listeners.delete(fn);
+  };
 }
