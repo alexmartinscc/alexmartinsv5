@@ -26,7 +26,7 @@ export function Header({ links = NAV, homeHref = "/#hero" }: HeaderProps = {}) {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur">
       <div className="section-shell grid h-20 grid-cols-[minmax(0,1fr)_auto] items-center gap-4">
-        <a href="/#hero" className="flex min-w-0 items-center gap-3">
+        <a href={homeHref} className="flex min-w-0 items-center gap-3">
           <img
             src={logo}
             alt="Logotipo Alex Martins"
@@ -46,7 +46,7 @@ export function Header({ links = NAV, homeHref = "/#hero" }: HeaderProps = {}) {
 
         <div className="flex items-center gap-2">
           <nav className="hidden items-center gap-7 lg:flex">
-            {NAV.map((item) => (
+            {nav.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
@@ -72,7 +72,7 @@ export function Header({ links = NAV, homeHref = "/#hero" }: HeaderProps = {}) {
       {open ? (
         <div className="border-t border-border bg-background lg:hidden">
           <nav className="section-shell flex flex-col py-4">
-            {NAV.map((item) => (
+            {nav.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
