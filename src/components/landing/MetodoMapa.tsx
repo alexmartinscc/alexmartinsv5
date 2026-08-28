@@ -43,51 +43,20 @@ export function MetodoMapa() {
           </p>
         </Reveal>
 
-        {/* Desktop: jornada horizontal */}
-        <div className="relative mt-12 hidden lg:block">
-          <div className="absolute top-[3.25rem] left-0 right-0 h-px bg-primary-foreground/20" />
+        {/* Uma única estrutura no DOM: timeline vertical no mobile,
+            jornada horizontal no desktop (apenas CSS responsivo). */}
+        <div className="relative mt-10 lg:mt-12">
+          <div className="absolute left-[1.375rem] top-5 bottom-5 w-px bg-primary-foreground/20 lg:left-0 lg:right-0 lg:top-[3.25rem] lg:bottom-auto lg:h-px lg:w-auto" />
 
-          <div className="relative grid grid-cols-4 gap-6">
+          <div className="relative space-y-10 lg:grid lg:grid-cols-4 lg:gap-6 lg:space-y-0">
             {STEPS.map((step, index) => (
               <Reveal
-                key={`${step.letter}-${step.title}`}
-                delay={index * 120}
-                className="text-center"
-              >
-                <div className="flex flex-col items-center">
-                  <div className="flex h-[6.5rem] items-center justify-center">
-                    <span className="bg-primary px-2 font-display text-6xl font-extrabold text-gold">
-                      {step.letter}
-                    </span>
-                  </div>
-                  <span className="text-xs font-semibold uppercase tracking-widest text-gold/80">
-                    {step.letter} — {step.title}
-                  </span>
-                  <h3 className="mt-5 text-lg font-bold text-primary-foreground">
-                    {step.title}
-                  </h3>
-                  <p className="mt-2 text-sm font-medium leading-relaxed text-primary-foreground/90">
-                    {step.description}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-
-        {/* Mobile / tablet: timeline vertical */}
-        <div className="relative mt-10 lg:hidden">
-          <div className="absolute top-5 bottom-5 left-[1.375rem] w-px bg-primary-foreground/20" />
-
-          <div className="relative space-y-10">
-            {STEPS.map((step, index) => (
-              <Reveal
-                key={`${step.letter}-${step.title}`}
+                key={`${index}-${step.letter}`}
                 delay={index * 100}
-                className="relative pl-12"
+                className="relative pl-12 lg:pl-0 lg:text-center"
               >
-                <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center bg-primary">
-                  <span className="font-display text-3xl font-extrabold text-gold">
+                <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center bg-primary lg:static lg:mx-auto lg:h-[6.5rem] lg:w-auto">
+                  <span className="font-display text-3xl font-extrabold text-gold lg:bg-primary lg:px-2 lg:text-6xl">
                     {step.letter}
                   </span>
                 </div>
@@ -96,10 +65,10 @@ export function MetodoMapa() {
                   <span className="text-xs font-semibold uppercase tracking-widest text-gold/80">
                     {step.letter} — {step.title}
                   </span>
-                  <h3 className="mt-0.5 text-lg font-bold text-primary-foreground">
+                  <h3 className="mt-0.5 text-lg font-bold text-primary-foreground lg:mt-5">
                     {step.title}
                   </h3>
-                  <p className="mt-1 text-sm font-medium leading-relaxed text-primary-foreground/90">
+                  <p className="mt-1 text-sm font-medium leading-relaxed text-primary-foreground/90 lg:mt-2">
                     {step.description}
                   </p>
                 </div>
@@ -107,6 +76,7 @@ export function MetodoMapa() {
             ))}
           </div>
         </div>
+
 
         <Reveal className="mt-14 text-center md:mt-16" delay={200}>
           <p className="mx-auto max-w-2xl text-lg font-semibold leading-relaxed text-primary-foreground md:text-xl">
