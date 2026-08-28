@@ -12,8 +12,16 @@ const NAV = [
   { label: "FAQ", href: "/#faq" },
 ];
 
-export function Header() {
+type HeaderProps = {
+  /** Links de navegação (padrão: navegação da Home). */
+  links?: { label: string; href: string }[];
+  /** Destino do logotipo. */
+  homeHref?: string;
+};
+
+export function Header({ links = NAV, homeHref = "/#hero" }: HeaderProps = {}) {
   const [open, setOpen] = useState(false);
+  const nav = links;
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur">
