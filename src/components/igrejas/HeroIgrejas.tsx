@@ -24,10 +24,10 @@ export function HeroIgrejas() {
       />
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-primary-deep/80 md:bg-gradient-to-r md:from-primary-deep md:via-primary-deep/85 md:to-primary-deep/25"
+        className="absolute inset-0 -z-10 bg-gradient-to-b from-primary-deep/90 via-primary-deep/75 to-primary-deep/85 md:bg-gradient-to-r md:from-primary-deep md:via-primary-deep/85 md:to-primary-deep/25"
       />
 
-      <div className="section-shell flex min-h-[92vh] flex-col justify-center pt-28 pb-14 md:min-h-[85vh] md:pt-32 md:pb-20">
+      <div className="section-shell flex min-h-[78vh] flex-col justify-center pt-28 pb-12 md:min-h-[85vh] md:pt-32 md:pb-20">
         <div className="max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold">
             Planejamento para igrejas e pastores
