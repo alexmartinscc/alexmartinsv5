@@ -8,22 +8,22 @@ const ATTRIBUTES = [
   {
     icon: User,
     title: "Atendimento direto e humanizado",
-    text: "Você fala comigo diretamente para esclarecer dúvidas, entender suas opções e tomar decisões com tranquilidade. Meu objetivo não é simplesmente vender uma cota, mas ajudar você a conduzir seu projeto.",
+    text: "Você fala comigo, não com robôs ou menus intermináveis.",
   },
   {
     icon: Wallet,
     title: "Acompanhamento da sua carteira",
-    text: "Mantenho um canal privado com meus clientes para orientações, dúvidas, informações importantes e acompanhamento ao longo do plano.",
+    text: "Informação e suporte ao longo de todo o plano.",
   },
   {
     icon: ListChecks,
     title: "Organização das oportunidades",
-    text: "Ajudo você a acompanhar boletos, assembleias e estratégias de lance. Quando previamente combinado, também faço a aplicação dos lances, para que uma oportunidade não seja perdida por falta de tempo ou esquecimento.",
+    text: "Apoio com boletos, assembleias e estratégias de lance.",
   },
   {
     icon: TrendingUp,
-    title: "Experiência aplicada ao seu projeto",
-    text: "Minha experiência em negócios me ajuda a investigar cenários e estruturar estratégias mais adequadas aos seus objetivos, prazo e capacidade financeira.",
+    title: "Experiência aplicada ao projeto",
+    text: "Mais de 20 anos de experiência em negócios ajudando a analisar cenários.",
   },
 ];
 
