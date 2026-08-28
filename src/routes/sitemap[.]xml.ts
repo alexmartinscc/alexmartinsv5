@@ -12,7 +12,10 @@ interface SitemapEntry {
 // Páginas públicas indexáveis. Futuras landing pages (/pastores, /medicos,
 // /advogados, /agro) devem ser adicionadas aqui quando forem publicadas.
 // Páginas operacionais com noindex (ex.: /obrigado) não entram no sitemap.
-const ENTRIES: SitemapEntry[] = [{ path: "/", changefreq: "weekly", priority: "1.0" }];
+const ENTRIES: SitemapEntry[] = [
+  { path: "/", changefreq: "weekly", priority: "1.0" },
+  { path: "/igrejas", changefreq: "monthly", priority: "0.9" },
+];
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
