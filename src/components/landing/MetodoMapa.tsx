@@ -69,9 +69,6 @@ export function MetodoMapa() {
                   <p className="mt-2 text-sm font-medium leading-relaxed text-primary-foreground/90">
                     {step.description}
                   </p>
-                  <p className="mt-2 text-sm leading-relaxed text-primary-foreground/65">
-                    {step.details}
-                  </p>
                 </div>
               </Reveal>
             ))}
@@ -104,9 +101,6 @@ export function MetodoMapa() {
                   </h3>
                   <p className="mt-1 text-sm font-medium leading-relaxed text-primary-foreground/90">
                     {step.description}
-                  </p>
-                  <p className="mt-1 text-sm leading-relaxed text-primary-foreground/65">
-                    {step.details}
                   </p>
                 </div>
               </Reveal>
