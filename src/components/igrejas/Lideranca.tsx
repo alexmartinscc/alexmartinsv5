@@ -5,7 +5,7 @@ import { selecionarProjeto } from "./projeto-preset";
 export function Lideranca() {
   return (
     <section id="lideranca" className="scroll-mt-24 bg-background py-16 md:py-24">
-      <div className="section-shell grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
+      <div className="section-shell grid items-center gap-8 lg:grid-cols-2 lg:gap-14 [&>*]:min-w-0">
         <Reveal className="order-1 lg:order-2">
           <img
             src="/images/igrejas/reuniao-lideranca-alex.webp"
@@ -42,7 +42,7 @@ export function Lideranca() {
           <Button
             asChild
             size="lg"
-            className="mt-6 w-full rounded-xl bg-gold px-8 text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90 sm:w-auto"
+            className="mt-6 h-auto w-full whitespace-normal rounded-xl bg-gold px-8 py-3 text-center text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90 sm:w-auto"
           >
             <a href="#cta" onClick={() => selecionarProjeto("igreja")}>
               Quero conversar com a liderança

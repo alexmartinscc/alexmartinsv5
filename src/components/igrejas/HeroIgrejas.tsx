@@ -61,7 +61,7 @@ export function HeroIgrejas() {
             <Button
               asChild
               size="lg"
-              className="w-full rounded-xl bg-gold px-8 text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90 sm:w-auto"
+              className="h-auto w-full whitespace-normal rounded-xl bg-gold px-8 py-3 text-center text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90 sm:w-auto"
             >
               <a href="#cta">Conte-me sobre o seu projeto</a>
             </Button>

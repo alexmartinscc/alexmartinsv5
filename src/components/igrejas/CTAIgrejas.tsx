@@ -143,7 +143,7 @@ export function CTAIgrejas() {
               aria-hidden
               className="pointer-events-none absolute -top-24 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-gold/10 blur-3xl"
             />
-            <div className="relative grid gap-8 lg:grid-cols-[42fr_58fr] lg:items-start lg:gap-12">
+            <div className="relative grid gap-8 lg:grid-cols-[42fr_58fr] lg:items-start lg:gap-12 [&>*]:min-w-0">
               <div>
                 <h2 className="text-3xl font-extrabold text-primary-foreground md:text-[2.25rem] md:leading-[1.15]">
                   Conte-me sobre o seu projeto

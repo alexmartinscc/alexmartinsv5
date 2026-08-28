@@ -8,7 +8,7 @@ import sobreAlex from "@/assets/sobre-alex.jpg";
 export function SobreIgrejas() {
   return (
     <section id="sobre" className="scroll-mt-24 bg-secondary py-16 md:py-24">
-      <div className="section-shell grid items-center gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14">
+      <div className="section-shell grid items-center gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14 [&>*]:min-w-0">
         <Reveal>
           <ImageSlot
             path="/sobre-alex.webp"
@@ -61,7 +61,7 @@ export function SobreIgrejas() {
             <p className="mt-2 text-sm leading-[1.65] text-muted-foreground">
               Minha credencial pode ser verificada diretamente no site oficial da Ademicon.
             </p>
-            <Button asChild variant="outline" size="lg" className="mt-4 rounded-xl">
+            <Button asChild variant="outline" size="lg" className="mt-4 h-auto whitespace-normal rounded-xl py-3 text-center">
               <a
                 href={ADEMICON_CREDENTIAL_URL}
                 target="_blank"
