@@ -121,24 +121,20 @@ export const Route = createFileRoute("/")({
       },
     ],
     meta: [
-      { title: "Alex Martins | Consórcio Imobiliário e Conquista Patrimonial" },
-      {
-        name: "description",
-        content:
-          "Consultor Autorizado Ademicon. Conquiste imóveis e patrimônio com consórcio: sem juros, com estratégia e acompanhamento.",
-      },
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { name: "robots", content: "index, follow" },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: SITE_URL },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:image", content: OG_IMAGE },
       { name: "twitter:card", content: "summary_large_image" },
-      {
-        property: "og:title",
-        content: "Alex Martins | Consórcio Imobiliário e Conquista Patrimonial",
-      },
-      {
-        property: "og:description",
-        content:
-          "Consultor Autorizado Ademicon. Conquiste imóveis e patrimônio com consórcio: sem juros, com estratégia e acompanhamento.",
-      },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
+    links: [{ rel: "canonical", href: SITE_URL }],
   }),
   component: Home,
 });
