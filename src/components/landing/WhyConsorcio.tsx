@@ -314,12 +314,6 @@ export function WhyConsorcio() {
             Cada projeto possui características diferentes. Entender qual estratégia faz mais sentido
             é o primeiro passo.
           </p>
-          <a
-            href="#cta"
-            className="mt-5 inline-flex items-center justify-center rounded-full bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.02] active:scale-[0.98]"
-          >
-            Quero conversar sobre meu projeto
-          </a>
         </Reveal>
       </div>
     </section>

@@ -4,7 +4,7 @@ import { CentralDeConhecimento } from "@/pages/CentralDeConhecimento";
 const TITLE = "Central de Conhecimento | Alex Martins";
 const DESCRIPTION =
   "Conteúdos claros sobre consórcio e estratégias financeiras para você entender cada detalhe antes de decidir como realizar o seu projeto.";
-const URL = "https://alexmartinsv2.lovable.app/central-de-conhecimento";
+const URL = "https://www.alexmartins.cc/central-de-conhecimento";
 
 export const Route = createFileRoute("/central-de-conhecimento")({
   head: () => ({
