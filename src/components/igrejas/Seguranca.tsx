@@ -29,14 +29,17 @@ export function Seguranca() {
 
         <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {SINAIS.map((sinal, index) => (
-            <Reveal key={sinal.text} delay={index * 60} asChild>
-              <li className="flex items-start gap-3 rounded-2xl border border-primary-foreground/15 bg-primary-foreground/5 p-4">
+            <li key={sinal.text}>
+              <Reveal
+                delay={index * 60}
+                className="flex h-full items-start gap-3 rounded-2xl border border-primary-foreground/15 bg-primary-foreground/5 p-4"
+              >
                 <sinal.icon className="mt-0.5 h-5 w-5 shrink-0 text-gold" aria-hidden="true" />
                 <span className="text-sm font-medium leading-[1.6] text-primary-foreground/90">
                   {sinal.text}
                 </span>
-              </li>
-            </Reveal>
+              </Reveal>
+            </li>
           ))}
         </ul>
       </div>
