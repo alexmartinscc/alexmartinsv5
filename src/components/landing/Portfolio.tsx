@@ -84,14 +84,6 @@ export function Portfolio() {
           </div>
         </Reveal>
 
-        <Reveal className="mt-8 text-center" delay={240}>
-          <a
-            href="#cta"
-            className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]"
-          >
-            Quero conversar sobre meu projeto
-          </a>
-        </Reveal>
       </div>
     </section>
   );
