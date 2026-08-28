@@ -4,7 +4,7 @@ import { ComoFuncionaConsorcio } from "@/pages/ComoFuncionaConsorcio";
 const TITLE = "Como funciona o Consórcio? Guia Completo para Entender Antes de Contratar";
 const DESCRIPTION =
   "Entenda como funciona o consórcio, como acontece a contemplação, o que são os lances, quais as vantagens e quando essa estratégia pode fazer sentido para o seu projeto.";
-const URL = "https://alexmartinsv2.lovable.app/como-funciona-o-consorcio";
+const URL = "https://www.alexmartins.cc/como-funciona-o-consorcio";
 
 export const Route = createFileRoute("/como-funciona-o-consorcio")({
   head: () => ({
@@ -42,7 +42,7 @@ export const Route = createFileRoute("/como-funciona-o-consorcio")({
               "@type": "ListItem",
               position: 1,
               name: "Início",
-              item: "https://alexmartinsv2.lovable.app/",
+              item: "https://www.alexmartins.cc/",
             },
             { "@type": "ListItem", position: 2, name: "Central de Conhecimento", item: URL },
           ],
