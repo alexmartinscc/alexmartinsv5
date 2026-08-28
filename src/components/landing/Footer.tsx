@@ -10,10 +10,9 @@ const LINKS = [
 
 type FooterProps = {
   links?: { label: string; href: string }[];
-  homeHref?: string;
 };
 
-export function Footer({ links = LINKS, homeHref = "/#hero" }: FooterProps = {}) {
+export function Footer({ links = LINKS }: FooterProps = {}) {
   const items = links;
   return (
     <footer className="border-t border-border bg-secondary">
