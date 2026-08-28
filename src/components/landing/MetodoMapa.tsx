@@ -6,25 +6,21 @@ const STEPS = [
     letter: "M",
     title: "Mapear",
     description: "Entender onde você está e o que quer conquistar.",
-    details: "Objetivos, prazo, capacidade financeira e prioridades.",
   },
   {
     letter: "A",
     title: "Analisar opções",
     description: "Avaliar os caminhos possíveis para o seu projeto.",
-    details: "Crédito, prazo, parcelas, possibilidades de lance e alternativas disponíveis.",
   },
   {
     letter: "P",
     title: "Planejar a estratégia",
     description: "Transformar as opções em um plano.",
-    details: "Definir como estruturar o consórcio de acordo com seu objetivo e seu momento.",
   },
   {
     letter: "A",
     title: "Acompanhar a jornada",
     description: "Estar ao seu lado durante o caminho.",
-    details: "Acompanhar o plano, orientar nas decisões e apoiar você até a utilização do crédito.",
   },
 ];
 
@@ -73,9 +69,6 @@ export function MetodoMapa() {
                   <p className="mt-2 text-sm font-medium leading-relaxed text-primary-foreground/90">
                     {step.description}
                   </p>
-                  <p className="mt-2 text-sm leading-relaxed text-primary-foreground/65">
-                    {step.details}
-                  </p>
                 </div>
               </Reveal>
             ))}
@@ -108,9 +101,6 @@ export function MetodoMapa() {
                   </h3>
                   <p className="mt-1 text-sm font-medium leading-relaxed text-primary-foreground/90">
                     {step.description}
-                  </p>
-                  <p className="mt-1 text-sm leading-relaxed text-primary-foreground/65">
-                    {step.details}
                   </p>
                 </div>
               </Reveal>

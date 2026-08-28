@@ -8,22 +8,22 @@ const ATTRIBUTES = [
   {
     icon: User,
     title: "Atendimento direto e humanizado",
-    text: "Você fala comigo diretamente para esclarecer dúvidas, entender suas opções e tomar decisões com tranquilidade. Meu objetivo não é simplesmente vender uma cota, mas ajudar você a conduzir seu projeto.",
+    text: "Você fala comigo, não com robôs ou menus intermináveis.",
   },
   {
     icon: Wallet,
     title: "Acompanhamento da sua carteira",
-    text: "Mantenho um canal privado com meus clientes para orientações, dúvidas, informações importantes e acompanhamento ao longo do plano.",
+    text: "Informação e suporte ao longo de todo o plano.",
   },
   {
     icon: ListChecks,
     title: "Organização das oportunidades",
-    text: "Ajudo você a acompanhar boletos, assembleias e estratégias de lance. Quando previamente combinado, também faço a aplicação dos lances, para que uma oportunidade não seja perdida por falta de tempo ou esquecimento.",
+    text: "Apoio com boletos, assembleias e estratégias de lance.",
   },
   {
     icon: TrendingUp,
-    title: "Experiência aplicada ao seu projeto",
-    text: "Minha experiência em negócios me ajuda a investigar cenários e estruturar estratégias mais adequadas aos seus objetivos, prazo e capacidade financeira.",
+    title: "Experiência aplicada ao projeto",
+    text: "Mais de 20 anos de experiência em negócios ajudando a analisar cenários.",
   },
 ];
 
@@ -32,7 +32,7 @@ const ADEMICON_URL = "https://www.ademicon.com.br/licensed/984100/alexsandro-mar
 export function About() {
   return (
     <section id="sobre" className="scroll-mt-24 bg-secondary py-16 md:py-24">
-      <div className="section-shell flex flex-col gap-8 lg:grid lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-x-16 lg:gap-y-5">
+      <div className="section-shell flex flex-col gap-8 lg:grid lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-x-14 lg:gap-y-5">
         {/* Mobile order 1 / Desktop column 2 row 1: eyebrow, title, first paragraph */}
         <Reveal className="order-1 lg:col-start-2 lg:row-start-1 lg:self-start">
           <p className="eyebrow">Sobre mim</p>
@@ -47,7 +47,7 @@ export function About() {
         {/* Mobile order 2 / Desktop column 1 spanning rows: photo */}
         <Reveal
           delay={80}
-          className="order-2 lg:col-start-1 lg:row-start-1 lg:row-span-2 lg:self-start"
+          className="order-2 lg:col-start-1 lg:row-start-1 lg:row-span-2 lg:self-center"
         >
           <ImageSlot
             path="/sobre-alex.webp"
