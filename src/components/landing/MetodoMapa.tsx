@@ -24,7 +24,13 @@ const STEPS = [
   },
 ];
 
-export function MetodoMapa() {
+type MetodoMapaProps = {
+  intro?: string;
+};
+
+export function MetodoMapa({
+  intro = "Antes de falar em valores ou parcelas, eu procuro entender o que você quer conquistar, seu momento e seus objetivos. A partir daí, usamos o Método MAPA para estruturar o caminho.",
+}: MetodoMapaProps = {}) {
   return (
     <section
       id="metodo"
@@ -37,9 +43,7 @@ export function MetodoMapa() {
             Cada projeto precisa de um plano
           </h2>
           <p className="mx-auto mt-4 max-w-xl leading-[1.7] text-primary-foreground/80">
-            Antes de falar em valores ou parcelas, eu procuro entender o que você
-            quer conquistar, seu momento e seus objetivos. A partir daí, usamos o
-            Método MAPA para estruturar o caminho.
+{intro}
           </p>
         </Reveal>
 
