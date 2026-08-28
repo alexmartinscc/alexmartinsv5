@@ -1,6 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Home } from "@/pages/Home";
 
+const SITE_URL = "https://www.alexmartins.cc/";
+const OG_IMAGE = "https://www.alexmartins.cc/og-image.jpg";
+const TITLE = "Alex Martins | Planejamento Patrimonial com Consórcio";
+const DESCRIPTION =
+  "Planejamento patrimonial com consórcio para conquistar imóveis, construir patrimônio, gerar renda e estruturar projetos pessoais e empresariais.";
+
 const FAQ_PAGE_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
