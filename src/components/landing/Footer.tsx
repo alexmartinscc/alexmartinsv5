@@ -8,7 +8,12 @@ const LINKS = [
   { label: "FAQ", href: "/#faq" },
 ];
 
-export function Footer() {
+type FooterProps = {
+  links?: { label: string; href: string }[];
+};
+
+export function Footer({ links = LINKS }: FooterProps = {}) {
+  const items = links;
   return (
     <footer className="border-t border-border bg-secondary">
       <div className="section-shell flex flex-col gap-4 py-6 md:flex-row md:items-center md:justify-between">
@@ -30,7 +35,7 @@ export function Footer() {
         </div>
 
         <nav className="flex flex-wrap gap-x-4 gap-y-1.5">
-          {LINKS.map((link) => (
+          {items.map((link) => (
             <a
               key={link.href}
               href={link.href}

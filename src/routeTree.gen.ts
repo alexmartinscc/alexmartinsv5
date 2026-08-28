@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CentralDeConhecimentoRouteImport } from './routes/central-de-conhecimento'
 import { Route as ComoFuncionaOConsorcioRouteImport } from './routes/como-funciona-o-consorcio'
+import { Route as IgrejasRouteImport } from './routes/igrejas'
 import { Route as ObrigadoRouteImport } from './routes/obrigado'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 
@@ -30,6 +31,11 @@ const ComoFuncionaOConsorcioRoute = ComoFuncionaOConsorcioRouteImport.update({
   path: '/como-funciona-o-consorcio',
   getParentRoute: () => rootRouteImport,
 } as any)
+const IgrejasRoute = IgrejasRouteImport.update({
+  id: '/igrejas',
+  path: '/igrejas',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ObrigadoRoute = ObrigadoRouteImport.update({
   id: '/obrigado',
   path: '/obrigado',
@@ -45,6 +51,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/central-de-conhecimento': typeof CentralDeConhecimentoRoute
   '/como-funciona-o-consorcio': typeof ComoFuncionaOConsorcioRoute
+  '/igrejas': typeof IgrejasRoute
   '/obrigado': typeof ObrigadoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
@@ -52,6 +59,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/central-de-conhecimento': typeof CentralDeConhecimentoRoute
   '/como-funciona-o-consorcio': typeof ComoFuncionaOConsorcioRoute
+  '/igrejas': typeof IgrejasRoute
   '/obrigado': typeof ObrigadoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
@@ -60,6 +68,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/central-de-conhecimento': typeof CentralDeConhecimentoRoute
   '/como-funciona-o-consorcio': typeof ComoFuncionaOConsorcioRoute
+  '/igrejas': typeof IgrejasRoute
   '/obrigado': typeof ObrigadoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
@@ -69,6 +78,7 @@ export interface FileRouteTypes {
     | '/'
     | '/central-de-conhecimento'
     | '/como-funciona-o-consorcio'
+    | '/igrejas'
     | '/obrigado'
     | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
@@ -76,6 +86,7 @@ export interface FileRouteTypes {
     | '/'
     | '/central-de-conhecimento'
     | '/como-funciona-o-consorcio'
+    | '/igrejas'
     | '/obrigado'
     | '/sitemap.xml'
   id:
@@ -83,6 +94,7 @@ export interface FileRouteTypes {
     | '/'
     | '/central-de-conhecimento'
     | '/como-funciona-o-consorcio'
+    | '/igrejas'
     | '/obrigado'
     | '/sitemap.xml'
   fileRoutesById: FileRoutesById
@@ -91,6 +103,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CentralDeConhecimentoRoute: typeof CentralDeConhecimentoRoute
   ComoFuncionaOConsorcioRoute: typeof ComoFuncionaOConsorcioRoute
+  IgrejasRoute: typeof IgrejasRoute
   ObrigadoRoute: typeof ObrigadoRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
@@ -118,6 +131,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComoFuncionaOConsorcioRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/igrejas': {
+      id: '/igrejas'
+      path: '/igrejas'
+      fullPath: '/igrejas'
+      preLoaderRoute: typeof IgrejasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/obrigado': {
       id: '/obrigado'
       path: '/obrigado'
@@ -139,6 +159,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CentralDeConhecimentoRoute: CentralDeConhecimentoRoute,
   ComoFuncionaOConsorcioRoute: ComoFuncionaOConsorcioRoute,
+  IgrejasRoute: IgrejasRoute,
   ObrigadoRoute: ObrigadoRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }

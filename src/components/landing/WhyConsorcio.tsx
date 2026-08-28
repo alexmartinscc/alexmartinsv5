@@ -252,7 +252,14 @@ const ITEMS = [
   },
 ];
 
-export function WhyConsorcio() {
+type WhyConsorcioProps = {
+  /** Texto introdutório opcional (padrão: texto da Home). */
+  intro?: string;
+};
+
+export function WhyConsorcio({
+  intro = "Quando você compara custo, planejamento e liberdade de escolha, fica mais fácil entender as vantagens do consórcio.",
+}: WhyConsorcioProps = {}) {
   return (
     <section id="por-que-consorcio" className="scroll-mt-24 bg-secondary py-16 md:py-24">
       <div className="section-shell">
@@ -262,8 +269,7 @@ export function WhyConsorcio() {
             Por que tantas pessoas estão escolhendo o consórcio?
           </h2>
           <p className="mx-auto mt-4 max-w-xl leading-[1.7] text-muted-foreground">
-            Quando você compara custo, planejamento e liberdade de escolha, fica mais fácil entender
-            as vantagens do consórcio.
+{intro}
           </p>
         </Reveal>
 
