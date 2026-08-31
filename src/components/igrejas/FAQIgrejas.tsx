@@ -93,24 +93,33 @@ export function FAQIgrejas() {
                 className="overflow-hidden rounded-2xl border border-border bg-card"
               >
                 <AccordionPrimitive.Header>
-                  <AccordionPrimitive.Trigger
-                    className="group flex w-full items-start justify-between gap-4 px-5 py-4 text-left text-base font-semibold text-primary transition-colors hover:bg-secondary/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:text-lg"
-                  >
-                    <span>{item.q}</span>
-                    <span className="mt-0.5 shrink-0 text-gold" aria-hidden="true">
-                      <Plus className="h-5 w-5 group-data-[state=open]:hidden" />
-                      <Minus className="hidden h-5 w-5 group-data-[state=open]:block" />
-                    </span>
+                  <AccordionPrimitive.Trigger asChild>
+                    <button
+                      type="button"
+                      id={`faq-trigger-${index}`}
+                      aria-controls={`faq-panel-${index}`}
+                      className="group flex w-full items-start justify-between gap-4 px-5 py-4 text-left text-base font-semibold text-primary transition-colors hover:bg-secondary/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:text-lg"
+                    >
+                      <span>{item.q}</span>
+                      <span className="mt-0.5 shrink-0 text-gold" aria-hidden="true">
+                        <Plus className="h-5 w-5 group-data-[state=open]:hidden" />
+                        <Minus className="hidden h-5 w-5 group-data-[state=open]:block" />
+                      </span>
+                    </button>
                   </AccordionPrimitive.Trigger>
                 </AccordionPrimitive.Header>
-                <AccordionPrimitive.Content
-                  forceMount
-                  className="overflow-hidden [&[hidden]]:block data-[state=closed]:h-0 data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
-                >
-                  <div className="space-y-3 px-5 pb-5 leading-[1.7] text-muted-foreground">
-                    {item.a.map((p) => (
-                      <p key={p}>{p}</p>
-                    ))}
+                <AccordionPrimitive.Content forceMount asChild>
+                  <div
+                    id={`faq-panel-${index}`}
+                    data-faq-answer
+                    aria-labelledby={`faq-trigger-${index}`}
+                    className="overflow-hidden data-[state=closed]:h-0 data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+                  >
+                    <div className="space-y-3 px-5 pb-5 leading-[1.7] text-muted-foreground">
+                      {item.a.map((p) => (
+                        <p key={p}>{p}</p>
+                      ))}
+                    </div>
                   </div>
                 </AccordionPrimitive.Content>
               </AccordionPrimitive.Item>
