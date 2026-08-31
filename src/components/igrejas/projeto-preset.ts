@@ -1,4 +1,4 @@
-export type ProjetoTipo = "igreja" | "pessoal" | "ambos";
+export type ProjetoTipo = "igreja" | "pessoal" | "membro" | "ambos";
 
 type Listener = (tipo: ProjetoTipo) => void;
 

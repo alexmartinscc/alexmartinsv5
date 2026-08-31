@@ -59,14 +59,20 @@ export function MetodoMapa({
                 delay={index * 100}
                 className="relative pl-12 lg:pl-0 lg:text-center"
               >
-                <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center bg-primary lg:static lg:mx-auto lg:h-[6.5rem] lg:w-auto">
+                <div
+                  aria-hidden="true"
+                  className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center bg-primary lg:static lg:mx-auto lg:h-[6.5rem] lg:w-auto"
+                >
                   <span className="font-display text-3xl font-extrabold text-gold lg:bg-primary lg:px-2 lg:text-6xl">
                     {step.letter}
                   </span>
                 </div>
 
                 <div>
-                  <span className="text-xs font-semibold uppercase tracking-widest text-gold/80">
+                  <span
+                    aria-hidden="true"
+                    className="text-xs font-semibold uppercase tracking-widest text-gold/80"
+                  >
                     {step.letter} — {step.title}
                   </span>
                   <h3 className="mt-0.5 text-lg font-bold text-primary-foreground lg:mt-5">
