@@ -15,14 +15,14 @@ export const FAQ_IGREJAS: FaqItem[] = [
   {
     q: "O consórcio é realmente sem juros?",
     a: [
-      "Sim. No consórcio não há cobrança de juros como em um financiamento. O plano possui taxa de administração e outros componentes previstos em contrato.",
-      "Por isso, a comparação deve considerar o custo total do projeto e não apenas o valor da parcela.",
+      "Sim. No consórcio não há cobrança de juros como em um financiamento. O plano possui taxa de administração e, conforme a modalidade contratada, outros componentes previstos em contrato.",
+      "Por não existir a cobrança dos juros de um financiamento, o consórcio pode ser uma alternativa econômica e planejada para adquirir um bem.",
     ],
   },
   {
     q: "A igreja precisa dar entrada?",
     a: [
-      "Não. O plano pode ser iniciado sem entrada. O lance é opcional e faz parte da estratégia de contemplação, não sendo uma exigência para participar do grupo.",
+      "Não. O plano pode ser iniciado sem entrada. O lance é opcional, pode ser ofertado desde a primeira assembleia e faz parte das estratégias de contemplação, não sendo uma exigência para participar do grupo.",
     ],
   },
   {
@@ -38,29 +38,30 @@ export const FAQ_IGREJAS: FaqItem[] = [
     ],
   },
   {
-    q: "É possível adquirir vans, automóveis e utilitários?",
+    q: "É possível adquirir vans, automóveis, utilitários ou equipamentos?",
     a: [
-      "Sim. Existem modalidades específicas para veículos leves, utilitários e pesados, que podem atender às necessidades de transporte e serviço da igreja.",
+      "Sim. Existem modalidades para veículos leves, utilitários e pesados, que podem atender às necessidades de transporte e serviço da igreja.",
+      "A Ademicon também possui modalidades para outros bens móveis duráveis e equipamentos, permitindo avaliar itens adequados às necessidades da instituição, de acordo com as regras e a categoria do consórcio contratado.",
     ],
   },
   {
     q: "Como funciona a contemplação?",
     a: [
-      "A contemplação acontece por sorteio ou por lance, nas assembleias do grupo. Não existe data garantida de contemplação.",
+      "A contemplação acontece por sorteio ou por lance, nas assembleias do grupo.",
       "Meu papel é ajudar a igreja a entender o processo, acompanhar as assembleias e organizar estratégias de lance conforme a realidade da instituição.",
     ],
   },
   {
-    q: "Um pastor pode usar consórcio para construir patrimônio?",
+    q: "Um pastor pode usar o consórcio para construir patrimônio?",
     a: [
-      "Sim. Como pessoa física, o pastor pode utilizar o consórcio para adquirir imóveis, terrenos, construir ou comprar veículos, estruturando o projeto de acordo com sua renda e seus objetivos.",
+      "Sim. Como pessoa física, tanto o pastor quanto os membros da igreja podem utilizar o consórcio para adquirir imóveis, terrenos, construir ou comprar veículos, estruturando o projeto de acordo com sua renda e seus objetivos.",
+      "O consórcio pode fazer parte de uma estratégia de construção patrimonial de médio e longo prazo.",
     ],
   },
   {
     q: "Como imóveis podem fazer parte do planejamento para aposentadoria ou jubilação?",
     a: [
       "Imóveis podem compor uma estratégia de longo prazo, seja para uso próprio, seja para gerar renda complementar por locação.",
-      "Os resultados dependem do mercado, da localização e das condições de cada operação, por isso o planejamento é feito caso a caso, sem promessa de rentabilidade.",
     ],
   },
   {
@@ -79,7 +80,7 @@ export function FAQIgrejas() {
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow justify-center">Perguntas frequentes</p>
           <h2 className="mt-4 text-3xl font-extrabold text-primary md:text-[2.5rem] md:leading-[1.15]">
-            Dúvidas de igrejas e pastores
+            Dúvidas de igrejas, pastores e membros
           </h2>
         </Reveal>
 
@@ -92,19 +93,33 @@ export function FAQIgrejas() {
                 className="overflow-hidden rounded-2xl border border-border bg-card"
               >
                 <AccordionPrimitive.Header>
-                  <AccordionPrimitive.Trigger className="group flex w-full items-start justify-between gap-4 px-5 py-4 text-left text-base font-semibold text-primary transition-colors hover:bg-secondary/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:text-lg">
-                    <span>{item.q}</span>
-                    <span className="mt-0.5 shrink-0 text-gold" aria-hidden="true">
-                      <Plus className="h-5 w-5 group-data-[state=open]:hidden" />
-                      <Minus className="hidden h-5 w-5 group-data-[state=open]:block" />
-                    </span>
+                  <AccordionPrimitive.Trigger asChild>
+                    <button
+                      type="button"
+                      id={`faq-trigger-${index}`}
+                      aria-controls={`faq-panel-${index}`}
+                      className="group flex w-full items-start justify-between gap-4 px-5 py-4 text-left text-base font-semibold text-primary transition-colors hover:bg-secondary/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:text-lg"
+                    >
+                      <span>{item.q}</span>
+                      <span className="mt-0.5 shrink-0 text-gold" aria-hidden="true">
+                        <Plus className="h-5 w-5 group-data-[state=open]:hidden" />
+                        <Minus className="hidden h-5 w-5 group-data-[state=open]:block" />
+                      </span>
+                    </button>
                   </AccordionPrimitive.Trigger>
                 </AccordionPrimitive.Header>
-                <AccordionPrimitive.Content className="overflow-hidden data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
-                  <div className="space-y-3 px-5 pb-5 leading-[1.7] text-muted-foreground">
-                    {item.a.map((p) => (
-                      <p key={p}>{p}</p>
-                    ))}
+                <AccordionPrimitive.Content forceMount asChild>
+                  <div
+                    id={`faq-panel-${index}`}
+                    data-faq-answer
+                    aria-labelledby={`faq-trigger-${index}`}
+                    className="overflow-hidden data-[state=closed]:h-0 data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+                  >
+                    <div className="space-y-3 px-5 pb-5 leading-[1.7] text-muted-foreground">
+                      {item.a.map((p) => (
+                        <p key={p}>{p}</p>
+                      ))}
+                    </div>
                   </div>
                 </AccordionPrimitive.Content>
               </AccordionPrimitive.Item>

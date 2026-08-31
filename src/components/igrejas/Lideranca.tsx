@@ -35,7 +35,8 @@ export function Lideranca() {
             </p>
             <p>
               A conversa pode acontecer por videochamada, WhatsApp ou reunião presencial, quando
-              aplicável.
+              aplicável. Também posso orientar projetos pessoais do pastor e de membros da
+              comunidade, sempre de forma individual e sem qualquer vínculo com a igreja.
             </p>
           </div>
 

@@ -210,3 +210,8 @@
 @utility measure {
   max-width: 34rem;
 }
+
+/* Respostas do FAQ permanecem no DOM e renderizadas quando o item está fechado. */
+[data-faq-answer][hidden] {
+  display: block;
+}
