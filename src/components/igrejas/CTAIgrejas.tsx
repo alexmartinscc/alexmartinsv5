@@ -28,10 +28,10 @@ const OBJETIVOS_IGREJA = [
 
 const OBJETIVOS_PESSOAL = [
   "Comprar imóvel",
+  "Comprar terreno",
   "Construir",
   "Gerar renda com imóveis",
-  "Planejar patrimônio para aposentadoria",
-  "Comprar terreno",
+  "Planejar patrimônio",
   "Comprar veículo",
   "Outro",
 ];
@@ -92,7 +92,7 @@ export function CTAIgrejas() {
   const objetivos =
     projeto === "igreja"
       ? OBJETIVOS_IGREJA
-      : projeto === "pessoal"
+      : projeto === "pessoal" || projeto === "membro"
         ? OBJETIVOS_PESSOAL
         : projeto === "ambos"
           ? [
@@ -207,13 +207,14 @@ export function CTAIgrejas() {
                           setProjeto(value as ProjetoTipo);
                           setObjetivo("");
                         }}
-                        className="grid gap-2 sm:grid-cols-3"
+                        className="grid gap-2 sm:grid-cols-2"
                         aria-describedby={errors.projeto ? "erro-projeto" : undefined}
                       >
                         {[
                           { value: "igreja", label: "Minha igreja" },
-                          { value: "pessoal", label: "Meu patrimônio pessoal ou familiar" },
-                          { value: "ambos", label: "Ambos" },
+                          { value: "pessoal", label: "Para mim ou minha família" },
+                          { value: "membro", label: "Para um membro da igreja" },
+                          { value: "ambos", label: "Igreja e projeto pessoal" },
                         ].map((opt) => (
                           <div
                             key={opt.value}
