@@ -80,7 +80,7 @@ export function FAQIgrejas() {
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow justify-center">Perguntas frequentes</p>
           <h2 className="mt-4 text-3xl font-extrabold text-primary md:text-[2.5rem] md:leading-[1.15]">
-            Dúvidas de igrejas e pastores
+            Dúvidas de igrejas, pastores e membros
           </h2>
         </Reveal>
 
@@ -101,7 +101,7 @@ export function FAQIgrejas() {
                     </span>
                   </AccordionPrimitive.Trigger>
                 </AccordionPrimitive.Header>
-                <AccordionPrimitive.Content className="overflow-hidden data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+                <AccordionPrimitive.Content forceMount className="overflow-hidden data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
                   <div className="space-y-3 px-5 pb-5 leading-[1.7] text-muted-foreground">
                     {item.a.map((p) => (
                       <p key={p}>{p}</p>
