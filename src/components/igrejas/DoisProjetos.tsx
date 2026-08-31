@@ -16,8 +16,8 @@ const AREAS = [
   },
   {
     icon: Home,
-    title: "Para você e sua família",
-    subtitle: "Construa patrimônio para o seu futuro.",
+    title: "Para você e os membros de sua igreja",
+    subtitle: "Construa patrimônio e planeje o futuro com mais segurança.",
     items: [
       "Casa própria",
       "Imóveis para renda",
@@ -40,8 +40,8 @@ export function DoisProjetos() {
             Dois tipos de responsabilidade.
           </h2>
           <p className="mx-auto mt-4 max-w-xl leading-[1.7] text-muted-foreground">
-            Cuidar da obra e cuidar do futuro da sua família podem caminhar juntos quando existe
-            planejamento.
+            Os projetos da igreja e os objetivos pessoais de quem faz parte dela ganham mais clareza
+            quando existe planejamento.
           </p>
         </Reveal>
 
@@ -70,10 +70,18 @@ export function DoisProjetos() {
           ))}
         </div>
 
-        <Reveal delay={150} className="mt-12">
+        <Reveal delay={120} className="mt-8">
+          <p className="mx-auto max-w-3xl text-center leading-[1.7] text-muted-foreground">
+            O mesmo planejamento que pode ajudar a igreja a realizar seus projetos também pode ser
+            utilizado individualmente pelo pastor e pelos membros da comunidade para construir
+            patrimônio e realizar objetivos pessoais.
+          </p>
+        </Reveal>
+
+        <Reveal delay={150} className="mt-8">
           <p className="mx-auto max-w-3xl border-l-2 border-gold bg-secondary px-5 py-4 text-base leading-[1.7] text-primary md:text-lg">
-            Cuidar da igreja e cuidar do futuro da sua família não precisam ser projetos
-            concorrentes. Com planejamento, é possível construir os dois caminhos.
+            Os projetos da igreja, o futuro do pastor e os objetivos das famílias que fazem parte da
+            comunidade podem seguir caminhos diferentes, mas todos se beneficiam de planejamento.
           </p>
         </Reveal>
       </div>
