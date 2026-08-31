@@ -29,9 +29,9 @@ export function Igrejas() {
         <DoisProjetos />
         <ProjetosIgreja />
         <FuturoPastor />
-        <WhyConsorcio intro="Seja para os projetos da igreja ou para a construção do seu patrimônio, entender como o consórcio funciona ajuda você a tomar uma decisão com mais clareza." />
+        <WhyConsorcio intro="Seja para os projetos da igreja, para o seu patrimônio ou para os membros da comunidade, entender como o consórcio funciona ajuda a tomar decisões com mais clareza." />
         <Seguranca />
-        <MetodoMapa intro="Antes de falar em valores ou parcelas, eu procuro entender o que você quer construir — seja um projeto para sua igreja, para sua família ou para o seu futuro. A partir daí, usamos o Método MAPA para estruturar o caminho." />
+        <MetodoMapa intro="Antes de falar em valores ou parcelas, eu procuro entender o que você quer construir — seja um projeto para sua igreja, para você ou para os membros da sua comunidade. A partir daí, usamos o Método MAPA para estruturar o caminho." />
         <SobreIgrejas />
         <Lideranca />
         <FAQIgrejas />
