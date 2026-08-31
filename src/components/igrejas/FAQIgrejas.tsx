@@ -94,8 +94,6 @@ export function FAQIgrejas() {
               >
                 <AccordionPrimitive.Header>
                   <AccordionPrimitive.Trigger
-                    id={`faq-trigger-${index}`}
-                    aria-controls={`faq-panel-${index}`}
                     className="group flex w-full items-start justify-between gap-4 px-5 py-4 text-left text-base font-semibold text-primary transition-colors hover:bg-secondary/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:text-lg"
                   >
                     <span>{item.q}</span>
@@ -107,10 +105,7 @@ export function FAQIgrejas() {
                 </AccordionPrimitive.Header>
                 <AccordionPrimitive.Content
                   forceMount
-                  hidden={false}
-                  id={`faq-panel-${index}`}
-                  aria-labelledby={`faq-trigger-${index}`}
-                  className="overflow-hidden data-[state=closed]:h-0 data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+                  className="overflow-hidden [&[hidden]]:block data-[state=closed]:h-0 data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
                 >
                   <div className="space-y-3 px-5 pb-5 leading-[1.7] text-muted-foreground">
                     {item.a.map((p) => (
