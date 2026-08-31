@@ -29,14 +29,15 @@ export function FuturoPastor() {
           </h2>
 
           <div className="mt-5 space-y-4 leading-[1.7] text-muted-foreground">
+            <p>A vocação ministerial não termina.</p>
             <p>
-              O ministério não termina. Mas, em algum momento, chegam a aposentadoria, a jubilação
-              ou a necessidade de diminuir o ritmo.
+              Durante muitos anos, é natural que o pastor coloque a igreja e as pessoas que serve à
+              frente de muitas decisões pessoais. Nesse caminho, o próprio planejamento patrimonial
+              pode acabar ficando para depois.
             </p>
             <p>
-              Durante muitos anos, é natural que o pastor coloque a igreja, a família e as pessoas
-              que serve à frente de muitas decisões pessoais. Nesse caminho, o próprio planejamento
-              patrimonial pode acabar ficando para depois.
+              Mas, em algum momento, chegam a aposentadoria, a jubilação ou simplesmente a
+              necessidade de diminuir o ritmo das atividades.
             </p>
             <p>Começar enquanto existe renda e tempo pode fazer uma diferença significativa no futuro.</p>
           </div>
@@ -51,7 +52,9 @@ export function FuturoPastor() {
             </p>
             <p>
               O objetivo não é deixar o ministério. É conquistar mais liberdade para continuar
-              servindo sem depender exclusivamente da renda ministerial.
+              servindo com o apoio e a segurança de uma renda complementar — seja para ajudar a
+              pagar um plano de saúde, planejar férias, formar uma reserva de emergência ou
+              simplesmente viver essa nova fase com mais tranquilidade.
             </p>
           </div>
 
