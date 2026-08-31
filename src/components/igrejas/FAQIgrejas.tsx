@@ -15,14 +15,14 @@ export const FAQ_IGREJAS: FaqItem[] = [
   {
     q: "O consórcio é realmente sem juros?",
     a: [
-      "Sim. No consórcio não há cobrança de juros como em um financiamento. O plano possui taxa de administração e outros componentes previstos em contrato.",
-      "Por isso, a comparação deve considerar o custo total do projeto e não apenas o valor da parcela.",
+      "Sim. No consórcio não há cobrança de juros como em um financiamento. O plano possui taxa de administração e, conforme a modalidade contratada, outros componentes previstos em contrato.",
+      "Por não existir a cobrança dos juros de um financiamento, o consórcio pode ser uma alternativa econômica e planejada para adquirir um bem.",
     ],
   },
   {
     q: "A igreja precisa dar entrada?",
     a: [
-      "Não. O plano pode ser iniciado sem entrada. O lance é opcional e faz parte da estratégia de contemplação, não sendo uma exigência para participar do grupo.",
+      "Não. O plano pode ser iniciado sem entrada. O lance é opcional, pode ser ofertado desde a primeira assembleia e faz parte das estratégias de contemplação, não sendo uma exigência para participar do grupo.",
     ],
   },
   {
@@ -38,29 +38,30 @@ export const FAQ_IGREJAS: FaqItem[] = [
     ],
   },
   {
-    q: "É possível adquirir vans, automóveis e utilitários?",
+    q: "É possível adquirir vans, automóveis, utilitários ou equipamentos?",
     a: [
-      "Sim. Existem modalidades específicas para veículos leves, utilitários e pesados, que podem atender às necessidades de transporte e serviço da igreja.",
+      "Sim. Existem modalidades para veículos leves, utilitários e pesados, que podem atender às necessidades de transporte e serviço da igreja.",
+      "A Ademicon também possui modalidades para outros bens móveis duráveis e equipamentos, permitindo avaliar itens adequados às necessidades da instituição, de acordo com as regras e a categoria do consórcio contratado.",
     ],
   },
   {
     q: "Como funciona a contemplação?",
     a: [
-      "A contemplação acontece por sorteio ou por lance, nas assembleias do grupo. Não existe data garantida de contemplação.",
+      "A contemplação acontece por sorteio ou por lance, nas assembleias do grupo.",
       "Meu papel é ajudar a igreja a entender o processo, acompanhar as assembleias e organizar estratégias de lance conforme a realidade da instituição.",
     ],
   },
   {
-    q: "Um pastor pode usar consórcio para construir patrimônio?",
+    q: "Um pastor pode usar o consórcio para construir patrimônio?",
     a: [
-      "Sim. Como pessoa física, o pastor pode utilizar o consórcio para adquirir imóveis, terrenos, construir ou comprar veículos, estruturando o projeto de acordo com sua renda e seus objetivos.",
+      "Sim. Como pessoa física, tanto o pastor quanto os membros da igreja podem utilizar o consórcio para adquirir imóveis, terrenos, construir ou comprar veículos, estruturando o projeto de acordo com sua renda e seus objetivos.",
+      "O consórcio pode fazer parte de uma estratégia de construção patrimonial de médio e longo prazo.",
     ],
   },
   {
     q: "Como imóveis podem fazer parte do planejamento para aposentadoria ou jubilação?",
     a: [
       "Imóveis podem compor uma estratégia de longo prazo, seja para uso próprio, seja para gerar renda complementar por locação.",
-      "Os resultados dependem do mercado, da localização e das condições de cada operação, por isso o planejamento é feito caso a caso, sem promessa de rentabilidade.",
     ],
   },
   {
