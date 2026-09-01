@@ -117,7 +117,7 @@ function ComparisonTable() {
   );
 }
 
-function MenorCustoContent() {
+export function MenorCustoContent() {
   return (
     <div className="space-y-5">
       <div>
@@ -184,7 +184,16 @@ function MenorCustoContent() {
   );
 }
 
-const ITEMS = [
+export type WhyItem = {
+  id: string;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  title: string;
+  lead: string;
+  hint?: string;
+  content: React.ReactNode;
+};
+
+const ITEMS: WhyItem[] = [
   {
     id: "menor-custo",
     icon: Coins,
@@ -290,7 +299,7 @@ export function WhyConsorcio({
             collapsible
             className="w-full divide-y divide-border/70 rounded-3xl border border-border/70 bg-background"
           >
-            {ITEMS.map((item) => (
+            {items.map((item) => (
               <AccordionPrimitive.Item key={item.id} value={item.id} className="px-4 md:px-6">
                 <AccordionPrimitive.Header className="flex">
                   <AccordionPrimitive.Trigger className="group flex w-full cursor-pointer items-start gap-3 py-5 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background md:gap-4 md:py-6">
@@ -327,10 +336,12 @@ export function WhyConsorcio({
         </Reveal>
 
         <Reveal className="mt-10 text-center" delay={180}>
-          <p className="text-muted-foreground">
-            Cada projeto possui características diferentes. Entender qual estratégia faz mais sentido
-            é o primeiro passo.
-          </p>
+          {footer ?? (
+            <p className="text-muted-foreground">
+              Cada projeto possui características diferentes. Entender qual estratégia faz mais
+              sentido é o primeiro passo.
+            </p>
+          )}
         </Reveal>
       </div>
     </section>
