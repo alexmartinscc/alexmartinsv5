@@ -15,6 +15,7 @@ interface SitemapEntry {
 const ENTRIES: SitemapEntry[] = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
   { path: "/igrejas", changefreq: "monthly", priority: "0.9" },
+  { path: "/saude", changefreq: "monthly", priority: "0.9" },
 ];
 
 export const Route = createFileRoute("/sitemap.xml")({
