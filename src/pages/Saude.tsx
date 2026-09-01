@@ -1,11 +1,11 @@
 import { Header } from "@/components/landing/Header";
 import { Footer } from "@/components/landing/Footer";
+import { MetodoMapa } from "@/components/landing/MetodoMapa";
+import { About } from "@/components/landing/About";
 import { HeroSaude } from "@/components/saude/HeroSaude";
 import { Dores } from "@/components/saude/Dores";
 import { Objetivos } from "@/components/saude/Objetivos";
 import { PorQueConsorcioSaude } from "@/components/saude/PorQueConsorcioSaude";
-import { MetodoSaude } from "@/components/saude/MetodoSaude";
-import { SobreSaude } from "@/components/saude/SobreSaude";
 import { FAQSaude } from "@/components/saude/FAQSaude";
 import { CTASaude } from "@/components/saude/CTASaude";
 
@@ -28,8 +28,8 @@ export function Saude() {
         <Dores />
         <Objetivos />
         <PorQueConsorcioSaude />
-        <MetodoSaude />
-        <SobreSaude />
+        <MetodoMapa />
+        <About />
         <FAQSaude />
         <CTASaude />
       </main>
