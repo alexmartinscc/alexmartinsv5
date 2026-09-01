@@ -15,11 +15,11 @@ export function HeroSaude() {
         decoding="async"
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 -z-10 h-full w-full object-cover object-[76%_18%] md:object-[72%_center]"
+        className="absolute inset-0 -z-10 h-full w-full object-cover object-[72%_12%] md:object-[72%_center]"
       />
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-gradient-to-b from-primary-deep/94 via-primary-deep/82 to-primary-deep/90 md:bg-gradient-to-r md:from-primary-deep md:via-primary-deep/85 md:to-primary-deep/15"
+        className="absolute inset-0 -z-10 bg-gradient-to-b from-primary-deep/86 via-primary-deep/84 to-primary-deep/95 md:bg-gradient-to-r md:from-primary-deep md:via-primary-deep/85 md:to-primary-deep/15"
       />
 
       <div className="section-shell flex min-h-[78vh] flex-col justify-center pt-28 pb-12 md:min-h-[86vh] md:pt-32 md:pb-20">
