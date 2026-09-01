@@ -14,6 +14,7 @@ import { Route as CentralDeConhecimentoRouteImport } from './routes/central-de-c
 import { Route as ComoFuncionaOConsorcioRouteImport } from './routes/como-funciona-o-consorcio'
 import { Route as IgrejasRouteImport } from './routes/igrejas'
 import { Route as ObrigadoRouteImport } from './routes/obrigado'
+import { Route as SaudeRouteImport } from './routes/saude'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 
 const IndexRoute = IndexRouteImport.update({
@@ -41,6 +42,11 @@ const ObrigadoRoute = ObrigadoRouteImport.update({
   path: '/obrigado',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SaudeRoute = SaudeRouteImport.update({
+  id: '/saude',
+  path: '/saude',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -53,6 +59,7 @@ export interface FileRoutesByFullPath {
   '/como-funciona-o-consorcio': typeof ComoFuncionaOConsorcioRoute
   '/igrejas': typeof IgrejasRoute
   '/obrigado': typeof ObrigadoRoute
+  '/saude': typeof SaudeRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
@@ -61,6 +68,7 @@ export interface FileRoutesByTo {
   '/como-funciona-o-consorcio': typeof ComoFuncionaOConsorcioRoute
   '/igrejas': typeof IgrejasRoute
   '/obrigado': typeof ObrigadoRoute
+  '/saude': typeof SaudeRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
@@ -70,6 +78,7 @@ export interface FileRoutesById {
   '/como-funciona-o-consorcio': typeof ComoFuncionaOConsorcioRoute
   '/igrejas': typeof IgrejasRoute
   '/obrigado': typeof ObrigadoRoute
+  '/saude': typeof SaudeRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
@@ -80,6 +89,7 @@ export interface FileRouteTypes {
     | '/como-funciona-o-consorcio'
     | '/igrejas'
     | '/obrigado'
+    | '/saude'
     | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -88,6 +98,7 @@ export interface FileRouteTypes {
     | '/como-funciona-o-consorcio'
     | '/igrejas'
     | '/obrigado'
+    | '/saude'
     | '/sitemap.xml'
   id:
     | '__root__'
@@ -96,6 +107,7 @@ export interface FileRouteTypes {
     | '/como-funciona-o-consorcio'
     | '/igrejas'
     | '/obrigado'
+    | '/saude'
     | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
@@ -105,6 +117,7 @@ export interface RootRouteChildren {
   ComoFuncionaOConsorcioRoute: typeof ComoFuncionaOConsorcioRoute
   IgrejasRoute: typeof IgrejasRoute
   ObrigadoRoute: typeof ObrigadoRoute
+  SaudeRoute: typeof SaudeRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
@@ -145,6 +158,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ObrigadoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/saude': {
+      id: '/saude'
+      path: '/saude'
+      fullPath: '/saude'
+      preLoaderRoute: typeof SaudeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -161,6 +181,7 @@ const rootRouteChildren: RootRouteChildren = {
   ComoFuncionaOConsorcioRoute: ComoFuncionaOConsorcioRoute,
   IgrejasRoute: IgrejasRoute,
   ObrigadoRoute: ObrigadoRoute,
+  SaudeRoute: SaudeRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
