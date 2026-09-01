@@ -23,10 +23,8 @@ const WHATSAPP_SAUDE_URL =
   );
 
 const OBJETIVOS = [
+  "Expandir meu negócio",
   "Construir patrimônio e gerar renda",
-  "Investir ou expandir meu negócio",
-  "Adquirir imóvel, equipamentos ou veículos",
-  "Obter crédito utilizando meu imóvel",
   "Quero avaliar minhas possibilidades",
 ];
 
@@ -97,18 +95,22 @@ export function CTASaude() {
             <div className="relative grid gap-8 lg:grid-cols-[42fr_58fr] lg:items-start lg:gap-12 [&>*]:min-w-0">
               <div>
                 <h2 className="text-3xl font-extrabold text-primary-foreground md:text-[2.25rem] md:leading-[1.15]">
-                  Seu próximo patrimônio começa com uma decisão bem estruturada.
+                  Você trabalha muito pelo seu dinheiro. Faça ele trabalhar pelos seus próximos
+                  objetivos.
                 </h2>
                 <p className="mt-4 leading-[1.7] text-primary-foreground/70">
-                  Talvez você queira comprar um imóvel, expandir sua clínica, preservar seus
-                  investimentos, utilizar melhor um patrimônio que já possui ou construir renda para
-                  o futuro.
+                  Se você quer expandir seu negócio, construir patrimônio, preservar capital ou
+                  criar novas fontes de renda, o primeiro passo é entender como utilizar melhor os
+                  recursos que já possui.
                 </p>
                 <p className="mt-4 border-l-2 border-gold pl-4 text-base font-semibold leading-[1.7] text-primary-foreground">
-                  Não comece escolhendo o produto. Comece definindo a estratégia.
+                  Não comece escolhendo o produto.
                 </p>
-                <p className="mt-4 leading-[1.7] text-primary-foreground/70">
-                  Conte-me o que você deseja conquistar. Vamos avaliar juntos as possibilidades.
+                <p className="mt-5 text-xl font-extrabold leading-[1.3] text-primary-foreground md:text-2xl">
+                  Comece definindo a estratégia.
+                </p>
+                <p className="mt-3 leading-[1.7] text-primary-foreground/70">
+                  Conte-me o que você deseja conquistar.
                 </p>
 
                 <div className="mt-6 flex flex-col gap-2 text-sm text-primary-foreground/70">
@@ -271,7 +273,7 @@ export function CTASaude() {
                       className="w-full rounded-xl bg-gold text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90"
                     >
                       <Send className="h-4 w-4" aria-hidden />
-                      Quero estruturar minha estratégia
+                      Quero potencializar meus recursos
                     </Button>
 
                     <p className="text-xs leading-[1.6] text-muted-foreground">

@@ -117,7 +117,7 @@ function ComparisonTable() {
   );
 }
 
-function MenorCustoContent() {
+export function MenorCustoContent() {
   return (
     <div className="space-y-5">
       <div>
@@ -184,7 +184,16 @@ function MenorCustoContent() {
   );
 }
 
-const ITEMS = [
+export type WhyItem = {
+  id: string;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  title: string;
+  lead: string;
+  hint?: string;
+  content: React.ReactNode;
+};
+
+const ITEMS: WhyItem[] = [
   {
     id: "menor-custo",
     icon: Coins,
@@ -253,25 +262,36 @@ const ITEMS = [
 ];
 
 type WhyConsorcioProps = {
+  /** Eyebrow opcional (padrão: texto da Home). */
+  eyebrow?: string;
+  /** Título opcional (padrão: texto da Home). */
+  title?: string;
   /** Texto introdutório opcional (padrão: texto da Home). */
   intro?: string;
+  /** Itens do accordion (padrão: itens da Home). */
+  items?: WhyItem[];
+  /** Bloco final opcional (padrão: texto da Home). */
+  footer?: React.ReactNode;
 };
 
 export function WhyConsorcio({
+  eyebrow = "Benefícios",
+  title = "Por que tantas pessoas estão escolhendo o consórcio?",
   intro = "Quando você compara custo, planejamento e liberdade de escolha, fica mais fácil entender as vantagens do consórcio.",
+  items = ITEMS,
+  footer,
 }: WhyConsorcioProps = {}) {
   return (
     <section id="por-que-consorcio" className="scroll-mt-24 bg-secondary py-16 md:py-24">
       <div className="section-shell">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <p className="eyebrow justify-center">Benefícios</p>
+          <p className="eyebrow justify-center">{eyebrow}</p>
           <h2 className="mt-4 text-3xl font-extrabold text-primary md:text-[2.5rem] md:leading-[1.15]">
-            Por que tantas pessoas estão escolhendo o consórcio?
+            {title}
           </h2>
-          <p className="mx-auto mt-4 max-w-xl leading-[1.7] text-muted-foreground">
-{intro}
-          </p>
+          <p className="mx-auto mt-4 max-w-xl leading-[1.7] text-muted-foreground">{intro}</p>
         </Reveal>
+
 
         <Reveal delay={100} className="mx-auto mt-8 max-w-4xl md:mt-10">
           <AccordionPrimitive.Root
@@ -279,7 +299,7 @@ export function WhyConsorcio({
             collapsible
             className="w-full divide-y divide-border/70 rounded-3xl border border-border/70 bg-background"
           >
-            {ITEMS.map((item) => (
+            {items.map((item) => (
               <AccordionPrimitive.Item key={item.id} value={item.id} className="px-4 md:px-6">
                 <AccordionPrimitive.Header className="flex">
                   <AccordionPrimitive.Trigger className="group flex w-full cursor-pointer items-start gap-3 py-5 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background md:gap-4 md:py-6">
@@ -316,10 +336,12 @@ export function WhyConsorcio({
         </Reveal>
 
         <Reveal className="mt-10 text-center" delay={180}>
-          <p className="text-muted-foreground">
-            Cada projeto possui características diferentes. Entender qual estratégia faz mais sentido
-            é o primeiro passo.
-          </p>
+          {footer ?? (
+            <p className="text-muted-foreground">
+              Cada projeto possui características diferentes. Entender qual estratégia faz mais
+              sentido é o primeiro passo.
+            </p>
+          )}
         </Reveal>
       </div>
     </section>
