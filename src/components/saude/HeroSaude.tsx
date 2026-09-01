@@ -14,7 +14,7 @@ export function HeroSaude() {
         fetchPriority="high"
         decoding="async"
         alt="Profissional da saúde em uma clínica moderna"
-        className="absolute inset-0 -z-10 h-full w-full object-cover object-[78%_18%] md:object-[70%_center]"
+        className="absolute inset-0 -z-10 h-full w-full object-cover object-[88%_22%] md:object-[70%_center]"
       />
       <div
         aria-hidden
