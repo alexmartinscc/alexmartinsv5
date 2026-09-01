@@ -6,36 +6,49 @@ type FaqItem = { q: string; a: string[] };
 
 export const FAQ_SAUDE: FaqItem[] = [
   {
-    q: "Consórcio faz sentido mesmo para quem já possui dinheiro investido?",
+    q: "O consórcio faz sentido mesmo para quem já possui dinheiro investido?",
     a: [
-      "Sim. O ponto não é apenas como comprar. É avaliar se faz sentido utilizar todo o capital disponível ou preservar parte dos recursos para continuar investindo e aproveitando outras oportunidades.",
+      "Sim. Uma das estratégias é utilizar o consórcio como ferramenta de alavancagem patrimonial, preservando parte do capital investido e mantendo esse patrimônio com potencial de continuar gerando rendimentos.",
+      "Assim, você pode ampliar seu poder de compra e construir novos ativos sem precisar concentrar todo o patrimônio financeiro em uma única aquisição.",
+    ],
+  },
+  {
+    q: "Consórcio demora muito para ser contemplado?",
+    a: [
+      "Não existe uma única estratégia para todos os projetos. Há alternativas para necessidades de curto, médio e longo prazo.",
+      "O primeiro passo é entender o que você deseja realizar e em quanto tempo. A partir disso, avaliamos as possibilidades disponíveis e estruturamos uma estratégia adequada ao seu objetivo.",
+      "É exatamente essa análise que fazemos na conversa inicial.",
     ],
   },
   {
     q: "Posso utilizar essas estratégias para minha clínica ou consultório?",
     a: [
-      "Sim. Existem soluções para imóveis comerciais, construção, reforma, equipamentos, veículos e diferentes projetos relacionados ao crescimento da atividade profissional. A estratégia depende do seu projeto.",
+      "Sim. Existem possibilidades para imóveis comerciais, construção, reforma, veículos, máquinas, equipamentos e outros projetos relacionados à sua atividade.",
+      "A estratégia será definida de acordo com seu objetivo.",
     ],
   },
   {
-    q: "Posso utilizar consórcio para construir patrimônio e gerar renda?",
+    q: "Posso utilizar o consórcio para construir patrimônio e gerar renda?",
     a: [
-      "Sim. Imóveis adquiridos de forma planejada podem fazer parte de uma estratégia progressiva de construção patrimonial e geração de novas fontes de renda.",
+      "Sim. A aquisição planejada de imóveis pode fazer parte de uma estratégia progressiva para ampliar patrimônio e desenvolver novas fontes de renda ao longo do tempo.",
     ],
   },
   {
     q: "Tenho um imóvel quitado. Posso utilizá-lo para obter crédito?",
     a: [
-      "Sim. Por meio do Home Equity, seu imóvel pode ser utilizado como garantia para acessar crédito sem precisar ser vendido.",
+      "Sim. Existem possibilidades de geração de crédito utilizando seu imóvel como garantia, sem precisar vender o patrimônio já conquistado.",
+      "Esses recursos podem atender necessidades de curto, médio ou longo prazo, de acordo com seu objetivo e a estratégia definida.",
     ],
   },
   {
     q: "Como saber qual estratégia faz mais sentido para mim?",
     a: [
-      "Começamos pelo seu objetivo. Depois analisamos patrimônio, recursos disponíveis, prazo, capacidade financeira e alternativas possíveis. A partir disso, estruturamos a estratégia.",
+      "Esse é justamente o objetivo da conversa inicial.",
+      "Primeiro entendemos o que você quer conquistar, os recursos disponíveis e o prazo. Depois avaliamos as alternativas e estruturamos o caminho mais adequado ao seu projeto.",
     ],
   },
 ];
+
 
 export function FAQSaude() {
   return (
