@@ -253,25 +253,36 @@ const ITEMS = [
 ];
 
 type WhyConsorcioProps = {
+  /** Eyebrow opcional (padrão: texto da Home). */
+  eyebrow?: string;
+  /** Título opcional (padrão: texto da Home). */
+  title?: string;
   /** Texto introdutório opcional (padrão: texto da Home). */
   intro?: string;
+  /** Itens do accordion (padrão: itens da Home). */
+  items?: WhyItem[];
+  /** Bloco final opcional (padrão: texto da Home). */
+  footer?: React.ReactNode;
 };
 
 export function WhyConsorcio({
+  eyebrow = "Benefícios",
+  title = "Por que tantas pessoas estão escolhendo o consórcio?",
   intro = "Quando você compara custo, planejamento e liberdade de escolha, fica mais fácil entender as vantagens do consórcio.",
+  items = ITEMS,
+  footer,
 }: WhyConsorcioProps = {}) {
   return (
     <section id="por-que-consorcio" className="scroll-mt-24 bg-secondary py-16 md:py-24">
       <div className="section-shell">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <p className="eyebrow justify-center">Benefícios</p>
+          <p className="eyebrow justify-center">{eyebrow}</p>
           <h2 className="mt-4 text-3xl font-extrabold text-primary md:text-[2.5rem] md:leading-[1.15]">
-            Por que tantas pessoas estão escolhendo o consórcio?
+            {title}
           </h2>
-          <p className="mx-auto mt-4 max-w-xl leading-[1.7] text-muted-foreground">
-{intro}
-          </p>
+          <p className="mx-auto mt-4 max-w-xl leading-[1.7] text-muted-foreground">{intro}</p>
         </Reveal>
+
 
         <Reveal delay={100} className="mx-auto mt-8 max-w-4xl md:mt-10">
           <AccordionPrimitive.Root
