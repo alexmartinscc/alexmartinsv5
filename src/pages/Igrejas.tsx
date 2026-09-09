@@ -3,10 +3,10 @@ import { Footer } from "@/components/landing/Footer";
 import { WhyConsorcio } from "@/components/landing/WhyConsorcio";
 import { MetodoMapa } from "@/components/landing/MetodoMapa";
 import { HeroIgrejas } from "@/components/igrejas/HeroIgrejas";
+import { DoresIgrejas } from "@/components/igrejas/DoresIgrejas";
 import { DoisProjetos } from "@/components/igrejas/DoisProjetos";
 import { ProjetosIgreja } from "@/components/igrejas/ProjetosIgreja";
 import { FuturoPastor } from "@/components/igrejas/FuturoPastor";
-import { Seguranca } from "@/components/igrejas/Seguranca";
 import { SobreIgrejas } from "@/components/igrejas/SobreIgrejas";
 import { Lideranca } from "@/components/igrejas/Lideranca";
 import { FAQIgrejas } from "@/components/igrejas/FAQIgrejas";
@@ -27,12 +27,24 @@ export function Igrejas() {
       <Header links={NAV} homeHref="#hero" />
       <main>
         <HeroIgrejas />
+        <DoresIgrejas />
         <DoisProjetos />
         <ProjetosIgreja />
         <FuturoPastor />
-        <WhyConsorcio intro="Seja para os projetos da igreja, para o seu patrimônio ou para os membros da comunidade, entender como o consórcio funciona ajuda a tomar decisões com mais clareza." />
-        <Seguranca />
-        <MetodoMapa intro="Antes de falar em valores ou parcelas, eu procuro entender o que você quer construir — seja um projeto para sua igreja, para você ou para os membros da sua comunidade. A partir daí, usamos o Método MAPA para estruturar o caminho." />
+        <WhyConsorcio
+          title="Por que o consórcio pode ser a ferramenta para colocar esses planos em movimento?"
+          intro="Depois de definir o que queremos construir, precisamos escolher uma forma eficiente de chegar lá. É aqui que o consórcio passa a fazer parte da estratégia."
+          footer={
+            <p className="mx-auto max-w-2xl text-base font-semibold leading-[1.6] text-primary md:text-lg">
+              Ter a ferramenta certa é importante. Saber como utilizá-la dentro do seu projeto faz
+              toda a diferença.
+            </p>
+          }
+        />
+        <MetodoMapa
+          eyebrow="Como eu posso ajudar"
+          intro="Seja para a igreja, para o seu futuro ou para um projeto pessoal, antes de falar em valores ou parcelas eu procuro entender o que realmente precisa ser construído. A partir daí, usamos o Método MAPA para transformar o objetivo em um caminho."
+        />
         <SobreIgrejas />
         <Lideranca />
         <FAQIgrejas />
