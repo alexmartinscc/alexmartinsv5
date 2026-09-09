@@ -13,11 +13,12 @@ import { FAQIgrejas } from "@/components/igrejas/FAQIgrejas";
 import { CTAIgrejas } from "@/components/igrejas/CTAIgrejas";
 
 const NAV = [
-  { label: "Projetos", href: "#projetos" },
-  { label: "Consórcio", href: "#por-que-consorcio" },
+  { label: "Objetivos", href: "#projetos" },
+  { label: "Por que Consórcio", href: "#por-que-consorcio" },
   { label: "Como funciona", href: "#metodo" },
   { label: "Sobre", href: "#sobre" },
   { label: "FAQ", href: "#faq" },
+  { label: "Site principal", href: "/" },
 ];
 
 export function Igrejas() {
