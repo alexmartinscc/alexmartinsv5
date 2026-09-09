@@ -31,7 +31,7 @@ const PAINS = [
 
 export function Dores() {
   return (
-    <section id="dores" className="scroll-mt-20 bg-background py-12 md:py-20">
+    <section id="dores" className="scroll-mt-20 bg-[#F3F6F8] py-12 md:py-20">
       <div className="section-shell">
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow justify-center">Pare e pense</p>

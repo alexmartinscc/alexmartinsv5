@@ -34,7 +34,7 @@ export function MetodoMapa({
   return (
     <section
       id="metodo"
-      className="scroll-mt-24 bg-primary py-16 text-primary-foreground md:py-24"
+      className="scroll-mt-24 bg-primary py-12 text-primary-foreground md:py-20"
     >
       <div className="section-shell">
         <Reveal className="mx-auto max-w-2xl text-center">

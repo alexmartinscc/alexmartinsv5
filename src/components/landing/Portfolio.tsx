@@ -7,7 +7,7 @@ import { OBJETIVOS_CONQUISTAR, PUBLICOS } from "./objetivos";
 
 export function Portfolio() {
   return (
-    <section id="portfolio" className="scroll-mt-24 bg-background py-14 md:py-24">
+    <section id="portfolio" className="scroll-mt-24 bg-background py-12 md:py-20">
       <div className="section-shell">
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow justify-center">Objetivos</p>

@@ -30,7 +30,7 @@ const ADEMICON_URL = "https://www.ademicon.com.br/licensed/984100/alexsandro-mar
 
 export function About() {
   return (
-    <section id="sobre" className="scroll-mt-24 bg-secondary py-16 md:py-24">
+    <section id="sobre" className="scroll-mt-24 bg-secondary py-12 md:py-20">
       <div className="section-shell flex flex-col gap-8 lg:grid lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-x-14 lg:gap-y-5">
         {/* Mobile order 1 / Desktop column 2 row 1: eyebrow, title, first paragraph */}
         <Reveal className="order-1 lg:col-start-2 lg:row-start-1 lg:self-start">

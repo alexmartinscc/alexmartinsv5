@@ -273,7 +273,7 @@ export function FAQ() {
   const [firstGroup, ...extraGroups] = FAQ_GROUPS;
 
   return (
-    <section id="faq" className="scroll-mt-24 bg-background py-16 md:py-24">
+    <section id="faq" className="scroll-mt-24 bg-background py-12 md:py-20">
       <div className="section-shell grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:gap-14">
         <Reveal>
           <div className="lg:sticky lg:top-28">
