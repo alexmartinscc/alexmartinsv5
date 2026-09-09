@@ -2,8 +2,8 @@ import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "./Reveal";
 import { WHATSAPP_URL } from "@/lib/contact";
-import heroImage from "@/assets/hero-image.webp.asset.json";
-import heroImageMobile from "@/assets/hero-image-mobile.webp.asset.json";
+const HERO_IMAGE = "/images/home/hero-image.webp";
+const HERO_IMAGE_MOBILE = "/images/home/hero-image-mobile.webp";
 
 export function Hero() {
   return (
@@ -12,9 +12,9 @@ export function Hero() {
       className="relative isolate scroll-mt-24 overflow-hidden bg-[#041628] pt-[42vh] pb-14 md:pt-32 md:pb-20 lg:flex lg:min-h-[85vh] lg:items-center"
     >
       <picture>
-        <source media="(max-width: 767px)" srcSet={heroImageMobile.url} type="image/webp" />
+        <source media="(max-width: 767px)" srcSet={HERO_IMAGE_MOBILE} type="image/webp" />
         <img
-          src={heroImage.url}
+          src={HERO_IMAGE}
           alt=""
           aria-hidden
           width={1672}
