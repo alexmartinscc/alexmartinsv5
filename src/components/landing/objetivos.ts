@@ -4,6 +4,8 @@ import {
   Users,
   Briefcase,
   Sprout,
+  HeartPulse,
+  Church,
   type LucideIcon,
 } from "lucide-react";
 
@@ -18,6 +20,8 @@ export type Publico = {
   id: string;
   label: string;
   icon: LucideIcon;
+  href?: string;
+  highlight?: boolean;
 };
 
 /** Blocos de objetivos patrimoniais — reutilizáveis em futuras páginas por público. */
@@ -49,4 +53,18 @@ export const PUBLICOS: Publico[] = [
   { id: "pessoas", label: "Pessoas e Famílias", icon: Users },
   { id: "empreendedores", label: "Empreendedores", icon: Briefcase },
   { id: "agro", label: "Agro", icon: Sprout },
+  {
+    id: "saude",
+    label: "Profissionais da Saúde",
+    icon: HeartPulse,
+    href: "/saude",
+    highlight: true,
+  },
+  {
+    id: "igrejas",
+    label: "Igrejas e Organizações Religiosas",
+    icon: Church,
+    href: "/igrejas",
+    highlight: true,
+  },
 ];
