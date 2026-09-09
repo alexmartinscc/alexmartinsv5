@@ -81,7 +81,7 @@ export function Portfolio() {
                       aria-hidden="true"
                     />
                   </span>
-                  <span className="text-center text-sm font-semibold text-primary">
+                  <span className="text-center text-xs font-semibold leading-tight text-primary sm:text-sm">
                     {publico.label}
                   </span>
                   {isSpecialized && (
