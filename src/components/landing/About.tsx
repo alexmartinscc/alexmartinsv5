@@ -103,7 +103,7 @@ export function About() {
               asChild
               variant="outline"
               size="lg"
-              className="mt-4 rounded-xl"
+              className="mt-4 rounded-xl whitespace-normal px-4 sm:px-8"
             >
               <a
                 href={ADEMICON_URL}
