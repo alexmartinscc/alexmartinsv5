@@ -1,4 +1,5 @@
 import { Wallet, Activity, CalendarClock, Compass } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { Reveal } from "./Reveal";
 
 const PAINS = [
@@ -30,14 +31,14 @@ const PAINS = [
 
 export function Dores() {
   return (
-    <section id="dores" className="scroll-mt-24 bg-background py-14 md:py-24">
+    <section id="dores" className="scroll-mt-20 bg-background py-12 md:py-20">
       <div className="section-shell">
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow justify-center">Pare e pense</p>
-          <h2 className="mt-4 text-balance text-3xl font-extrabold text-primary md:text-[2.5rem] md:leading-[1.15]">
+          <h2 className="mt-4 text-balance text-[1.5rem] font-extrabold leading-[1.22] text-primary md:text-[2.25rem] md:leading-[1.15]">
             Você está construindo o futuro — ou apenas sustentando o presente?
           </h2>
-          <p className="mt-4 text-balance leading-[1.7] text-muted-foreground">
+          <p className="mt-4 text-balance text-base leading-[1.55] text-muted-foreground md:text-[1.0625rem] md:leading-[1.6]">
             A rotina exige muito. A renda entra, o negócio gira, a produção continua e novas
             responsabilidades aparecem. Mas, em algum momento, surge uma pergunta importante: quanto
             de todo esse esforço está realmente se transformando em patrimônio, renda e liberdade
@@ -45,28 +46,44 @@ export function Dores() {
           </p>
         </Reveal>
 
-        <div className="mt-10 grid gap-6 md:mt-14 md:grid-cols-2 md:gap-8">
-          {PAINS.map((pain, index) => {
-            const Icon = pain.icon;
-            return (
-              <Reveal key={pain.id} delay={index * 80} className="h-full">
-                <div className="flex h-full flex-col rounded-2xl border-t-2 border-gold/40 bg-secondary/30 px-6 py-6 md:px-8 md:py-8">
-                  <span className="grid h-11 w-11 place-items-center rounded-2xl bg-background">
-                    <Icon className="h-5 w-5 fill-gold/20 text-gold" aria-hidden="true" />
-                  </span>
-                  <h3 className="mt-5 text-lg font-extrabold leading-snug tracking-tight text-primary md:text-xl">
-                    {pain.title}
-                  </h3>
-                  <p className="mt-3 leading-[1.7] text-muted-foreground">{pain.text}</p>
-                </div>
-              </Reveal>
-            );
-          })}
+        <div className="mt-10 md:mt-14">
+          <div className="grid gap-0 md:grid-cols-2 md:gap-x-10 md:gap-y-2">
+            {PAINS.map((pain, index) => {
+              const Icon = pain.icon;
+              const row = Math.floor(index / 2);
+              const hasMobileTopBorder = index > 0;
+              const hasDesktopTopBorder = row > 0;
+
+              return (
+                <Reveal key={pain.id} delay={index * 70} className="h-full">
+                  <div
+                    className={cn(
+                      "h-full py-6 md:py-8",
+                      hasMobileTopBorder && "border-t border-border/60",
+                      hasDesktopTopBorder
+                        ? "md:border-t md:border-border/60"
+                        : "md:border-t-0",
+                    )}
+                  >
+                    <span className="grid h-10 w-10 place-items-center rounded-xl bg-secondary/50">
+                      <Icon className="h-5 w-5 fill-gold/20 text-gold" aria-hidden="true" />
+                    </span>
+                    <h3 className="mt-4 text-lg font-extrabold leading-[1.3] tracking-tight text-primary md:text-xl">
+                      {pain.title}
+                    </h3>
+                    <p className="mt-2 text-base leading-[1.55] text-muted-foreground">
+                      {pain.text}
+                    </p>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
         </div>
 
-        <Reveal className="mt-10 md:mt-14" delay={180}>
-          <div className="mx-auto max-w-3xl rounded-2xl border-l-2 border-gold bg-secondary px-6 py-6 md:px-8 md:py-8">
-            <p className="text-center text-base font-semibold leading-[1.7] text-primary md:text-lg">
+        <Reveal className="mt-8 md:mt-12" delay={180}>
+          <div className="mx-auto max-w-3xl border-t border-gold/30 pt-8 md:pt-10">
+            <p className="text-center text-base font-semibold leading-[1.5] text-primary md:text-lg md:leading-[1.55]">
               Trabalhar muito pode construir uma boa renda. Transformar essa renda em patrimônio
               exige decisão e planejamento.
             </p>
