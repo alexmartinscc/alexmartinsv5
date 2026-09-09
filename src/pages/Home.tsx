@@ -1,5 +1,6 @@
 import { Header } from "@/components/landing/Header";
 import { Hero } from "@/components/landing/Hero";
+import { Dores } from "@/components/landing/Dores";
 import { Portfolio } from "@/components/landing/Portfolio";
 import { WhyConsorcio } from "@/components/landing/WhyConsorcio";
 import { MetodoMapa } from "@/components/landing/MetodoMapa";
@@ -14,6 +15,7 @@ export function Home() {
       <Header />
       <main>
         <Hero />
+        <Dores />
         <Portfolio />
         <WhyConsorcio />
         <MetodoMapa />
