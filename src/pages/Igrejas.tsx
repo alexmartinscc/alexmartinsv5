@@ -38,7 +38,7 @@ export function Igrejas() {
         <FAQIgrejas />
         <CTAIgrejas />
       </main>
-      <Footer links={NAV} />
+      <Footer links={NAV.filter((item) => item.href.startsWith("#"))} />
     </div>
   );
 }
