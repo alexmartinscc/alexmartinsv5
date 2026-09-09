@@ -1,5 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { trackEvent } from "@/lib/analytics";
+import { Link } from "@tanstack/react-router";
 import { Reveal } from "./Reveal";
 import { OBJETIVOS_CONQUISTAR, PUBLICOS } from "./objetivos";
 
@@ -59,25 +61,60 @@ export function Portfolio() {
               Quem pode se beneficiar
             </h3>
           </div>
-          <div className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-4">
+          <div className="mt-5 grid grid-cols-2 gap-3 md:grid-cols-5 md:gap-4">
             {PUBLICOS.map((publico, index) => {
               const Icon = publico.icon;
               const isLast = index === PUBLICOS.length - 1;
-              return (
-                <a
-                  key={publico.id}
-                  href="#cta"
-                  className={cn(
-                    "group flex flex-col items-center gap-2 rounded-2xl px-3 py-3 transition-colors hover:bg-secondary/30",
-                    isLast && "col-span-2 justify-self-center sm:col-span-1"
-                  )}
-                >
+              const isSpecialized = !!publico.href;
+              const baseClasses = cn(
+                "group flex h-full flex-col items-center gap-2 rounded-2xl px-3 py-4 transition-colors",
+                "hover:bg-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/50",
+                isSpecialized &&
+                  "bg-gold/[0.03] ring-1 ring-gold/20 hover:bg-gold/[0.07]",
+                isLast && "col-span-2 justify-self-center md:col-span-1"
+              );
+              const content = (
+                <>
                   <span className="grid h-10 w-10 place-items-center rounded-xl bg-secondary">
-                    <Icon className="h-5 w-5 fill-gold/20 text-gold transition-colors group-hover:fill-gold/30" />
+                    <Icon
+                      className="h-5 w-5 fill-gold/20 text-gold transition-colors group-hover:fill-gold/30"
+                      aria-hidden="true"
+                    />
                   </span>
                   <span className="text-center text-sm font-semibold text-primary">
                     {publico.label}
                   </span>
+                  {isSpecialized && (
+                    <>
+                      <span className="text-center text-xs font-medium text-gold">
+                        Conteúdo especializado
+                      </span>
+                      <span className="mt-1 text-center text-xs font-semibold text-primary transition-colors group-hover:text-gold">
+                        Ver página para{" "}
+                        {publico.id === "saude" ? "Saúde" : "Igrejas"} →
+                      </span>
+                    </>
+                  )}
+                </>
+              );
+
+              return isSpecialized ? (
+                <Link
+                  key={publico.id}
+                  to={publico.href}
+                  className={baseClasses}
+                  aria-label={publico.label}
+                  onClick={() =>
+                    trackEvent("specialized_content_click", {
+                      segment: publico.id,
+                    })
+                  }
+                >
+                  {content}
+                </Link>
+              ) : (
+                <a key={publico.id} href="#cta" className={baseClasses}>
+                  {content}
                 </a>
               );
             })}
