@@ -34,10 +34,10 @@ export function Dores() {
       <div className="section-shell">
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow justify-center">Pare e pense</p>
-          <h2 className="mt-4 text-3xl font-extrabold text-primary md:text-[2.5rem] md:leading-[1.15]">
+          <h2 className="mt-4 text-balance text-3xl font-extrabold text-primary md:text-[2.5rem] md:leading-[1.15]">
             Você está construindo o futuro — ou apenas sustentando o presente?
           </h2>
-          <p className="mt-4 leading-[1.7] text-muted-foreground">
+          <p className="mt-4 text-balance leading-[1.7] text-muted-foreground">
             A rotina exige muito. A renda entra, o negócio gira, a produção continua e novas
             responsabilidades aparecem. Mas, em algum momento, surge uma pergunta importante: quanto
             de todo esse esforço está realmente se transformando em patrimônio, renda e liberdade
