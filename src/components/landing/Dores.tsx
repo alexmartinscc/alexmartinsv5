@@ -35,7 +35,7 @@ export function Dores() {
       <div className="section-shell">
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow justify-center">Pare e pense</p>
-          <h2 className="mt-4 text-balance text-[1.625rem] font-extrabold leading-[1.2] text-primary md:text-[2.25rem] md:leading-[1.15]">
+          <h2 className="mt-4 text-balance text-[1.5rem] font-extrabold leading-[1.22] text-primary md:text-[2.25rem] md:leading-[1.15]">
             Você está construindo o futuro — ou apenas sustentando o presente?
           </h2>
           <p className="mt-4 text-balance text-base leading-[1.55] text-muted-foreground md:text-[1.0625rem] md:leading-[1.6]">
