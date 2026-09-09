@@ -26,10 +26,12 @@ const STEPS = [
 
 type MetodoMapaProps = {
   intro?: string;
+  eyebrow?: string;
 };
 
 export function MetodoMapa({
   intro = "Antes de falar em valores ou parcelas, eu procuro entender o que você quer conquistar, seu momento e seus objetivos. A partir daí, usamos o Método MAPA para estruturar o caminho.",
+  eyebrow = "Método MAPA",
 }: MetodoMapaProps = {}) {
   return (
     <section
@@ -38,7 +40,7 @@ export function MetodoMapa({
     >
       <div className="section-shell">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <p className="eyebrow justify-center">Método MAPA</p>
+          <p className="eyebrow justify-center">{eyebrow}</p>
           <h2 className="mt-4 text-3xl font-extrabold md:text-[2.5rem] md:leading-[1.15]">
             Cada projeto precisa de um plano
           </h2>

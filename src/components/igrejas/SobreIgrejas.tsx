@@ -6,7 +6,7 @@ import { ADEMICON_CREDENTIAL_URL } from "@/lib/contact";
 
 export function SobreIgrejas() {
   return (
-    <section id="sobre" className="scroll-mt-24 bg-secondary py-16 md:py-24">
+    <section id="sobre" className="scroll-mt-24 bg-secondary py-12 md:py-20">
       <div className="section-shell grid items-center gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14 [&>*]:min-w-0">
         <Reveal>
           <ImageSlot
