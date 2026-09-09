@@ -67,7 +67,7 @@ export function Portfolio() {
               const isLast = index === PUBLICOS.length - 1;
               const isSpecialized = !!publico.href;
               const baseClasses = cn(
-                "group flex h-full flex-col items-center gap-2 rounded-2xl px-3 py-4 transition-colors",
+                "group flex h-full flex-col items-center gap-2 rounded-2xl px-2 py-4 transition-colors sm:px-3",
                 "hover:bg-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/50",
                 isSpecialized &&
                   "bg-gold/[0.03] ring-1 ring-gold/20 hover:bg-gold/[0.07]",
