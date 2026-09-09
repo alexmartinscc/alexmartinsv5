@@ -4,7 +4,7 @@ import { selecionarProjeto } from "./projeto-preset";
 
 export function Lideranca() {
   return (
-    <section id="lideranca" className="scroll-mt-24 bg-background py-16 md:py-24">
+    <section id="lideranca" className="scroll-mt-24 bg-background py-12 md:py-20">
       <div className="section-shell grid items-center gap-8 lg:grid-cols-2 lg:gap-14 [&>*]:min-w-0">
         <Reveal className="order-1 lg:order-2">
           <img
@@ -23,20 +23,17 @@ export function Lideranca() {
         <Reveal delay={80} className="order-2 lg:order-1">
           <p className="eyebrow">Liderança da igreja</p>
           <h2 className="mt-3 text-3xl font-extrabold text-primary md:text-[2.5rem] md:leading-[1.15]">
-            Vamos conversar sobre o projeto da sua igreja?
+            Esse projeto precisa envolver outras pessoas da liderança?
           </h2>
 
-          <div className="mt-5 space-y-4 leading-[1.7] text-muted-foreground">
-            <p>Nem sempre uma decisão como essa depende apenas do pastor.</p>
+          <div className="mt-5 space-y-4 text-base leading-[1.6] text-muted-foreground">
             <p>
-              Se a igreja possui diretoria, conselho ou liderança administrativa, posso participar
-              de uma conversa para explicar como o consórcio funciona, responder às principais
-              dúvidas e analisar possibilidades para o projeto da instituição.
+              Posso participar de uma conversa com diretoria, conselho ou liderança administrativa
+              para explicar como o consórcio funciona, responder às dúvidas e analisar as
+              possibilidades para o projeto da igreja.
             </p>
             <p>
-              A conversa pode acontecer por videochamada, WhatsApp ou reunião presencial, quando
-              aplicável. Também posso orientar projetos pessoais do pastor e de membros da
-              comunidade, sempre de forma individual e sem qualquer vínculo com a igreja.
+              A conversa pode acontecer por videochamada ou presencialmente, quando aplicável.
             </p>
           </div>
 

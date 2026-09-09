@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/landing/Reveal";
+import { selecionarProjeto } from "./projeto-preset";
 
 export function ProjetosIgreja() {
   return (
-    <section id="igreja" className="scroll-mt-24 bg-secondary py-16 md:py-24">
+    <section id="igreja" className="scroll-mt-24 bg-secondary py-12 md:py-20">
       <div className="section-shell grid items-center gap-8 lg:grid-cols-[52fr_48fr] lg:gap-14 [&>*]:min-w-0">
         <Reveal className="order-1 lg:order-2">
           <img
@@ -22,28 +23,32 @@ export function ProjetosIgreja() {
         <Reveal delay={80} className="order-2 lg:order-1">
           <p className="eyebrow">Para sua igreja</p>
           <h2 className="mt-3 text-3xl font-extrabold text-primary md:text-[2.5rem] md:leading-[1.15]">
-            Realize os próximos projetos da sua igreja com planejamento.
+            Crescer também exige estrutura para continuar servindo.
           </h2>
 
-          <div className="mt-5 space-y-4 leading-[1.7] text-muted-foreground">
+          <div className="mt-5 space-y-4 text-base leading-[1.6] text-muted-foreground">
             <p>
-              Toda igreja tem projetos. Muitas vezes, o desafio não é saber o que precisa ser feito,
-              mas encontrar uma forma de realizar sem comprometer de uma só vez os recursos da
-              instituição.
+              Toda igreja chega a momentos em que a estrutura precisa acompanhar aquilo que está
+              acontecendo dentro dela.
             </p>
             <p>
-              Com o consórcio, é possível planejar a aquisição de imóveis, terrenos, construções,
-              reformas e veículos com parcelas organizadas de acordo com a realidade da igreja.
+              Pode ser a necessidade de sair do aluguel, conquistar uma sede, ampliar o templo,
+              comprar um terreno ou adquirir um veículo para atender melhor à comunidade.
             </p>
             <p>
-              Após a contemplação e liberação do crédito, a carta proporciona poder de compra para
-              negociar à vista.
+              O desafio é realizar esses projetos sem precisar comprometer de uma só vez os recursos
+              que mantêm a igreja funcionando.
+            </p>
+            <p>
+              Com o consórcio, esses projetos podem ser organizados ao longo do tempo, com parcelas
+              planejadas de acordo com a realidade da instituição e, após a contemplação e liberação
+              do crédito, poder de compra para negociar à vista.
             </p>
           </div>
 
-          <p className="mt-6 border-l-2 border-gold bg-background px-5 py-4 text-base font-semibold leading-[1.7] text-primary">
-            A igreja não precisa esperar sobrar dinheiro para começar a planejar sua próxima
-            conquista.
+          <p className="mt-6 border-l-2 border-gold bg-background px-5 py-4 text-base font-semibold leading-[1.6] text-primary">
+            A igreja não precisa esperar sobrar dinheiro para começar a construir o próximo capítulo
+            da sua história.
           </p>
 
           <Button
@@ -51,7 +56,9 @@ export function ProjetosIgreja() {
             size="lg"
             className="mt-6 h-auto w-full whitespace-normal rounded-xl bg-gold px-8 py-3 text-center text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90 sm:w-auto"
           >
-            <a href="#cta?projeto=igreja">Quero falar sobre o projeto da minha igreja</a>
+            <a href="#cta" onClick={() => selecionarProjeto("igreja")}>
+              Quero planejar um projeto para minha igreja
+            </a>
           </Button>
         </Reveal>
       </div>

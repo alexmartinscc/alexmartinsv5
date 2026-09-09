@@ -4,7 +4,7 @@ import { selecionarProjeto } from "./projeto-preset";
 
 export function FuturoPastor() {
   return (
-    <section id="futuro" className="scroll-mt-24 bg-background py-16 md:py-24">
+    <section id="futuro" className="scroll-mt-24 bg-background py-12 md:py-20">
       <div className="section-shell grid items-center gap-8 lg:grid-cols-[48fr_52fr] lg:gap-14 [&>*]:min-w-0">
         <Reveal>
           <img
@@ -28,39 +28,36 @@ export function FuturoPastor() {
             Seu futuro merece planejamento.
           </h2>
 
-          <div className="mt-5 space-y-4 leading-[1.7] text-muted-foreground">
+          <div className="mt-5 space-y-4 text-base leading-[1.6] text-muted-foreground">
             <p>A vocação ministerial não termina.</p>
             <p>
               Durante muitos anos, é natural que o pastor coloque a igreja e as pessoas que serve à
-              frente de muitas decisões pessoais. Nesse caminho, o próprio planejamento patrimonial
-              pode acabar ficando para depois.
+              frente de muitas decisões pessoais. E, nessa caminhada, o próprio futuro pode acabar
+              ficando sempre para depois.
             </p>
             <p>
-              Mas, em algum momento, chegam a aposentadoria, a jubilação ou simplesmente a
-              necessidade de diminuir o ritmo das atividades.
+              Mas chega um momento em que diminuir o ritmo, jubilar ou simplesmente ter mais
+              liberdade de escolha passa a ser importante.
             </p>
-            <p>Começar enquanto existe renda e tempo pode fazer uma diferença significativa no futuro.</p>
           </div>
 
           <h3 className="mt-8 text-lg font-bold text-primary md:text-xl">
             Transforme parte da renda de hoje em patrimônio para amanhã.
           </h3>
-          <div className="mt-3 space-y-4 leading-[1.7] text-muted-foreground">
+          <div className="mt-3 space-y-4 text-base leading-[1.6] text-muted-foreground">
             <p>
-              Imóveis, terrenos e outros ativos podem fazer parte de uma estratégia para construir
-              patrimônio e criar fontes complementares de renda para a aposentadoria.
+              Imóveis e outros ativos podem ajudar a construir patrimônio e criar uma renda
+              complementar para essa nova fase da vida.
             </p>
             <p>
               O objetivo não é deixar o ministério. É conquistar mais liberdade para continuar
-              servindo com o apoio e a segurança de uma renda complementar — seja para ajudar a
-              pagar um plano de saúde, planejar férias, formar uma reserva de emergência ou
-              simplesmente viver essa nova fase com mais tranquilidade.
+              servindo com o apoio de uma renda complementar — para cuidar da saúde, planejar
+              férias, formar uma reserva ou simplesmente viver com mais tranquilidade.
             </p>
           </div>
 
-          <p className="mt-6 border-l-2 border-gold bg-secondary px-5 py-4 text-base font-semibold leading-[1.7] text-primary">
-            O consórcio pode ser uma forma econômica e planejada de proteger o futuro das pessoas
-            que você ama.
+          <p className="mt-6 border-l-2 border-gold bg-secondary px-5 py-4 text-base font-semibold leading-[1.6] text-primary">
+            Cuidar do futuro também é cuidar das pessoas que você ama.
           </p>
 
           <Button
