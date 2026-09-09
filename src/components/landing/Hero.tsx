@@ -2,8 +2,8 @@ import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "./Reveal";
 import { WHATSAPP_URL } from "@/lib/contact";
-import heroImage from "@/assets/hero-image.webp.asset.json";
-import heroImageMobile from "@/assets/hero-image-mobile.webp.asset.json";
+const HERO_IMAGE = "/images/home/hero-image.webp";
+const HERO_IMAGE_MOBILE = "/images/home/hero-image-mobile.webp";
 
 export function Hero() {
   return (
