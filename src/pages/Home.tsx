@@ -15,6 +15,7 @@ export function Home() {
       <Header />
       <main>
         <Hero />
+        <Dores />
         <Portfolio />
         <WhyConsorcio />
         <MetodoMapa />
