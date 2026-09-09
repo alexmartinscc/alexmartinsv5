@@ -12,9 +12,9 @@ import { CTASaude } from "@/components/saude/CTASaude";
 const NAV = [
   { label: "Desafios", href: "#desafios" },
   { label: "Objetivos", href: "#objetivos" },
-  { label: "Por que consórcio", href: "#por-que-consorcio" },
-  { label: "Método MAPA", href: "#metodo" },
-  { label: "Sobre mim", href: "#sobre" },
+  { label: "Por que Consórcio", href: "#por-que-consorcio" },
+  { label: "Como funciona", href: "#metodo" },
+  { label: "Sobre", href: "#sobre" },
   { label: "FAQ", href: "#faq" },
   { label: "Site principal", href: "/" },
 ];
