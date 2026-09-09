@@ -12,9 +12,9 @@ export function Hero() {
       className="relative isolate scroll-mt-24 overflow-hidden bg-[#041628] pt-[42vh] pb-14 md:pt-32 md:pb-20 lg:flex lg:min-h-[85vh] lg:items-center"
     >
       <picture>
-        <source media="(max-width: 767px)" srcSet={heroImageMobile.url} type="image/webp" />
+        <source media="(max-width: 767px)" srcSet={HERO_IMAGE_MOBILE} type="image/webp" />
         <img
-          src={heroImage.url}
+          src={HERO_IMAGE}
           alt=""
           aria-hidden
           width={1672}
