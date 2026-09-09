@@ -3,7 +3,7 @@ import { Saude } from "@/pages/Saude";
 import { FAQ_SAUDE } from "@/components/saude/FAQSaude";
 
 const PAGE_URL = "https://www.alexmartins.cc/saude";
-const OG_IMAGE = "https://www.alexmartins.cc/og-image.jpg";
+const OG_IMAGE = "https://www.alexmartins.cc/images/shared/og-image.jpg";
 const TITLE = "Planejamento Patrimonial para Profissionais da Saúde | Alex Martins";
 const DESCRIPTION =
   "Estratégias para profissionais da saúde que desejam expandir seus projetos, construir patrimônio, preservar capital e criar novas fontes de renda.";

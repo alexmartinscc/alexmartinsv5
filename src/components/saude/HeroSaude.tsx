@@ -2,13 +2,12 @@ import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { WHATSAPP_URL } from "@/lib/contact";
 import { trackEvent } from "@/lib/analytics";
-import heroSaude from "@/assets/hero-saude.png";
 
 export function HeroSaude() {
   return (
     <section id="hero" className="relative isolate scroll-mt-24 overflow-hidden bg-primary-deep">
       <img
-        src={heroSaude}
+        src="/images/saude/hero-saude.png"
         width={1717}
         height={916}
         fetchPriority="high"

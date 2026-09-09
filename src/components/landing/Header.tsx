@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 
-import logo from "@/assets/alex-martins-logo.png";
 
 const NAV = [
   { label: "Objetivos", href: "/#portfolio" },
@@ -28,7 +27,7 @@ export function Header({ links = NAV, homeHref = "/#hero" }: HeaderProps = {}) {
       <div className="section-shell grid h-20 grid-cols-[minmax(0,1fr)_auto] items-center gap-4">
         <a href={homeHref} className="flex min-w-0 items-center gap-3">
           <img
-            src={logo}
+            src="/images/shared/logo-alex-martins.png"
             alt="Logotipo Alex Martins"
             width={40}
             height={40}

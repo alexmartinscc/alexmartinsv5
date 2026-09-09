@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { ImageSlot } from "@/components/landing/ImageSlot";
 import { Reveal } from "@/components/landing/Reveal";
 import { ADEMICON_CREDENTIAL_URL } from "@/lib/contact";
-import sobreAlex from "@/assets/sobre-alex.jpg";
 
 export function SobreIgrejas() {
   return (
@@ -11,8 +10,8 @@ export function SobreIgrejas() {
       <div className="section-shell grid items-center gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14 [&>*]:min-w-0">
         <Reveal>
           <ImageSlot
-            path="/sobre-alex.webp"
-            src={sobreAlex}
+            path="/images/shared/alex-sobre.jpg"
+            src="/images/shared/alex-sobre.jpg"
             ratio="4 / 5"
             alt="Alex Martins durante um atendimento de consultoria"
             label="Foto do consultor"

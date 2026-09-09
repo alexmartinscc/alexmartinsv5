@@ -2,7 +2,6 @@ import { User, Wallet, ListChecks, TrendingUp, ExternalLink } from "lucide-react
 import { Button } from "@/components/ui/button";
 import { ImageSlot } from "./ImageSlot";
 import { Reveal } from "./Reveal";
-import sobreAlex from "@/assets/sobre-alex.jpg";
 
 const ATTRIBUTES = [
   {
@@ -50,8 +49,8 @@ export function About() {
           className="order-2 lg:col-start-1 lg:row-start-1 lg:row-span-2 lg:self-center"
         >
           <ImageSlot
-            path="/sobre-alex.webp"
-            src={sobreAlex}
+            path="/images/shared/alex-sobre.jpg"
+            src="/images/shared/alex-sobre.jpg"
             ratio="4 / 5"
             alt="Alex Martins ouvindo uma cliente durante o atendimento"
             label="Foto do consultor"
