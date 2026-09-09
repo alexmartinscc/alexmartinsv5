@@ -103,7 +103,7 @@ export function CTA() {
   };
 
   return (
-    <section id="cta" className="scroll-mt-24 bg-background pb-14 md:pb-20">
+    <section id="cta" className="scroll-mt-24 bg-background py-12 md:py-20">
       <div className="section-shell">
         <Reveal>
           <div className="relative overflow-hidden rounded-[2rem] bg-primary-deep px-5 py-10 md:px-12 md:py-14">

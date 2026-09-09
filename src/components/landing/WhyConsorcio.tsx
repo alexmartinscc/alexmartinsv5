@@ -282,7 +282,7 @@ export function WhyConsorcio({
   footer,
 }: WhyConsorcioProps = {}) {
   return (
-    <section id="por-que-consorcio" className="scroll-mt-24 bg-secondary py-16 md:py-24">
+    <section id="por-que-consorcio" className="scroll-mt-24 bg-secondary py-12 md:py-20">
       <div className="section-shell">
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow justify-center">{eyebrow}</p>
