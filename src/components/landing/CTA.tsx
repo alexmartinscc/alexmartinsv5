@@ -15,6 +15,7 @@ import { Reveal } from "./Reveal";
 import { ValueStepper, buildScale } from "./ValueStepper";
 import { CONTACT_EMAIL, WHATSAPP_NUMBER, WHATSAPP_URL } from "@/lib/contact";
 import { getLeadOrigin } from "@/lib/lead-tracking";
+import { ERRO_ENVIO, sendLead } from "@/lib/send-lead";
 
 const OBJETIVOS = [
   "Comprar imóvel ou terreno",
@@ -70,9 +71,14 @@ export function CTA() {
   const [parcela, setParcela] = useState(PARCELA_MIN);
   const [errors, setErrors] = useState<Errors>({});
   const [enviado, setEnviado] = useState(false);
+  const [enviando, setEnviando] = useState(false);
+  const [erroEnvio, setErroEnvio] = useState("");
+  const [honeypot, setHoneypot] = useState("");
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (enviando || enviado) return;
+    setErroEnvio("");
     const next: Errors = {};
     if (!nome.trim()) next.nome = "Informe seu nome para que eu saiba com quem estou falando.";
     if (whatsapp.replace(/\D/g, "").length < 10)
