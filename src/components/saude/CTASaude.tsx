@@ -77,14 +77,20 @@ export function CTASaude() {
       objetivo,
       mensagem: mensagem.trim(),
       source_page: "saude",
+      empresa_site: honeypot,
       ...getLeadOrigin(),
     };
     if (typeof window !== "undefined") {
       (window as unknown as { __ultimoLead?: unknown }).__ultimoLead = payload;
     }
-    trackEvent("form_submit", { source_page: "saude", objetivo });
-    setEnviado(true);
+    const ok = await sendLead(payload);
     setEnviando(false);
+    if (ok) {
+      trackEvent("form_submit", { source_page: "saude", objetivo });
+      setEnviado(true);
+    } else {
+      setErroEnvio(ERRO_ENVIO);
+    }
   };
 
   return (
