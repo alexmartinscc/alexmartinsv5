@@ -2,6 +2,7 @@
 export type LeadOrigin = {
   pagina_origem: string;
   url_atual: string;
+  source_domain: string;
   utm_source: string;
   utm_medium: string;
   utm_campaign: string;
@@ -12,6 +13,7 @@ export type LeadOrigin = {
 const EMPTY: LeadOrigin = {
   pagina_origem: "",
   url_atual: "",
+  source_domain: "",
   utm_source: "",
   utm_medium: "",
   utm_campaign: "",
@@ -26,6 +28,7 @@ export function getLeadOrigin(): LeadOrigin {
   return {
     pagina_origem: document.referrer || "",
     url_atual: window.location.href,
+    source_domain: window.location.hostname,
     utm_source: get("utm_source"),
     utm_medium: get("utm_medium"),
     utm_campaign: get("utm_campaign"),

@@ -12,4 +12,10 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  vite: {
+    server: {
+      // Permite testar o roteamento por hostname (domínio comercial) em desenvolvimento.
+      allowedHosts: ["consorcioigrejas.com.br", "www.consorcioigrejas.com.br", "www.alexmartins.cc"],
+    },
+  },
 });
