@@ -1,5 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Home } from "@/pages/Home";
+import { Igrejas } from "@/pages/Igrejas";
+import { buildIgrejasHead } from "@/lib/igrejas-seo";
+import { IGREJAS_DOMAIN_URL, isIgrejasHost, resolveHostname } from "@/lib/hostname";
 
 const SITE_URL = "https://www.alexmartins.cc/";
 const OG_IMAGE = "https://www.alexmartins.cc/images/shared/og-image.jpg";
@@ -119,28 +122,39 @@ const FAQ_PAGE_SCHEMA = {
 };
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(FAQ_PAGE_SCHEMA),
-      },
-    ],
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESCRIPTION },
-      { name: "robots", content: "index, follow" },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: SITE_URL },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESCRIPTION },
-      { property: "og:image", content: OG_IMAGE },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESCRIPTION },
-      { name: "twitter:image", content: OG_IMAGE },
-    ],
-    links: [{ rel: "canonical", href: SITE_URL }],
-  }),
-  component: Home,
+  loader: async () => ({ igrejasDomain: isIgrejasHost(await resolveHostname()) }),
+  head: ({ loaderData }) => {
+    if (loaderData?.igrejasDomain) {
+      return buildIgrejasHead({ pageUrl: IGREJAS_DOMAIN_URL, robots: "noindex, follow" });
+    }
+    return {
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(FAQ_PAGE_SCHEMA),
+        },
+      ],
+      meta: [
+        { title: TITLE },
+        { name: "description", content: DESCRIPTION },
+        { name: "robots", content: "index, follow" },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: SITE_URL },
+        { property: "og:title", content: TITLE },
+        { property: "og:description", content: DESCRIPTION },
+        { property: "og:image", content: OG_IMAGE },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: TITLE },
+        { name: "twitter:description", content: DESCRIPTION },
+        { name: "twitter:image", content: OG_IMAGE },
+      ],
+      links: [{ rel: "canonical", href: SITE_URL }],
+    };
+  },
+  component: RootPage,
 });
+
+function RootPage() {
+  const { igrejasDomain } = Route.useLoaderData();
+  return igrejasDomain ? <Igrejas /> : <Home />;
+}
