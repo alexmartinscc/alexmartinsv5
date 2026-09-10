@@ -76,7 +76,7 @@ export const Route = createFileRoute("/api/lead")({
 
         // Honeypot: bots preenchem o campo invisível.
         if (str(body["empresa_site"])) {
-          return Response.json({ ok: true });
+          return Response.json({ ok: false });
         }
 
         const nome = str(body["nome"], 120);

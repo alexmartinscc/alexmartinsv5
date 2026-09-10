@@ -16,6 +16,7 @@ import { ValueStepper, buildScale } from "@/components/landing/ValueStepper";
 import { CONTACT_EMAIL, WHATSAPP_NUMBER, WHATSAPP_URL } from "@/lib/contact";
 import { getLeadOrigin } from "@/lib/lead-tracking";
 import { ERRO_ENVIO, sendLead } from "@/lib/send-lead";
+import { trackLeadGenerated } from "@/lib/analytics";
 import { onSelecionarProjeto, type ProjetoTipo } from "./projeto-preset";
 
 const OBJETIVOS_IGREJA = [
@@ -142,8 +143,10 @@ export function CTAIgrejas() {
     setEnviando(true);
     const ok = await sendLead(payload);
     setEnviando(false);
-    if (ok) setEnviado(true);
-    else setErroEnvio(ERRO_ENVIO);
+    if (ok) {
+      trackLeadGenerated("igrejas");
+      setEnviado(true);
+    } else setErroEnvio(ERRO_ENVIO);
   };
 
   return (
