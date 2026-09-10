@@ -14,7 +14,7 @@ import {
 import { Reveal } from "@/components/landing/Reveal";
 import { CONTACT_EMAIL, WHATSAPP_NUMBER } from "@/lib/contact";
 import { getLeadOrigin } from "@/lib/lead-tracking";
-import { trackLeadGenerated } from "@/lib/analytics";
+import { getProjectCategory, trackLeadGenerated } from "@/lib/analytics";
 import { ERRO_ENVIO, sendLead } from "@/lib/send-lead";
 
 const WHATSAPP_SAUDE_URL =
@@ -86,7 +86,7 @@ export function CTASaude() {
     const ok = await sendLead(payload);
     setEnviando(false);
     if (ok) {
-      trackLeadGenerated("saude");
+      trackLeadGenerated("saude", getProjectCategory(objetivo));
       setEnviado(true);
     } else {
       setErroEnvio(ERRO_ENVIO);
@@ -94,7 +94,7 @@ export function CTASaude() {
   };
 
   return (
-    <section id="cta" className="scroll-mt-24 bg-background pb-14 md:pb-20">
+    <section id="contato" className="scroll-mt-24 bg-background pb-14 md:pb-20">
       <div className="section-shell">
         <Reveal>
           <div className="relative overflow-hidden rounded-[2rem] bg-primary-deep px-5 py-10 md:px-12 md:py-14">
@@ -131,15 +131,10 @@ export function CTASaude() {
                     <Mail className="h-4 w-4 text-gold" aria-hidden />
                     {CONTACT_EMAIL}
                   </a>
-                  <a
-                    href={WHATSAPP_SAUDE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex w-fit items-center gap-2 transition-colors hover:text-primary-foreground"
-                  >
+                  <span className="inline-flex w-fit items-center gap-2">
                     <MessageCircle className="h-4 w-4 text-gold" aria-hidden />
                     {WHATSAPP_NUMBER}
-                  </a>
+                  </span>
                 </div>
               </div>
 

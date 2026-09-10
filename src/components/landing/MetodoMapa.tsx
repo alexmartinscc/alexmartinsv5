@@ -95,7 +95,7 @@ export function MetodoMapa({
             size="lg"
             className="mt-6 rounded-xl bg-gold px-8 text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5"
           >
-            <a href="#cta">Conte-me sobre o seu projeto</a>
+            <a href="#contato" data-cta-location="mapa" data-cta-name="conte_me_projeto">Conte-me sobre o seu projeto</a>
           </Button>
         </Reveal>
       </div>

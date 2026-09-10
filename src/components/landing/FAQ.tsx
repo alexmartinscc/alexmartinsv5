@@ -236,7 +236,7 @@ function FaqAnswer({ blocks, highlight, cta }: { blocks: FaqBlock[]; highlight?:
             size="lg"
             className="mt-3 rounded-xl bg-gold px-8 text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90"
           >
-            <a href="#cta">{cta}</a>
+            <a href="#contato" data-cta-location="faq" data-cta-name="simular_projeto">{cta}</a>
           </Button>
         </div>
       )}

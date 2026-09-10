@@ -1,6 +1,5 @@
 import { MessageCircle, ShieldCheck, Wallet, Percent } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { WHATSAPP_URL } from "@/lib/contact";
 
 const BENEFITS = [
   { icon: Wallet, label: "Sem entrada" },
@@ -63,7 +62,7 @@ export function HeroIgrejas() {
               size="lg"
               className="h-auto w-full whitespace-normal rounded-xl bg-gold px-8 py-3 text-center text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90 sm:w-auto"
             >
-              <a href="#cta">Conte-me sobre o seu projeto</a>
+              <a href="#contato" data-cta-location="hero" data-cta-name="conte_me_projeto">Conte-me sobre o seu projeto</a>
             </Button>
 
             <Button
@@ -73,13 +72,12 @@ export function HeroIgrejas() {
               className="w-full rounded-xl border-primary-foreground/40 bg-transparent px-6 text-primary-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-primary-foreground/10 hover:text-primary-foreground sm:w-auto"
             >
               <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Falar pelo WhatsApp (abre em nova aba)"
+                href="#contato"
+                data-cta-location="hero"
+                data-cta-name="quero_conversar"
               >
                 <MessageCircle className="h-4 w-4 text-gold" aria-hidden="true" />
-                Falar pelo WhatsApp
+                Quero conversar
               </a>
             </Button>
           </div>

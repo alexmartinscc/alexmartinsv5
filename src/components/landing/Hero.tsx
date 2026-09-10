@@ -1,7 +1,6 @@
 import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "./Reveal";
-import { WHATSAPP_URL } from "@/lib/contact";
 const HERO_IMAGE = "/images/home/hero-image.webp";
 const HERO_IMAGE_MOBILE = "/images/home/hero-image-mobile.webp";
 
@@ -54,7 +53,7 @@ export function Hero() {
               size="lg"
               className="w-full rounded-xl bg-gold px-8 text-gold-foreground shadow-soft transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90 focus-visible:ring-gold focus-visible:ring-offset-[#041628] sm:w-auto"
             >
-              <a href="#cta">Conte-me sobre o seu projeto</a>
+              <a href="#contato" data-cta-location="hero" data-cta-name="conte_me_projeto">Conte-me sobre o seu projeto</a>
             </Button>
 
             <Button
@@ -64,13 +63,12 @@ export function Hero() {
               className="w-full rounded-xl border-white/45 bg-white/5 px-6 text-white transition-transform duration-200 hover:-translate-y-0.5 hover:bg-white/12 hover:text-white focus-visible:ring-gold focus-visible:ring-offset-[#041628] sm:w-auto"
             >
               <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Falar pelo WhatsApp"
+                href="#contato"
+                data-cta-location="hero"
+                data-cta-name="quero_conversar"
               >
                 <MessageCircle className="h-4 w-4 text-gold" />
-                Falar pelo WhatsApp
+                Quero conversar
               </a>
             </Button>
           </div>

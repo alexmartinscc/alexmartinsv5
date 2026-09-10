@@ -27,26 +27,49 @@ export function getPageSegment(): string {
   return "home";
 }
 
-export function trackLeadGenerated(pageSegment: "home" | "igrejas" | "saude") {
+export type PageSegment = "home" | "igrejas" | "saude";
+
+const PROJECT_CATEGORIES: Record<string, string> = {
+  "Comprar imóvel ou terreno": "imovel",
+  "Construir ou reformar": "imovel",
+  "Quitar financiamento imobiliário": "imovel",
+  "Gerar renda com imóveis": "patrimonio_renda",
+  "Ter uma aposentadoria confortável": "patrimonio_renda",
+  "Obter crédito usando meu imóvel": "patrimonio_renda",
+  "Comprar veículo ou utilitário": "veiculo",
+  "Projeto empresarial ou agro": "negocio",
+  "Comprar sede ou imóvel": "institucional_religioso",
+  "Comprar terreno": "imovel",
+  Construir: "imovel",
+  "Reformar ou ampliar": "institucional_religioso",
+  "Comprar veículos ou vans": "veiculo",
+  "Outro projeto da igreja": "outro",
+  "Comprar imóvel": "imovel",
+  "Planejar patrimônio": "patrimonio_renda",
+  "Comprar veículo": "veiculo",
+  "Expandir meu negócio": "negocio",
+  "Construir patrimônio e gerar renda": "patrimonio_renda",
+  "Quero avaliar minhas possibilidades": "outros",
+  Outro: "outros",
+};
+
+export function getProjectCategory(objective: string, projectFor?: string): string {
+  const normalizedObjective = objective.replace(/^(Igreja|Pessoal) — /, "");
+  if (projectFor === "igreja" || projectFor === "ambos") return "institucional_religioso";
+  return PROJECT_CATEGORIES[normalizedObjective] ?? "outros";
+}
+
+export function trackLeadGenerated(pageSegment: PageSegment, projectCategory: string) {
   if (typeof window === "undefined") return;
   trackEvent("generate_lead", {
     page_segment: pageSegment,
     source_domain: window.location.hostname,
-    project_category: "planejamento_patrimonial",
+    project_category: projectCategory,
   });
 }
 
-function getCtaLocation(anchor: HTMLAnchorElement): string {
-  const explicitLocation = anchor.dataset.ctaLocation;
-  if (explicitLocation) return explicitLocation;
-  if (anchor.closest("header")) return "header";
-  if (anchor.closest("form") || anchor.closest("#cta")) return "formulario";
-  if (anchor.closest("#hero")) return "hero";
-  return "conteudo";
-}
-
-/** Rastreia todos os links de WhatsApp atuais e futuros por delegação de eventos. */
-export function installWhatsAppTracking(): () => void {
+/** Rastreia CTAs internos e o WhatsApp final por uma única delegação global. */
+export function installConversionTracking(): () => void {
   if (typeof document === "undefined") return () => undefined;
 
   const onClick = (event: MouseEvent) => {
@@ -55,6 +78,16 @@ export function installWhatsAppTracking(): () => void {
     const anchor = target.closest<HTMLAnchorElement>("a[href]");
     if (!anchor) return;
 
+    if (anchor.getAttribute("href") === "#contato" && anchor.dataset.ctaLocation && anchor.dataset.ctaName) {
+      trackEvent("cta_click", {
+        page_segment: getPageSegment(),
+        source_domain: window.location.hostname,
+        cta_location: anchor.dataset.ctaLocation,
+        cta_name: anchor.dataset.ctaName,
+      });
+      return;
+    }
+
     let hostname = "";
     try {
       hostname = new URL(anchor.href, window.location.href).hostname;
@@ -62,11 +95,12 @@ export function installWhatsAppTracking(): () => void {
       return;
     }
     if (hostname !== "wa.me" && hostname !== "api.whatsapp.com" && hostname !== "web.whatsapp.com") return;
+    if (!anchor.closest("#contato")) return;
 
     trackEvent("whatsapp_click", {
       page_segment: getPageSegment(),
       source_domain: window.location.hostname,
-      cta_location: getCtaLocation(anchor),
+      cta_location: "contato_final",
     });
   };
 
