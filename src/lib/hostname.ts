@@ -1,3 +1,6 @@
+import { createIsomorphicFn } from "@tanstack/react-start";
+import { getRequestHost } from "@tanstack/react-start/server";
+
 /**
  * Reconhecimento de hostname — permite que o domínio comercial
  * consorcioigrejas.com.br sirva a mesma página /igrejas sem redirecionar.
@@ -13,12 +16,12 @@ export function isIgrejasHost(host: string | undefined | null): boolean {
 }
 
 /** Hostname atual: cabeçalho da requisição no SSR, window no cliente. */
-export async function resolveHostname(): Promise<string> {
-  if (typeof window !== "undefined") return window.location.hostname;
-  try {
-    const { getRequestHost } = await import("@tanstack/react-start/server");
-    return getRequestHost({ xForwardedHost: true });
-  } catch {
-    return "";
-  }
-}
+export const resolveHostname = createIsomorphicFn()
+  .client(() => window.location.hostname)
+  .server(() => {
+    try {
+      return getRequestHost({ xForwardedHost: true });
+    } catch {
+      return "";
+    }
+  });

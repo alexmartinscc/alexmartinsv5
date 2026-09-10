@@ -122,7 +122,7 @@ const FAQ_PAGE_SCHEMA = {
 };
 
 export const Route = createFileRoute("/")({
-  loader: async () => ({ igrejasDomain: isIgrejasHost(await resolveHostname()) }),
+  loader: async () => ({ igrejasDomain: isIgrejasHost(resolveHostname()) }),
   head: ({ loaderData }) => {
     if (loaderData?.igrejasDomain) {
       return buildIgrejasHead({ pageUrl: IGREJAS_DOMAIN_URL, robots: "noindex, follow" });
