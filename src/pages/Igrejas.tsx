@@ -18,7 +18,7 @@ const NAV = [
   { label: "Como funciona", href: "#metodo" },
   { label: "Sobre", href: "#sobre" },
   { label: "FAQ", href: "#faq" },
-  { label: "Site principal", href: "/" },
+  { label: "Site principal", href: "https://www.alexmartins.cc/" },
 ];
 
 export function Igrejas() {
