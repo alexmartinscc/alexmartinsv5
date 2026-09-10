@@ -15,6 +15,7 @@ import { Reveal } from "@/components/landing/Reveal";
 import { ValueStepper, buildScale } from "@/components/landing/ValueStepper";
 import { CONTACT_EMAIL, WHATSAPP_NUMBER, WHATSAPP_URL } from "@/lib/contact";
 import { getLeadOrigin } from "@/lib/lead-tracking";
+import { ERRO_ENVIO, sendLead } from "@/lib/send-lead";
 import { onSelecionarProjeto, type ProjetoTipo } from "./projeto-preset";
 
 const OBJETIVOS_IGREJA = [
@@ -79,6 +80,10 @@ export function CTAIgrejas() {
   const [parcela, setParcela] = useState(PARCELA_MIN);
   const [errors, setErrors] = useState<Errors>({});
   const [enviado, setEnviado] = useState(false);
+  const [enviando, setEnviando] = useState(false);
+  const [erroEnvio, setErroEnvio] = useState("");
+  const [honeypot, setHoneypot] = useState("");
+
 
   useEffect(
     () =>
