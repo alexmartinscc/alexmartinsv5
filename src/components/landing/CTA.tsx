@@ -144,15 +144,10 @@ export function CTA() {
                       <Mail className="h-4 w-4 text-gold" aria-hidden />
                       {CONTACT_EMAIL}
                     </a>
-                    <a
-                      href={WHATSAPP_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex w-fit items-center gap-2 transition-colors hover:text-primary-foreground"
-                    >
+                    <span className="inline-flex w-fit items-center gap-2">
                       <MessageCircle className="h-4 w-4 text-gold" aria-hidden />
                       {WHATSAPP_NUMBER}
-                    </a>
+                    </span>
                   </div>
                 </div>
               </div>

@@ -69,15 +69,6 @@ export function trackLeadGenerated(pageSegment: PageSegment, projectCategory: st
   });
 }
 
-function getCtaLocation(anchor: HTMLAnchorElement): string {
-  const explicitLocation = anchor.dataset.ctaLocation;
-  if (explicitLocation) return explicitLocation;
-  if (anchor.closest("header")) return "header";
-  if (anchor.closest("#contato")) return "contato_final";
-  if (anchor.closest("#hero")) return "hero";
-  return "conteudo";
-}
-
 /** Rastreia CTAs internos e o WhatsApp final por uma única delegação global. */
 export function installConversionTracking(): () => void {
   if (typeof document === "undefined") return () => undefined;
