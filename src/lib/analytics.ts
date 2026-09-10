@@ -30,34 +30,33 @@ export function getPageSegment(): string {
 export type PageSegment = "home" | "igrejas" | "saude";
 
 const PROJECT_CATEGORIES: Record<string, string> = {
-  "Comprar imóvel ou terreno": "comprar_imovel",
-  "Construir ou reformar": "construir_reformar",
-  "Quitar financiamento imobiliário": "quitar_financiamento",
-  "Gerar renda com imóveis": "gerar_renda_imoveis",
-  "Ter uma aposentadoria confortável": "aposentadoria",
-  "Obter crédito usando meu imóvel": "credito_com_imovel",
+  "Comprar imóvel ou terreno": "imovel",
+  "Construir ou reformar": "imovel",
+  "Quitar financiamento imobiliário": "imovel",
+  "Gerar renda com imóveis": "patrimonio_renda",
+  "Ter uma aposentadoria confortável": "patrimonio_renda",
+  "Obter crédito usando meu imóvel": "patrimonio_renda",
   "Comprar veículo ou utilitário": "veiculo",
-  "Projeto empresarial ou agro": "projeto_empresarial_agro",
-  "Comprar sede ou imóvel": "igreja_sede",
-  "Comprar terreno": "comprar_imovel",
-  Construir: "construir_reformar",
-  "Reformar ou ampliar": "igreja_expansao",
+  "Projeto empresarial ou agro": "negocio",
+  "Comprar sede ou imóvel": "institucional_religioso",
+  "Comprar terreno": "imovel",
+  Construir: "imovel",
+  "Reformar ou ampliar": "institucional_religioso",
   "Comprar veículos ou vans": "veiculo",
   "Outro projeto da igreja": "outro",
-  "Comprar imóvel": "comprar_imovel",
-  "Planejar patrimônio": "aposentadoria",
+  "Comprar imóvel": "imovel",
+  "Planejar patrimônio": "patrimonio_renda",
   "Comprar veículo": "veiculo",
-  "Expandir meu negócio": "projeto_empresarial_agro",
-  "Construir patrimônio e gerar renda": "gerar_renda_imoveis",
-  "Quero avaliar minhas possibilidades": "outro",
-  Outro: "outro",
+  "Expandir meu negócio": "negocio",
+  "Construir patrimônio e gerar renda": "patrimonio_renda",
+  "Quero avaliar minhas possibilidades": "outros",
+  Outro: "outros",
 };
 
 export function getProjectCategory(objective: string, projectFor?: string): string {
   const normalizedObjective = objective.replace(/^(Igreja|Pessoal) — /, "");
-  if (projectFor === "igreja" && normalizedObjective === "Comprar terreno") return "igreja_sede";
-  if (projectFor === "igreja" && normalizedObjective === "Construir") return "igreja_expansao";
-  return PROJECT_CATEGORIES[normalizedObjective] ?? "outro";
+  if (projectFor === "igreja" || projectFor === "ambos") return "institucional_religioso";
+  return PROJECT_CATEGORIES[normalizedObjective] ?? "outros";
 }
 
 export function trackLeadGenerated(pageSegment: PageSegment, projectCategory: string) {
@@ -79,7 +78,7 @@ export function installConversionTracking(): () => void {
     const anchor = target.closest<HTMLAnchorElement>("a[href]");
     if (!anchor) return;
 
-    if (anchor.hash === "#contato" && anchor.dataset.ctaLocation && anchor.dataset.ctaName) {
+    if (anchor.getAttribute("href") === "#contato" && anchor.dataset.ctaLocation && anchor.dataset.ctaName) {
       trackEvent("cta_click", {
         page_segment: getPageSegment(),
         source_domain: window.location.hostname,
