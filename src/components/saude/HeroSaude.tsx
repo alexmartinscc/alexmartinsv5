@@ -54,7 +54,6 @@ export function HeroSaude() {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => trackEvent("whatsapp_click", { local: "hero_saude" })}
                 className="inline-flex items-center gap-1.5 font-semibold text-gold underline underline-offset-4"
               >
                 <MessageCircle className="h-4 w-4" aria-hidden="true" />

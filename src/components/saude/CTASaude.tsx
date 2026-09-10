@@ -14,7 +14,7 @@ import {
 import { Reveal } from "@/components/landing/Reveal";
 import { CONTACT_EMAIL, WHATSAPP_NUMBER } from "@/lib/contact";
 import { getLeadOrigin } from "@/lib/lead-tracking";
-import { trackEvent } from "@/lib/analytics";
+import { trackLeadGenerated } from "@/lib/analytics";
 import { ERRO_ENVIO, sendLead } from "@/lib/send-lead";
 
 const WHATSAPP_SAUDE_URL =
@@ -86,7 +86,7 @@ export function CTASaude() {
     const ok = await sendLead(payload);
     setEnviando(false);
     if (ok) {
-      trackEvent("form_submit", { source_page: "saude", objetivo });
+      trackLeadGenerated("saude");
       setEnviado(true);
     } else {
       setErroEnvio(ERRO_ENVIO);
@@ -135,7 +135,6 @@ export function CTASaude() {
                     href={WHATSAPP_SAUDE_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={() => trackEvent("whatsapp_click", { local: "cta_saude" })}
                     className="inline-flex w-fit items-center gap-2 transition-colors hover:text-primary-foreground"
                   >
                     <MessageCircle className="h-4 w-4 text-gold" aria-hidden />
@@ -317,7 +316,6 @@ export function CTASaude() {
                         href={WHATSAPP_SAUDE_URL}
                         target="_blank"
                         rel="noopener noreferrer"
-                        onClick={() => trackEvent("whatsapp_click", { local: "form_saude" })}
                         className="mt-1 inline-flex items-center gap-2 rounded-lg px-2 py-2 text-sm font-semibold text-primary underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                       >
                         <MessageCircle className="h-4 w-4" aria-hidden />
