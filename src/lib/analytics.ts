@@ -24,8 +24,7 @@ export function getPageSegment(): string {
   if (window.location.hostname.includes("consorcioigrejas")) return "igrejas";
   if (window.location.pathname.startsWith("/igrejas")) return "igrejas";
   if (window.location.pathname.startsWith("/saude")) return "saude";
-  if (window.location.pathname === "/") return "home";
-  return window.location.pathname.split("/").filter(Boolean)[0]?.replace(/-/g, "_") ?? "home";
+  return "home";
 }
 
 export function trackLeadGenerated(pageSegment: "home" | "igrejas" | "saude") {
