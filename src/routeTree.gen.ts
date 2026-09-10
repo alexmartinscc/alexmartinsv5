@@ -16,6 +16,7 @@ import { Route as IgrejasRouteImport } from './routes/igrejas'
 import { Route as ObrigadoRouteImport } from './routes/obrigado'
 import { Route as SaudeRouteImport } from './routes/saude'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ApiLeadRouteImport } from './routes/api/lead'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -52,6 +53,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiLeadRoute = ApiLeadRouteImport.update({
+  id: '/api/lead',
+  path: '/api/lead',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -61,6 +67,7 @@ export interface FileRoutesByFullPath {
   '/obrigado': typeof ObrigadoRoute
   '/saude': typeof SaudeRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/api/lead': typeof ApiLeadRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -70,6 +77,7 @@ export interface FileRoutesByTo {
   '/obrigado': typeof ObrigadoRoute
   '/saude': typeof SaudeRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/api/lead': typeof ApiLeadRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -80,6 +88,7 @@ export interface FileRoutesById {
   '/obrigado': typeof ObrigadoRoute
   '/saude': typeof SaudeRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/api/lead': typeof ApiLeadRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -91,6 +100,7 @@ export interface FileRouteTypes {
     | '/obrigado'
     | '/saude'
     | '/sitemap.xml'
+    | '/api/lead'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -100,6 +110,7 @@ export interface FileRouteTypes {
     | '/obrigado'
     | '/saude'
     | '/sitemap.xml'
+    | '/api/lead'
   id:
     | '__root__'
     | '/'
@@ -109,6 +120,7 @@ export interface FileRouteTypes {
     | '/obrigado'
     | '/saude'
     | '/sitemap.xml'
+    | '/api/lead'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -119,6 +131,7 @@ export interface RootRouteChildren {
   ObrigadoRoute: typeof ObrigadoRoute
   SaudeRoute: typeof SaudeRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  ApiLeadRoute: typeof ApiLeadRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -172,6 +185,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/lead': {
+      id: '/api/lead'
+      path: '/api/lead'
+      fullPath: '/api/lead'
+      preLoaderRoute: typeof ApiLeadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -183,6 +203,7 @@ const rootRouteChildren: RootRouteChildren = {
   ObrigadoRoute: ObrigadoRoute,
   SaudeRoute: SaudeRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  ApiLeadRoute: ApiLeadRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -15,6 +15,7 @@ import { Reveal } from "@/components/landing/Reveal";
 import { ValueStepper, buildScale } from "@/components/landing/ValueStepper";
 import { CONTACT_EMAIL, WHATSAPP_NUMBER, WHATSAPP_URL } from "@/lib/contact";
 import { getLeadOrigin } from "@/lib/lead-tracking";
+import { ERRO_ENVIO, sendLead } from "@/lib/send-lead";
 import { onSelecionarProjeto, type ProjetoTipo } from "./projeto-preset";
 
 const OBJETIVOS_IGREJA = [
@@ -79,6 +80,10 @@ export function CTAIgrejas() {
   const [parcela, setParcela] = useState(PARCELA_MIN);
   const [errors, setErrors] = useState<Errors>({});
   const [enviado, setEnviado] = useState(false);
+  const [enviando, setEnviando] = useState(false);
+  const [erroEnvio, setErroEnvio] = useState("");
+  const [honeypot, setHoneypot] = useState("");
+
 
   useEffect(
     () =>
@@ -101,8 +106,10 @@ export function CTAIgrejas() {
             ]
           : [];
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (enviando || enviado) return;
+    setErroEnvio("");
     const next: Errors = {};
     if (!nome.trim()) next.nome = "Informe seu nome para que eu saiba com quem estou falando.";
     if (whatsapp.replace(/\D/g, "").length < 10)
@@ -125,13 +132,18 @@ export function CTAIgrejas() {
       tipo_valor: modo,
       valor: modo === "credito" ? credito : parcela,
       source_page: "igrejas",
+      empresa_site: honeypot,
       ...getLeadOrigin(),
     };
     if (typeof window !== "undefined") {
       (window as unknown as { __ultimoLead?: unknown }).__ultimoLead = payload;
     }
 
-    setEnviado(true);
+    setEnviando(true);
+    const ok = await sendLead(payload);
+    setEnviando(false);
+    if (ok) setEnviado(true);
+    else setErroEnvio(ERRO_ENVIO);
   };
 
   return (
@@ -196,6 +208,18 @@ export function CTAIgrejas() {
                 ) : (
                   <form onSubmit={handleSubmit} noValidate className="space-y-4">
                     <input type="hidden" name="source_page" value="igrejas" />
+                    <div className="hidden" aria-hidden>
+                      <label htmlFor="igreja-empresa-site">Não preencher</label>
+                      <input
+                        id="igreja-empresa-site"
+                        type="text"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        value={honeypot}
+                        onChange={(e) => setHoneypot(e.target.value)}
+                      />
+                    </div>
+
 
                     <fieldset className="space-y-2">
                       <legend className="text-sm font-medium text-card-foreground">
@@ -378,11 +402,19 @@ export function CTAIgrejas() {
                     <Button
                       type="submit"
                       size="lg"
+                      disabled={enviando}
                       className="w-full rounded-xl bg-gold text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90"
                     >
                       <Send className="h-4 w-4" aria-hidden />
-                      Enviar meu projeto
+                      {enviando ? "Enviando..." : "Enviar meu projeto"}
                     </Button>
+
+                    {erroEnvio && (
+                      <p role="alert" className="text-sm text-destructive">
+                        {erroEnvio}
+                      </p>
+                    )}
+
 
                     <p className="text-xs leading-[1.6] text-muted-foreground">
                       Ao enviar, você concorda que eu utilize essas informações para entrar em

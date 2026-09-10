@@ -15,6 +15,7 @@ import { Reveal } from "@/components/landing/Reveal";
 import { CONTACT_EMAIL, WHATSAPP_NUMBER } from "@/lib/contact";
 import { getLeadOrigin } from "@/lib/lead-tracking";
 import { trackEvent } from "@/lib/analytics";
+import { ERRO_ENVIO, sendLead } from "@/lib/send-lead";
 
 const WHATSAPP_SAUDE_URL =
   "https://wa.me/5511933838030?text=" +
@@ -48,10 +49,13 @@ export function CTASaude() {
   const [errors, setErrors] = useState<Errors>({});
   const [enviando, setEnviando] = useState(false);
   const [enviado, setEnviado] = useState(false);
+  const [erroEnvio, setErroEnvio] = useState("");
+  const [honeypot, setHoneypot] = useState("");
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (enviando || enviado) return;
+    setErroEnvio("");
 
     const next: Errors = {};
     if (!nome.trim()) next.nome = "Informe seu nome para que eu saiba com quem estou falando.";
@@ -73,14 +77,20 @@ export function CTASaude() {
       objetivo,
       mensagem: mensagem.trim(),
       source_page: "saude",
+      empresa_site: honeypot,
       ...getLeadOrigin(),
     };
     if (typeof window !== "undefined") {
       (window as unknown as { __ultimoLead?: unknown }).__ultimoLead = payload;
     }
-    trackEvent("form_submit", { source_page: "saude", objetivo });
-    setEnviado(true);
+    const ok = await sendLead(payload);
     setEnviando(false);
+    if (ok) {
+      trackEvent("form_submit", { source_page: "saude", objetivo });
+      setEnviado(true);
+    } else {
+      setErroEnvio(ERRO_ENVIO);
+    }
   };
 
   return (
@@ -155,6 +165,18 @@ export function CTASaude() {
                 ) : (
                   <form onSubmit={handleSubmit} noValidate className="space-y-4">
                     <input type="hidden" name="source_page" value="saude" />
+                    <div className="hidden" aria-hidden>
+                      <label htmlFor="saude-empresa-site">Não preencher</label>
+                      <input
+                        id="saude-empresa-site"
+                        type="text"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        value={honeypot}
+                        onChange={(e) => setHoneypot(e.target.value)}
+                      />
+                    </div>
+
 
                     <div className="space-y-1.5">
                       <Label htmlFor="saude-nome">Nome</Label>
@@ -273,8 +295,15 @@ export function CTASaude() {
                       className="w-full rounded-xl bg-gold text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90"
                     >
                       <Send className="h-4 w-4" aria-hidden />
-                      Quero potencializar meus recursos
+                      {enviando ? "Enviando..." : "Quero potencializar meus recursos"}
                     </Button>
+
+                    {erroEnvio && (
+                      <p role="alert" className="text-sm text-destructive">
+                        {erroEnvio}
+                      </p>
+                    )}
+
 
                     <p className="text-xs leading-[1.6] text-muted-foreground">
                       Ao enviar, você concorda que eu utilize essas informações para entrar em
