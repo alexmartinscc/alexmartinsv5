@@ -95,7 +95,7 @@ export const Route = createFileRoute("/api/lead")({
 
         if (!apiKey) {
           console.error("[lead] BREVO_API_KEY ausente no ambiente do servidor");
-          return Response.json({ ok: false, error: "config" }, { status: 500 });
+          return Response.json({ ok: false, error: "config" }, { status: 200 });
         }
 
         const rows: Array<[string, string]> = [];
@@ -146,7 +146,7 @@ ${rows
           const raw = await response.text();
           if (!response.ok) {
             console.error(`[lead] Brevo falhou [${response.status}]: ${raw}`);
-            return Response.json({ ok: false, error: "provider" }, { status: 502 });
+            return Response.json({ ok: false, error: "provider" }, { status: 200 });
           }
 
           let messageId: string | undefined;
@@ -159,7 +159,7 @@ ${rows
           return Response.json({ ok: true, messageId });
         } catch (error) {
           console.error("[lead] erro ao chamar a Brevo:", error);
-          return Response.json({ ok: false, error: "network" }, { status: 502 });
+          return Response.json({ ok: false, error: "network" }, { status: 200 });
         }
       },
     },
