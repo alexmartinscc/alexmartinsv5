@@ -165,6 +165,18 @@ export function CTASaude() {
                 ) : (
                   <form onSubmit={handleSubmit} noValidate className="space-y-4">
                     <input type="hidden" name="source_page" value="saude" />
+                    <div className="hidden" aria-hidden>
+                      <label htmlFor="saude-empresa-site">Não preencher</label>
+                      <input
+                        id="saude-empresa-site"
+                        type="text"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        value={honeypot}
+                        onChange={(e) => setHoneypot(e.target.value)}
+                      />
+                    </div>
+
 
                     <div className="space-y-1.5">
                       <Label htmlFor="saude-nome">Nome</Label>
@@ -283,8 +295,15 @@ export function CTASaude() {
                       className="w-full rounded-xl bg-gold text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90"
                     >
                       <Send className="h-4 w-4" aria-hidden />
-                      Quero potencializar meus recursos
+                      {enviando ? "Enviando..." : "Quero potencializar meus recursos"}
                     </Button>
+
+                    {erroEnvio && (
+                      <p role="alert" className="text-sm text-destructive">
+                        {erroEnvio}
+                      </p>
+                    )}
+
 
                     <p className="text-xs leading-[1.6] text-muted-foreground">
                       Ao enviar, você concorda que eu utilize essas informações para entrar em
