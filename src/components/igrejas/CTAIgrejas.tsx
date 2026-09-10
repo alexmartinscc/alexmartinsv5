@@ -106,8 +106,10 @@ export function CTAIgrejas() {
             ]
           : [];
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (enviando || enviado) return;
+    setErroEnvio("");
     const next: Errors = {};
     if (!nome.trim()) next.nome = "Informe seu nome para que eu saiba com quem estou falando.";
     if (whatsapp.replace(/\D/g, "").length < 10)
@@ -130,13 +132,18 @@ export function CTAIgrejas() {
       tipo_valor: modo,
       valor: modo === "credito" ? credito : parcela,
       source_page: "igrejas",
+      empresa_site: honeypot,
       ...getLeadOrigin(),
     };
     if (typeof window !== "undefined") {
       (window as unknown as { __ultimoLead?: unknown }).__ultimoLead = payload;
     }
 
-    setEnviado(true);
+    setEnviando(true);
+    const ok = await sendLead(payload);
+    setEnviando(false);
+    if (ok) setEnviado(true);
+    else setErroEnvio(ERRO_ENVIO);
   };
 
   return (
