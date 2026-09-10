@@ -16,7 +16,7 @@ import { ValueStepper, buildScale } from "./ValueStepper";
 import { CONTACT_EMAIL, WHATSAPP_NUMBER, WHATSAPP_URL } from "@/lib/contact";
 import { getLeadOrigin } from "@/lib/lead-tracking";
 import { ERRO_ENVIO, sendLead } from "@/lib/send-lead";
-import { trackLeadGenerated } from "@/lib/analytics";
+import { getProjectCategory, trackLeadGenerated } from "@/lib/analytics";
 
 const OBJETIVOS = [
   "Comprar imóvel ou terreno",
@@ -111,13 +111,13 @@ export function CTA() {
     const ok = await sendLead(payload);
     setEnviando(false);
     if (ok) {
-      trackLeadGenerated("home");
+      trackLeadGenerated("home", getProjectCategory(objetivo));
       setEnviado(true);
     } else setErroEnvio(ERRO_ENVIO);
   };
 
   return (
-    <section id="cta" className="scroll-mt-24 bg-background py-12 md:py-20">
+    <section id="contato" className="scroll-mt-24 bg-background py-12 md:py-20">
       <div className="section-shell">
         <Reveal>
           <div className="relative overflow-hidden rounded-[2rem] bg-primary-deep px-5 py-10 md:px-12 md:py-14">

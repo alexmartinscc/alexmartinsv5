@@ -1,7 +1,5 @@
 import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { WHATSAPP_URL } from "@/lib/contact";
-import { trackEvent } from "@/lib/analytics";
 
 export function HeroSaude() {
   return (
@@ -43,7 +41,7 @@ export function HeroSaude() {
               size="lg"
               className="h-auto w-full whitespace-normal rounded-xl bg-gold px-8 py-3 text-center text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90 sm:w-auto"
             >
-              <a href="#cta" onClick={() => trackEvent("cta_hero_saude")}>
+              <a href="#contato" data-cta-location="hero" data-cta-name="potencializar_ganhos">
                 Quero potencializar meus ganhos
               </a>
             </Button>
@@ -51,13 +49,13 @@ export function HeroSaude() {
             <p className="mt-3 text-sm text-primary-foreground/80">
               Prefere conversar agora?{" "}
               <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#contato"
+                data-cta-location="hero"
+                data-cta-name="quero_conversar"
                 className="inline-flex items-center gap-1.5 font-semibold text-gold underline underline-offset-4"
               >
                 <MessageCircle className="h-4 w-4" aria-hidden="true" />
-                Fale comigo pelo WhatsApp.
+                Quero conversar.
               </a>
             </p>
           </div>

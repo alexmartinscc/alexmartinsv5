@@ -177,7 +177,7 @@ export function MenorCustoContent() {
           size="lg"
           className="mt-4 w-full rounded-xl bg-gold px-8 text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90 sm:w-auto"
         >
-          <a href="#cta">Quero simular meu projeto</a>
+          <a href="#contato" data-cta-location="consorcio" data-cta-name="simular_projeto">Quero simular meu projeto</a>
         </Button>
       </div>
     </div>

@@ -16,7 +16,7 @@ import { ValueStepper, buildScale } from "@/components/landing/ValueStepper";
 import { CONTACT_EMAIL, WHATSAPP_NUMBER, WHATSAPP_URL } from "@/lib/contact";
 import { getLeadOrigin } from "@/lib/lead-tracking";
 import { ERRO_ENVIO, sendLead } from "@/lib/send-lead";
-import { trackLeadGenerated } from "@/lib/analytics";
+import { getProjectCategory, trackLeadGenerated } from "@/lib/analytics";
 import { onSelecionarProjeto, type ProjetoTipo } from "./projeto-preset";
 
 const OBJETIVOS_IGREJA = [
@@ -144,13 +144,13 @@ export function CTAIgrejas() {
     const ok = await sendLead(payload);
     setEnviando(false);
     if (ok) {
-      trackLeadGenerated("igrejas");
+      trackLeadGenerated("igrejas", getProjectCategory(objetivo, projeto));
       setEnviado(true);
     } else setErroEnvio(ERRO_ENVIO);
   };
 
   return (
-    <section id="cta" className="scroll-mt-24 bg-background pb-14 md:pb-20">
+    <section id="contato" className="scroll-mt-24 bg-background pb-14 md:pb-20">
       <div className="section-shell">
         <Reveal>
           <div className="relative overflow-hidden rounded-[2rem] bg-primary-deep px-5 py-10 md:px-12 md:py-14">

@@ -11,7 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { ensureDataLayer, installWhatsAppTracking } from "../lib/analytics";
+import { ensureDataLayer, installConversionTracking } from "../lib/analytics";
 
 const GTM_ID = "GTM-NMLHWP3L";
 
@@ -138,7 +138,7 @@ function RootComponent() {
 
   useEffect(() => {
     ensureDataLayer();
-    return installWhatsAppTracking();
+    return installConversionTracking();
   }, []);
 
   return (
