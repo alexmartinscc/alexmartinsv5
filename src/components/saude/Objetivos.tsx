@@ -1,7 +1,6 @@
 import { Building2, Landmark } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/landing/Reveal";
-import { trackEvent } from "@/lib/analytics";
 
 const CARDS = [
   {
@@ -84,7 +83,7 @@ export function Objetivos() {
             size="lg"
             className="h-auto whitespace-normal rounded-xl bg-gold px-8 py-3 text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90"
           >
-            <a href="#cta" onClick={() => trackEvent("cta_objetivos_saude")}>
+            <a href="#contato" data-cta-location="conquistas" data-cta-name="estruturar_objetivo">
               Quero estruturar meu objetivo
             </a>
           </Button>

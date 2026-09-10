@@ -56,7 +56,12 @@ export function ProjetosIgreja() {
             size="lg"
             className="mt-6 h-auto w-full whitespace-normal rounded-xl bg-gold px-8 py-3 text-center text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90 sm:w-auto"
           >
-            <a href="#cta" onClick={() => selecionarProjeto("igreja")}>
+            <a
+              href="#contato"
+              data-cta-location="igreja_projeto"
+              data-cta-name="planejar_projeto"
+              onClick={() => selecionarProjeto("igreja")}
+            >
               Quero planejar um projeto para minha igreja
             </a>
           </Button>

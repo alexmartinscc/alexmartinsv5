@@ -26,7 +26,12 @@ export function Portfolio() {
             const Icon = bloco.icon;
             return (
               <Reveal key={bloco.id} delay={index * 80} className="h-full">
-                <a href="#cta" className="block h-full">
+                <a
+                  href="#contato"
+                  data-cta-location="conquistas"
+                  data-cta-name="entender_possibilidades"
+                  className="block h-full"
+                >
                   <Card className="card-lift h-full overflow-hidden rounded-3xl border-border/70 bg-secondary/50 py-0 shadow-soft">
                     <CardContent className="flex h-full flex-col p-6 md:p-8">
                       <span className="grid h-11 w-11 place-items-center rounded-2xl bg-background">
@@ -113,7 +118,13 @@ export function Portfolio() {
                   {content}
                 </Link>
               ) : (
-                <a key={publico.id} href="#cta" className={baseClasses}>
+                <a
+                  key={publico.id}
+                  href="#contato"
+                  data-cta-location="conquistas"
+                  data-cta-name="entender_possibilidades"
+                  className={baseClasses}
+                >
                   {content}
                 </a>
               );

@@ -1,7 +1,6 @@
 import { Coins, CalendarDays, Handshake, ArrowLeftRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { WhyConsorcio, MenorCustoContent, type WhyItem } from "@/components/landing/WhyConsorcio";
-import { trackEvent } from "@/lib/analytics";
 
 const ITEMS: WhyItem[] = [
   {
@@ -65,7 +64,7 @@ export function PorQueConsorcioSaude() {
           size="lg"
           className="h-auto whitespace-normal rounded-xl bg-gold px-8 py-3 text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90"
         >
-          <a href="#cta" onClick={() => trackEvent("cta_por_que_consorcio_saude")}>
+          <a href="#contato" data-cta-location="consorcio" data-cta-name="entender_estrategia">
             Quero entender qual estratégia atende meu prazo
           </a>
         </Button>
