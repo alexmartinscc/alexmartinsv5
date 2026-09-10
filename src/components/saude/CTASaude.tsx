@@ -49,10 +49,13 @@ export function CTASaude() {
   const [errors, setErrors] = useState<Errors>({});
   const [enviando, setEnviando] = useState(false);
   const [enviado, setEnviado] = useState(false);
+  const [erroEnvio, setErroEnvio] = useState("");
+  const [honeypot, setHoneypot] = useState("");
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (enviando || enviado) return;
+    setErroEnvio("");
 
     const next: Errors = {};
     if (!nome.trim()) next.nome = "Informe seu nome para que eu saiba com quem estou falando.";
