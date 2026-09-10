@@ -136,7 +136,7 @@ ${rows
             body: JSON.stringify({
               sender: FROM,
               to: TO,
-              replyTo: { email, name: nome },
+              ...(email ? { replyTo: { email, name: nome } } : {}),
               subject,
               htmlContent,
               textContent,

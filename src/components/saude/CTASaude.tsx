@@ -15,6 +15,7 @@ import { Reveal } from "@/components/landing/Reveal";
 import { CONTACT_EMAIL, WHATSAPP_NUMBER } from "@/lib/contact";
 import { getLeadOrigin } from "@/lib/lead-tracking";
 import { trackEvent } from "@/lib/analytics";
+import { ERRO_ENVIO, sendLead } from "@/lib/send-lead";
 
 const WHATSAPP_SAUDE_URL =
   "https://wa.me/5511933838030?text=" +
