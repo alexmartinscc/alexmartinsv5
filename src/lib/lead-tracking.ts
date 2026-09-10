@@ -2,6 +2,7 @@
 export type LeadOrigin = {
   pagina_origem: string;
   url_atual: string;
+  source_domain: string;
   utm_source: string;
   utm_medium: string;
   utm_campaign: string;
