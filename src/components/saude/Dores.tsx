@@ -49,7 +49,7 @@ export function Dores() {
         <div className="mt-9 grid gap-4 md:grid-cols-2 md:gap-6">
           {BLOCOS.map((bloco, i) => (
             <Reveal key={bloco.title} delay={i * 80}>
-              <article className="card-lift h-full rounded-2xl border border-border bg-card p-5 md:p-6">
+              <article className="h-full rounded-2xl border border-border bg-card p-5 md:p-6">
                 <bloco.icon
                   className="h-7 w-7 fill-gold/20 text-gold"
                   strokeWidth={1.75}

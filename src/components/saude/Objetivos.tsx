@@ -1,5 +1,4 @@
 import { Building2, Landmark } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/landing/Reveal";
 
 const CARDS = [
@@ -16,6 +15,7 @@ const CARDS = [
       "Nova unidade",
     ],
     micro: "Clínica • Consultório • Estrutura • Expansão",
+    ctaName: "expandir_negocio",
   },
   {
     icon: Landmark,
@@ -30,6 +30,7 @@ const CARDS = [
       "Construção de renda recorrente",
     ],
     micro: "Imóveis • Patrimônio • Renda recorrente • Aposentadoria",
+    ctaName: "construir_patrimonio",
   },
 ];
 
@@ -51,46 +52,39 @@ export function Objetivos() {
         <div className="mt-9 grid gap-4 md:grid-cols-2 md:gap-6">
           {CARDS.map((card, i) => (
             <Reveal key={card.title} delay={i * 90}>
-              <article className="card-lift h-full rounded-2xl border border-border bg-card p-5 md:p-7">
-                <card.icon
-                  className="h-7 w-7 fill-gold/20 text-gold"
-                  strokeWidth={1.75}
-                  aria-hidden="true"
-                />
-                <h3 className="mt-4 text-xl font-bold text-primary md:text-2xl">{card.title}</h3>
-                <p className="mt-2 leading-[1.7] text-muted-foreground">{card.text}</p>
-                <ul className="mt-4 flex flex-wrap gap-2">
-                  {card.exemplos.map((ex) => (
-                    <li
-                      key={ex}
-                      className="rounded-full bg-secondary px-3 py-1.5 text-xs font-semibold text-primary md:text-sm"
-                    >
-                      {ex}
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-5 text-xs font-semibold uppercase tracking-[0.08em] text-gold">
-                  {card.micro}
-                </p>
-              </article>
+              <a
+                href="#contato"
+                data-cta-location="objetivos"
+                data-cta-name={card.ctaName}
+                aria-label={`${card.title}: ir para a seção de contato`}
+                className="card-lift group block h-full rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-secondary"
+              >
+                <article className="h-full rounded-2xl border border-border bg-card p-5 transition-colors group-hover:border-gold/50 md:p-7">
+                  <card.icon
+                    className="h-7 w-7 fill-gold/20 text-gold"
+                    strokeWidth={1.75}
+                    aria-hidden="true"
+                  />
+                  <h3 className="mt-4 text-xl font-bold text-primary md:text-2xl">{card.title}</h3>
+                  <p className="mt-2 leading-[1.7] text-muted-foreground">{card.text}</p>
+                  <ul className="mt-4 flex flex-wrap gap-2">
+                    {card.exemplos.map((ex) => (
+                      <li
+                        key={ex}
+                        className="rounded-full bg-secondary px-3 py-1.5 text-xs font-semibold text-primary md:text-sm"
+                      >
+                        {ex}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-5 text-xs font-semibold uppercase tracking-[0.08em] text-gold">
+                    {card.micro}
+                  </p>
+                </article>
+              </a>
             </Reveal>
           ))}
         </div>
-
-        <Reveal className="mt-9 text-center" delay={180}>
-          <Button
-            asChild
-            size="lg"
-            className="h-auto whitespace-normal rounded-xl bg-gold px-8 py-3 text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90"
-          >
-            <a href="#contato" data-cta-location="conquistas" data-cta-name="estruturar_objetivo">
-              Quero estruturar meu objetivo
-            </a>
-          </Button>
-          <p className="mt-3 text-sm text-muted-foreground">
-            Vamos entender sua prioridade e avaliar a melhor estratégia para alcançá-la.
-          </p>
-        </Reveal>
       </div>
     </section>
   );

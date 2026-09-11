@@ -1,5 +1,4 @@
 import { Coins, CalendarDays, Handshake, ArrowLeftRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { WhyConsorcio, MenorCustoContent, type WhyItem } from "@/components/landing/WhyConsorcio";
 
 const ITEMS: WhyItem[] = [
@@ -58,17 +57,6 @@ export function PorQueConsorcioSaude() {
       title="Por que o consórcio é uma alternativa inteligente para construir patrimônio?"
       intro="Uma forma planejada de realizar grandes conquistas, preservar capacidade financeira e ampliar patrimônio sem os juros de um financiamento."
       items={ITEMS}
-      footer={
-        <Button
-          asChild
-          size="lg"
-          className="h-auto whitespace-normal rounded-xl bg-gold px-8 py-3 text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90"
-        >
-          <a href="#contato" data-cta-location="consorcio" data-cta-name="entender_estrategia">
-            Quero entender qual estratégia atende meu prazo
-          </a>
-        </Button>
-      }
     />
   );
 }
