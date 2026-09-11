@@ -1,4 +1,3 @@
-import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "./Reveal";
 const HERO_IMAGE = "/images/home/hero-image.webp";
@@ -47,7 +46,7 @@ export function Hero() {
             segurança no futuro.
           </p>
 
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="mt-7">
             <Button
               asChild
               size="lg"
@@ -56,21 +55,6 @@ export function Hero() {
               <a href="#contato" data-cta-location="hero" data-cta-name="conte_me_projeto">Conte-me sobre o seu projeto</a>
             </Button>
 
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="w-full rounded-xl border-white/45 bg-white/5 px-6 text-white transition-transform duration-200 hover:-translate-y-0.5 hover:bg-white/12 hover:text-white focus-visible:ring-gold focus-visible:ring-offset-[#041628] sm:w-auto"
-            >
-              <a
-                href="#contato"
-                data-cta-location="hero"
-                data-cta-name="quero_conversar"
-              >
-                <MessageCircle className="h-4 w-4 text-gold" />
-                Quero conversar
-              </a>
-            </Button>
           </div>
 
           <div className="mt-7 max-w-[520px]">
