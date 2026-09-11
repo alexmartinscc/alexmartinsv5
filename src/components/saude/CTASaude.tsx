@@ -316,10 +316,6 @@ export function CTASaude() {
                         <MessageCircle className="h-4 w-4" aria-hidden />
                         Falar com Alex pelo WhatsApp
                       </a>
-                      <p className="mt-2 text-xs leading-[1.6] text-muted-foreground">
-                        Uma conversa inicial para entender seu projeto e avaliar os caminhos
-                        possíveis.
-                      </p>
                     </div>
                   </form>
                 )}
