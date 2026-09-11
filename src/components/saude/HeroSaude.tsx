@@ -1,4 +1,3 @@
-import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function HeroSaude() {
@@ -45,19 +44,6 @@ export function HeroSaude() {
                 Quero potencializar meus ganhos
               </a>
             </Button>
-
-            <p className="mt-3 text-sm text-primary-foreground/80">
-              Prefere conversar agora?{" "}
-              <a
-                href="#contato"
-                data-cta-location="hero"
-                data-cta-name="quero_conversar"
-                className="inline-flex items-center gap-1.5 font-semibold text-gold underline underline-offset-4"
-              >
-                <MessageCircle className="h-4 w-4" aria-hidden="true" />
-                Quero conversar.
-              </a>
-            </p>
           </div>
         </div>
       </div>

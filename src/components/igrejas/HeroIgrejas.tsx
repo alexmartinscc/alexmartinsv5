@@ -1,4 +1,4 @@
-import { MessageCircle, ShieldCheck, Wallet, Percent } from "lucide-react";
+import { ShieldCheck, Wallet, Percent } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const BENEFITS = [
@@ -56,7 +56,7 @@ export function HeroIgrejas() {
             ))}
           </ul>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="mt-8">
             <Button
               asChild
               size="lg"
@@ -65,21 +65,6 @@ export function HeroIgrejas() {
               <a href="#contato" data-cta-location="hero" data-cta-name="conte_me_projeto">Conte-me sobre o seu projeto</a>
             </Button>
 
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="w-full rounded-xl border-primary-foreground/40 bg-transparent px-6 text-primary-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-primary-foreground/10 hover:text-primary-foreground sm:w-auto"
-            >
-              <a
-                href="#contato"
-                data-cta-location="hero"
-                data-cta-name="quero_conversar"
-              >
-                <MessageCircle className="h-4 w-4 text-gold" aria-hidden="true" />
-                Quero conversar
-              </a>
-            </Button>
           </div>
         </div>
       </div>
