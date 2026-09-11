@@ -117,7 +117,7 @@ function ComparisonTable() {
   );
 }
 
-export function MenorCustoContent() {
+export function MenorCustoContent({ showCta = true }: { showCta?: boolean } = {}) {
   return (
     <div className="space-y-5">
       <div>
@@ -162,24 +162,26 @@ export function MenorCustoContent() {
         </p>
       </div>
 
-      <div className="max-w-2xl rounded-2xl border border-border/70 bg-background p-4 md:p-5">
-        <h4 className="text-base font-extrabold text-primary">Quer saber como ficaria no seu caso?</h4>
-        <p className="mt-2 text-sm leading-[1.7] text-muted-foreground">
-          Cada projeto tem valores, prazos e objetivos diferentes. Entre em contato para fazermos uma
-          simulação usando os dados da sua realidade.
-        </p>
-        <p className="mt-2 text-sm leading-[1.7] text-muted-foreground">
-          No momento da contratação, também podem existir condições e incentivos comerciais vigentes
-          que tornem a proposta ainda mais atrativa.
-        </p>
-        <Button
-          asChild
-          size="lg"
-          className="mt-4 w-full rounded-xl bg-gold px-8 text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90 sm:w-auto"
-        >
-          <a href="#contato" data-cta-location="consorcio" data-cta-name="simular_projeto">Quero simular meu projeto</a>
-        </Button>
-      </div>
+      {showCta && (
+        <div className="max-w-2xl rounded-2xl border border-border/70 bg-background p-4 md:p-5">
+          <h4 className="text-base font-extrabold text-primary">Quer saber como ficaria no seu caso?</h4>
+          <p className="mt-2 text-sm leading-[1.7] text-muted-foreground">
+            Cada projeto tem valores, prazos e objetivos diferentes. Entre em contato para fazermos uma
+            simulação usando os dados da sua realidade.
+          </p>
+          <p className="mt-2 text-sm leading-[1.7] text-muted-foreground">
+            No momento da contratação, também podem existir condições e incentivos comerciais vigentes
+            que tornem a proposta ainda mais atrativa.
+          </p>
+          <Button
+            asChild
+            size="lg"
+            className="mt-4 w-full rounded-xl bg-gold px-8 text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90 sm:w-auto"
+          >
+            <a href="#contato" data-cta-location="consorcio" data-cta-name="simular_projeto">Quero simular meu projeto</a>
+          </Button>
+        </div>
+      )}
     </div>
   );
 }

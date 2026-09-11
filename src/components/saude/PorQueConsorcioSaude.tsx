@@ -8,7 +8,7 @@ const ITEMS: WhyItem[] = [
     title: "Menor custo",
     lead: "Sem juros de financiamento e sem precisar comprometer seu capital com uma entrada para começar.",
     hint: "Veja a comparação",
-    content: <MenorCustoContent />,
+    content: <MenorCustoContent showCta={false} />,
   },
   {
     id: "planejamento",
