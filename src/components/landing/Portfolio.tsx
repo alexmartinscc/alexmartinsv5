@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { trackEvent } from "@/lib/analytics";
 import { Link } from "@tanstack/react-router";
@@ -12,16 +13,15 @@ export function Portfolio() {
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow justify-center">Objetivos</p>
           <h2 className="mt-4 text-3xl font-extrabold text-primary md:text-[2.5rem] md:leading-[1.15]">
-            O que você quer conquistar?
+            Qual projeto você quer realizar?
           </h2>
           <p className="mt-3 leading-[1.7] text-muted-foreground">
-            Com planejamento, o consórcio pode ajudar você a transformar seus planos em
-            patrimônio, renda e novas possibilidades.
+            O consórcio pode fazer parte de diferentes estratégias. O primeiro passo é entender o
+            que você deseja conquistar.
           </p>
         </Reveal>
 
-        {/* Dois objetivos principais — mesmo peso visual */}
-        <div className="mt-8 grid gap-4 md:grid-cols-2 md:gap-6">
+        <div className="mt-8 grid gap-3 sm:grid-cols-2 md:gap-5">
           {OBJETIVOS_CONQUISTAR.map((bloco, index) => {
             const Icon = bloco.icon;
             return (
@@ -29,28 +29,18 @@ export function Portfolio() {
                 <a
                   href="#contato"
                   data-cta-location="conquistas"
-                  data-cta-name="entender_possibilidades"
-                  className="block h-full"
+                  data-cta-name={`projeto_${bloco.id}`}
+                  className="group block h-full rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 focus-visible:ring-offset-2"
                 >
-                  <Card className="card-lift h-full overflow-hidden rounded-3xl border-border/70 bg-secondary/50 py-0 shadow-soft">
-                    <CardContent className="flex h-full flex-col p-6 md:p-8">
-                      <span className="grid h-11 w-11 place-items-center rounded-2xl bg-background">
+                  <Card className="h-full overflow-hidden rounded-2xl border-border/70 bg-secondary/40 py-0 shadow-none transition-colors group-hover:border-gold/40 group-hover:bg-secondary/60">
+                    <CardContent className="flex h-full items-start gap-4 p-5 md:p-6">
+                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-background">
                         <Icon className="h-6 w-6 fill-gold/20 text-gold" />
                       </span>
-                      <h3 className="mt-4 text-2xl font-extrabold tracking-tight text-primary md:text-[1.75rem]">
-                        {bloco.title}
-                      </h3>
-                      <ul className="mt-4 grid gap-y-2">
-                        {bloco.items.map((item) => (
-                          <li
-                            key={item}
-                            className="flex items-start gap-2 text-sm leading-[1.6] text-muted-foreground"
-                          >
-                            <span className="mt-[0.5rem] h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
+                      <div>
+                        <h3 className="text-lg font-extrabold text-primary md:text-xl">{bloco.title}</h3>
+                        <p className="mt-2 text-sm leading-[1.6] text-muted-foreground">{bloco.description}</p>
+                      </div>
                     </CardContent>
                   </Card>
                 </a>
@@ -59,8 +49,24 @@ export function Portfolio() {
           })}
         </div>
 
+        <Reveal className="mt-6 md:mt-8" delay={120}>
+          <div className="flex flex-col gap-5 border-y border-border/70 py-6 md:flex-row md:items-center md:justify-between md:gap-10 md:py-7">
+            <div className="max-w-2xl">
+              <h3 className="text-xl font-extrabold text-primary md:text-2xl">Cada projeto exige uma estratégia diferente.</h3>
+              <p className="mt-2 text-sm leading-[1.7] text-muted-foreground md:text-base">
+                Analiso seu objetivo, prazo e capacidade financeira para estruturar uma proposta adequada à sua realidade.
+              </p>
+            </div>
+            <Button asChild size="lg" className="w-full shrink-0 rounded-xl bg-gold px-7 text-gold-foreground hover:bg-gold/90 md:w-auto">
+              <a href="#contato" data-cta-location="objetivos_transicao" data-cta-name="analisar_projeto">
+                Quero analisar meu projeto
+              </a>
+            </Button>
+          </div>
+        </Reveal>
+
         {/* Públicos atendidos — composição leve */}
-        <Reveal className="mt-10 md:mt-14" delay={160}>
+        <Reveal className="mt-8 md:mt-12" delay={160}>
           <div className="text-center">
             <h3 className="text-lg font-extrabold tracking-tight text-primary md:text-xl">
               Quem pode se beneficiar

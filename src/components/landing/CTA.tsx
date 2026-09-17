@@ -1,5 +1,5 @@
 import { useMemo, useState, type FormEvent } from "react";
-import { CheckCircle2, Mail, MessageCircle, Send } from "lucide-react";
+import { Check, CheckCircle2, Mail, MessageCircle, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -32,6 +32,13 @@ const OBJETIVOS = [
 
 const CREDITO_MIN = 40000;
 const PARCELA_MIN = 270;
+
+const CONVERSA_PASSOS = [
+  "Entender seu objetivo e suas prioridades",
+  "Avaliar prazo e capacidade de investimento",
+  "Analisar as possibilidades disponíveis",
+  "Definir os próximos passos",
+];
 
 function maskPhone(raw: string) {
   const digits = raw.replace(/\D/g, "").slice(0, 11);
@@ -128,13 +135,23 @@ export function CTA() {
             <div className="relative grid gap-8 lg:grid-cols-[42fr_58fr] lg:items-start lg:gap-12">
               <div>
                 <h2 className="text-3xl font-extrabold text-primary-foreground md:text-[2.25rem] md:leading-[1.15]">
-                  Conte-me o que você está buscando
+                  Vamos analisar seu projeto?
                 </h2>
                 <p className="mt-4 leading-[1.7] text-primary-foreground/70">
-                  Preencha algumas informações sobre o seu projeto. Vou analisar seu cenário e entrar em contato para
-                  combinarmos os próximos passos.
+                  Em uma conversa de aproximadamente 30 minutos, vou entender seu objetivo e avaliar, junto com você,
+                  quais possibilidades fazem mais sentido para o seu momento.
                 </p>
-                <div className="mt-6">
+                <ol className="mt-6 space-y-3">
+                  {CONVERSA_PASSOS.map((passo, index) => (
+                    <li key={passo} className="flex items-start gap-3 text-sm leading-[1.6] text-primary-foreground/80">
+                      <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-gold text-xs font-bold text-gold-foreground">
+                        {index + 1}
+                      </span>
+                      {passo}
+                    </li>
+                  ))}
+                </ol>
+                <div className="mt-7 border-t border-primary-foreground/15 pt-5">
                   <h3 className="text-sm font-semibold text-gold">Como posso falar com você?</h3>
                   <div className="mt-3 flex flex-col gap-2 text-sm text-primary-foreground/70">
                     <a
@@ -325,8 +342,13 @@ export function CTA() {
                       className="w-full rounded-xl bg-gold text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90"
                     >
                       <Send className="h-4 w-4" aria-hidden />
-                      {enviando ? "Enviando..." : "Enviar meu projeto"}
+                      {enviando ? "Enviando..." : "Quero analisar meu projeto"}
                     </Button>
+
+                    <p className="text-center text-xs font-medium text-muted-foreground">
+                      <Check className="mr-1 inline h-3.5 w-3.5 text-gold" aria-hidden />
+                      Sem compromisso de contratação.
+                    </p>
 
                     {erroEnvio && (
                       <p role="alert" className="text-sm text-destructive">

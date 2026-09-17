@@ -38,7 +38,7 @@ const FAQ_GROUPS: FaqGroup[] = [
           "Por isso, a melhor comparação não é somente entre parcelas, mas entre quanto você precisa desembolsar ao longo de todo o projeto.",
         ],
         highlight: "Quer saber como essa diferença ficaria no seu caso?",
-        cta: "Quero simular meu projeto",
+        cta: "Quero analisar meu projeto",
       },
       {
         q: "Preciso dar entrada para fazer um consórcio?",
@@ -236,7 +236,7 @@ function FaqAnswer({ blocks, highlight, cta }: { blocks: FaqBlock[]; highlight?:
             size="lg"
             className="mt-3 rounded-xl bg-gold px-8 text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90"
           >
-            <a href="#contato" data-cta-location="faq" data-cta-name="simular_projeto">{cta}</a>
+            <a href="#contato" data-cta-location="faq" data-cta-name="analisar_projeto">{cta}</a>
           </Button>
         </div>
       )}

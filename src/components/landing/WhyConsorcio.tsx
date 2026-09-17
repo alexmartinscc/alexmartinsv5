@@ -117,7 +117,11 @@ function ComparisonTable() {
   );
 }
 
-export function MenorCustoContent({ showCta = true }: { showCta?: boolean } = {}) {
+export function MenorCustoContent({
+  showCta = true,
+  ctaLabel = "Quero simular meu projeto",
+  ctaName = "simular_projeto",
+}: { showCta?: boolean; ctaLabel?: string; ctaName?: string } = {}) {
   return (
     <div className="space-y-5">
       <div>
@@ -178,7 +182,7 @@ export function MenorCustoContent({ showCta = true }: { showCta?: boolean } = {}
             size="lg"
             className="mt-4 w-full rounded-xl bg-gold px-8 text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90 sm:w-auto"
           >
-            <a href="#contato" data-cta-location="consorcio" data-cta-name="simular_projeto">Quero simular meu projeto</a>
+            <a href="#contato" data-cta-location="consorcio" data-cta-name={ctaName}>{ctaLabel}</a>
           </Button>
         </div>
       )}
@@ -274,6 +278,8 @@ type WhyConsorcioProps = {
   items?: WhyItem[];
   /** Bloco final opcional (padrão: texto da Home). */
   footer?: React.ReactNode;
+  ctaLabel?: string;
+  ctaName?: string;
 };
 
 export function WhyConsorcio({
@@ -282,7 +288,12 @@ export function WhyConsorcio({
   intro = "Quando você compara custo, planejamento e liberdade de escolha, fica mais fácil entender as vantagens do consórcio.",
   items = ITEMS,
   footer,
+  ctaLabel,
+  ctaName,
 }: WhyConsorcioProps = {}) {
+  const displayedItems = ctaLabel && items === ITEMS
+    ? items.map((item, index) => index === 0 ? { ...item, content: <MenorCustoContent ctaLabel={ctaLabel} ctaName={ctaName} /> } : item)
+    : items;
   return (
     <section id="por-que-consorcio" className="scroll-mt-24 bg-secondary py-12 md:py-20">
       <div className="section-shell">
@@ -301,7 +312,7 @@ export function WhyConsorcio({
             collapsible
             className="w-full divide-y divide-border/70 rounded-3xl border border-border/70 bg-background"
           >
-            {items.map((item) => (
+            {displayedItems.map((item) => (
               <AccordionPrimitive.Item key={item.id} value={item.id} className="px-4 md:px-6">
                 <AccordionPrimitive.Header className="flex">
                   <AccordionPrimitive.Trigger className="group flex w-full cursor-pointer items-start gap-3 py-5 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background md:gap-4 md:py-6">
