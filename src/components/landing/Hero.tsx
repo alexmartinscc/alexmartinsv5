@@ -52,7 +52,7 @@ export function Hero() {
               size="lg"
               className="w-full rounded-xl bg-gold px-8 text-gold-foreground shadow-soft transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90 focus-visible:ring-gold focus-visible:ring-offset-[#041628] sm:w-auto"
             >
-              <a href="#contato" data-cta-location="hero" data-cta-name="conte_me_projeto">Conte-me sobre o seu projeto</a>
+              <a href="#contato" data-cta-location="hero" data-cta-name="analisar_projeto">Quero analisar meu projeto</a>
             </Button>
 
           </div>

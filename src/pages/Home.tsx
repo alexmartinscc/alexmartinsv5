@@ -17,8 +17,8 @@ export function Home() {
         <Hero />
         <Dores />
         <Portfolio />
-        <WhyConsorcio />
-        <MetodoMapa />
+        <WhyConsorcio ctaLabel="Quero analisar meu projeto" />
+        <MetodoMapa ctaLabel="Quero analisar meu projeto" />
         <About />
         <FAQ />
         <CTA />

@@ -1,6 +1,8 @@
 import {
   Building2,
-  TrendingUp,
+  Car,
+  Landmark,
+  BriefcaseBusiness,
   Users,
   Briefcase,
   Sprout,
@@ -13,7 +15,7 @@ export type ObjetivoBloco = {
   id: string;
   title: string;
   icon: LucideIcon;
-  items: string[];
+  description: string;
 };
 
 export type Publico = {
@@ -27,25 +29,28 @@ export type Publico = {
 /** Blocos de objetivos patrimoniais — reutilizáveis em futuras páginas por público. */
 export const OBJETIVOS_CONQUISTAR: ObjetivoBloco[] = [
   {
-    id: "patrimonio",
-    title: "Construir meu patrimônio",
+    id: "imovel",
+    title: "Imóvel",
     icon: Building2,
-    items: [
-      "Comprar imóveis ou terrenos",
-      "Construir ou reformar",
-      "Quitar financiamento imobiliário",
-      "Adquirir veículos e utilitários",
-    ],
+    description: "Comprar, construir, reformar, adquirir terrenos ou investir em imóveis.",
   },
   {
-    id: "renda-negocio",
-    title: "Gerar renda ou obter crédito para meu negócio",
-    icon: TrendingUp,
-    items: [
-      "Gerar renda com imóveis alugados",
-      "Ter uma aposentadoria confortável",
-      "Obter crédito usando meu imóvel como garantia",
-    ],
+    id: "veiculo",
+    title: "Veículo",
+    icon: Car,
+    description: "Comprar ou trocar carros, motos, utilitários, caminhões ou estruturar uma frota.",
+  },
+  {
+    id: "investimento-patrimonio",
+    title: "Investimento e Patrimônio",
+    icon: Landmark,
+    description: "Planejar novas aquisições, ampliar patrimônio ou construir fontes futuras de renda.",
+  },
+  {
+    id: "novos-projetos",
+    title: "Crédito para Novos Projetos",
+    icon: BriefcaseBusiness,
+    description: "Quitar financiamentos, estruturar novos projetos ou apoiar a expansão do negócio.",
   },
 ];
 
