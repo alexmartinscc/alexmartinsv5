@@ -17,8 +17,8 @@ export function Home() {
         <Hero />
         <Dores />
         <Portfolio />
-        <WhyConsorcio ctaLabel="Quero analisar meu projeto" />
-        <MetodoMapa ctaLabel="Quero analisar meu projeto" />
+        <WhyConsorcio ctaLabel="Quero analisar meu projeto" ctaName="analisar_projeto" />
+        <MetodoMapa ctaLabel="Quero analisar meu projeto" ctaName="analisar_projeto" />
         <About />
         <FAQ />
         <CTA />

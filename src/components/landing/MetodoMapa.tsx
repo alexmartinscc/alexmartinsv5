@@ -28,12 +28,14 @@ type MetodoMapaProps = {
   intro?: string;
   eyebrow?: string;
   ctaLabel?: string;
+  ctaName?: string;
 };
 
 export function MetodoMapa({
   intro = "Antes de falar em valores ou parcelas, eu procuro entender o que você quer conquistar, seu momento e seus objetivos. A partir daí, usamos o Método MAPA para estruturar o caminho.",
   eyebrow = "Método MAPA",
   ctaLabel = "Conte-me sobre o seu projeto",
+  ctaName = "conte_me_projeto",
 }: MetodoMapaProps = {}) {
   return (
     <section
@@ -97,7 +99,7 @@ export function MetodoMapa({
             size="lg"
             className="mt-6 rounded-xl bg-gold px-8 text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5"
           >
-            <a href="#contato" data-cta-location="mapa" data-cta-name="analisar_projeto">{ctaLabel}</a>
+            <a href="#contato" data-cta-location="mapa" data-cta-name={ctaName}>{ctaLabel}</a>
           </Button>
         </Reveal>
       </div>

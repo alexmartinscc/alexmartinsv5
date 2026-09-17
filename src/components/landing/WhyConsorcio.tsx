@@ -120,7 +120,8 @@ function ComparisonTable() {
 export function MenorCustoContent({
   showCta = true,
   ctaLabel = "Quero simular meu projeto",
-}: { showCta?: boolean; ctaLabel?: string } = {}) {
+  ctaName = "simular_projeto",
+}: { showCta?: boolean; ctaLabel?: string; ctaName?: string } = {}) {
   return (
     <div className="space-y-5">
       <div>
@@ -181,7 +182,7 @@ export function MenorCustoContent({
             size="lg"
             className="mt-4 w-full rounded-xl bg-gold px-8 text-gold-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:bg-gold/90 sm:w-auto"
           >
-            <a href="#contato" data-cta-location="consorcio" data-cta-name="analisar_projeto">{ctaLabel}</a>
+            <a href="#contato" data-cta-location="consorcio" data-cta-name={ctaName}>{ctaLabel}</a>
           </Button>
         </div>
       )}
@@ -278,6 +279,7 @@ type WhyConsorcioProps = {
   /** Bloco final opcional (padrão: texto da Home). */
   footer?: React.ReactNode;
   ctaLabel?: string;
+  ctaName?: string;
 };
 
 export function WhyConsorcio({
@@ -287,9 +289,10 @@ export function WhyConsorcio({
   items = ITEMS,
   footer,
   ctaLabel,
+  ctaName,
 }: WhyConsorcioProps = {}) {
   const displayedItems = ctaLabel && items === ITEMS
-    ? items.map((item, index) => index === 0 ? { ...item, content: <MenorCustoContent ctaLabel={ctaLabel} /> } : item)
+    ? items.map((item, index) => index === 0 ? { ...item, content: <MenorCustoContent ctaLabel={ctaLabel} ctaName={ctaName} /> } : item)
     : items;
   return (
     <section id="por-que-consorcio" className="scroll-mt-24 bg-secondary py-12 md:py-20">
