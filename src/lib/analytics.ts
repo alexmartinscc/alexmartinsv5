@@ -51,6 +51,15 @@ const PROJECT_CATEGORIES: Record<string, string> = {
   "Construir patrimônio e gerar renda": "patrimonio_renda",
   "Quero avaliar minhas possibilidades": "outros",
   Outro: "outros",
+  "Comprar um imóvel": "imovel",
+  "Comprar um terreno": "imovel",
+  "Construir patrimônio": "patrimonio_renda",
+  "Gerar renda": "patrimonio_renda",
+  "Comprar ou trocar um veículo": "veiculo",
+  "Veículos ou frota para empresa": "veiculo",
+  "Expandir ou estruturar um negócio": "negocio",
+  "Quitar um financiamento": "imovel",
+  "Outro projeto": "outros",
 };
 
 export function getProjectCategory(objective: string, projectFor?: string): string {
@@ -78,7 +87,11 @@ export function installConversionTracking(): () => void {
     const anchor = target.closest<HTMLAnchorElement>("a[href]");
     if (!anchor) return;
 
-    if (anchor.getAttribute("href") === "#contato" && anchor.dataset.ctaLocation && anchor.dataset.ctaName) {
+    if (
+      anchor.getAttribute("href") === "#contato" &&
+      anchor.dataset.ctaLocation &&
+      anchor.dataset.ctaName
+    ) {
       trackEvent("cta_click", {
         page_segment: getPageSegment(),
         source_domain: window.location.hostname,
@@ -94,7 +107,8 @@ export function installConversionTracking(): () => void {
     } catch {
       return;
     }
-    if (hostname !== "wa.me" && hostname !== "api.whatsapp.com" && hostname !== "web.whatsapp.com") return;
+    if (hostname !== "wa.me" && hostname !== "api.whatsapp.com" && hostname !== "web.whatsapp.com")
+      return;
     if (!anchor.closest("#contato")) return;
 
     trackEvent("whatsapp_click", {

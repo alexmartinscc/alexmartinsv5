@@ -9,7 +9,14 @@ const TO = [{ email: "contato@alexmartins.cc" }];
 function str(value: unknown, max = 500): string {
   if (typeof value === "number") return String(value);
   if (typeof value !== "string") return "";
-  return value.replace(/[\u0000-\u001f\u007f]/g, " ").trim().slice(0, max);
+  return Array.from(value)
+    .map((character) => {
+      const code = character.codePointAt(0) ?? 0;
+      return code < 32 || code === 127 ? " " : character;
+    })
+    .join("")
+    .trim()
+    .slice(0, max);
 }
 
 function escapeHtml(value: string): string {
@@ -88,7 +95,7 @@ export const Route = createFileRoute("/api/lead")({
         const digits = whatsapp.replace(/\D/g, "");
         const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
         // Em /saude o e-mail é opcional; quando informado, precisa ser válido.
-        const emailObrigatorio = sourcePage !== "saude";
+        const emailObrigatorio = sourcePage !== "saude" && sourcePage !== "home";
         if (!nome || digits.length < 10 || !sourcePage || (email ? !emailOk : emailObrigatorio)) {
           return Response.json({ ok: false, error: "invalid" }, { status: 400 });
         }
