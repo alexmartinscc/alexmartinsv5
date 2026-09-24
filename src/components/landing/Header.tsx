@@ -3,8 +3,9 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const NAV = [
-  { label: "Prioridades", href: "/#prioridades" },
-  { label: "Como trabalho", href: "/#metodo" },
+  { label: "Objetivos", href: "/#portfolio" },
+  { label: "Por que Consórcio", href: "/#por-que-consorcio" },
+  { label: "Como funciona", href: "/#metodo" },
   { label: "Sobre", href: "/#sobre" },
   { label: "FAQ", href: "/#faq" },
 ];
