@@ -88,7 +88,7 @@ export const Route = createFileRoute("/api/lead")({
         const digits = whatsapp.replace(/\D/g, "");
         const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
         // Em /saude o e-mail é opcional; quando informado, precisa ser válido.
-        const emailObrigatorio = sourcePage !== "saude";
+        const emailObrigatorio = sourcePage !== "saude" && sourcePage !== "home";
         if (!nome || digits.length < 10 || !sourcePage || (email ? !emailOk : emailObrigatorio)) {
           return Response.json({ ok: false, error: "invalid" }, { status: 400 });
         }

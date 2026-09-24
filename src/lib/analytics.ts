@@ -51,6 +51,15 @@ const PROJECT_CATEGORIES: Record<string, string> = {
   "Construir patrimônio e gerar renda": "patrimonio_renda",
   "Quero avaliar minhas possibilidades": "outros",
   Outro: "outros",
+  "Comprar um imóvel": "imovel",
+  "Comprar um terreno": "imovel",
+  "Construir patrimônio": "patrimonio_renda",
+  "Gerar renda": "patrimonio_renda",
+  "Comprar ou trocar um veículo": "veiculo",
+  "Veículos ou frota para empresa": "veiculo",
+  "Expandir ou estruturar um negócio": "negocio",
+  "Quitar um financiamento": "imovel",
+  "Outro projeto": "outros",
 };
 
 export function getProjectCategory(objective: string, projectFor?: string): string {
