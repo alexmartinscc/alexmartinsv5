@@ -36,24 +36,38 @@ export function FAQ() {
         <Reveal>
           <div className="lg:sticky lg:top-28">
             <p className="eyebrow">FAQ</p>
-            <h2 className="mt-5 text-3xl font-extrabold text-primary md:text-[2.5rem] md:leading-[1.15]">Dúvidas frequentes</h2>
+            <h2 className="mt-5 text-3xl font-extrabold text-primary md:text-[2.5rem] md:leading-[1.15]">
+              Dúvidas frequentes
+            </h2>
           </div>
         </Reveal>
         <Reveal delay={100}>
           <AccordionPrimitive.Root type="single" collapsible className="w-full space-y-3">
             {ITEMS.map((item) => (
-              <AccordionPrimitive.Item key={item.q} value={item.q} className="rounded-2xl border border-border/70 bg-card shadow-soft transition-colors data-[state=open]:border-gold/50">
+              <AccordionPrimitive.Item
+                key={item.q}
+                value={item.q}
+                className="rounded-2xl border border-border/70 bg-card shadow-soft transition-colors data-[state=open]:border-gold/50"
+              >
                 <AccordionPrimitive.Header className="flex">
                   <AccordionPrimitive.Trigger className="group flex flex-1 cursor-pointer items-center justify-between gap-4 rounded-2xl px-5 py-5 text-left text-base font-semibold leading-snug text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 md:px-6 md:py-6">
                     {item.q}
                     <span className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gold/30 bg-gold/10 text-gold group-data-[state=open]:bg-gold group-data-[state=open]:text-gold-foreground">
-                      <Plus className="h-4 w-4 group-data-[state=open]:scale-0 group-data-[state=open]:opacity-0" aria-hidden="true" />
-                      <Minus className="absolute h-4 w-4 scale-0 opacity-0 group-data-[state=open]:scale-100 group-data-[state=open]:opacity-100" aria-hidden="true" />
+                      <Plus
+                        className="h-4 w-4 group-data-[state=open]:scale-0 group-data-[state=open]:opacity-0"
+                        aria-hidden="true"
+                      />
+                      <Minus
+                        className="absolute h-4 w-4 scale-0 opacity-0 group-data-[state=open]:scale-100 group-data-[state=open]:opacity-100"
+                        aria-hidden="true"
+                      />
                     </span>
                   </AccordionPrimitive.Trigger>
                 </AccordionPrimitive.Header>
                 <AccordionPrimitive.Content className="overflow-hidden text-sm motion-safe:data-[state=closed]:animate-accordion-up motion-safe:data-[state=open]:animate-accordion-down">
-                  <p className="max-w-2xl px-5 pb-5 leading-[1.8] text-muted-foreground md:px-6 md:pb-6">{item.a}</p>
+                  <p className="max-w-2xl px-5 pb-5 leading-[1.8] text-muted-foreground md:px-6 md:pb-6">
+                    {item.a}
+                  </p>
                 </AccordionPrimitive.Content>
               </AccordionPrimitive.Item>
             ))}

@@ -87,7 +87,11 @@ export function installConversionTracking(): () => void {
     const anchor = target.closest<HTMLAnchorElement>("a[href]");
     if (!anchor) return;
 
-    if (anchor.getAttribute("href") === "#contato" && anchor.dataset.ctaLocation && anchor.dataset.ctaName) {
+    if (
+      anchor.getAttribute("href") === "#contato" &&
+      anchor.dataset.ctaLocation &&
+      anchor.dataset.ctaName
+    ) {
       trackEvent("cta_click", {
         page_segment: getPageSegment(),
         source_domain: window.location.hostname,
@@ -103,7 +107,8 @@ export function installConversionTracking(): () => void {
     } catch {
       return;
     }
-    if (hostname !== "wa.me" && hostname !== "api.whatsapp.com" && hostname !== "web.whatsapp.com") return;
+    if (hostname !== "wa.me" && hostname !== "api.whatsapp.com" && hostname !== "web.whatsapp.com")
+      return;
     if (!anchor.closest("#contato")) return;
 
     trackEvent("whatsapp_click", {

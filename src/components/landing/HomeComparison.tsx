@@ -30,7 +30,8 @@ export function HomeComparison() {
             Não tome uma decisão patrimonial sem antes comparar.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl leading-[1.7] text-muted-foreground">
-            Financiamento, recursos próprios, consórcio e outras estratégias podem levar ao mesmo objetivo — mas com custos, prazos e impactos muito diferentes.
+            Financiamento, recursos próprios, consórcio e outras estratégias podem levar ao mesmo
+            objetivo — mas com custos, prazos e impactos muito diferentes.
           </p>
         </Reveal>
 
@@ -40,9 +41,15 @@ export function HomeComparison() {
             {POINTS.map((point, index) => {
               const Icon = point.icon;
               return (
-                <Reveal key={point.title} delay={index * 80} className="border-t border-border py-6 md:border-l md:border-t-0 md:py-2 md:pl-6 first:md:border-l-0 first:md:pl-0">
+                <Reveal
+                  key={point.title}
+                  delay={index * 80}
+                  className="border-t border-border py-6 md:border-l md:border-t-0 md:py-2 md:pl-6 first:md:border-l-0 first:md:pl-0"
+                >
                   <Icon className="h-6 w-6 text-gold" aria-hidden="true" />
-                  <h3 className="mt-4 text-lg font-extrabold leading-snug text-primary">{point.title}</h3>
+                  <h3 className="mt-4 text-lg font-extrabold leading-snug text-primary">
+                    {point.title}
+                  </h3>
                   <p className="mt-2 text-base leading-[1.6] text-muted-foreground">{point.text}</p>
                 </Reveal>
               );
@@ -50,12 +57,21 @@ export function HomeComparison() {
           </div>
         </div>
 
-        <Reveal className="mx-auto mt-8 max-w-3xl border-t border-gold/30 pt-8 text-center" delay={180}>
+        <Reveal
+          className="mx-auto mt-8 max-w-3xl border-t border-gold/30 pt-8 text-center"
+          delay={180}
+        >
           <p className="text-lg font-semibold leading-[1.55] text-primary md:text-xl">
             Uma decisão de longo prazo merece mais do que uma simulação. Merece estratégia.
           </p>
-          <Button asChild size="lg" className="mt-6 w-full rounded-xl bg-gold px-8 text-gold-foreground hover:bg-gold/90 sm:w-auto">
-            <a href="#contato" data-cta-location="comparacao" data-cta-name="comparar_cenario">Quero comparar meu cenário</a>
+          <Button
+            asChild
+            size="lg"
+            className="mt-6 w-full rounded-xl bg-gold px-8 text-gold-foreground hover:bg-gold/90 sm:w-auto"
+          >
+            <a href="#contato" data-cta-location="comparacao" data-cta-name="comparar_cenario">
+              Quero comparar meu cenário
+            </a>
           </Button>
         </Reveal>
       </div>

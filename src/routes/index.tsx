@@ -14,13 +14,35 @@ const FAQ_PAGE_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: [
-    ["Por que conversar com você antes de tomar uma decisão?", "Prazo, custo, disponibilidade de recursos e objetivo podem mudar completamente a forma de estruturar um projeto. Minha função é ajudar você a enxergar essas variáveis antes de assumir um compromisso."],
-    ["Você trabalha somente com consórcio?", "Meu trabalho começa pelo seu objetivo, não pelo produto. Primeiro entendo seu projeto e estruturo a estratégia. O consórcio é uma das ferramentas que utilizo profissionalmente por meio do portfólio da Ademicon."],
-    ["Consórcio tem juros?", "O consórcio não possui juros de financiamento. Existem custos próprios da modalidade, como taxa de administração e outros valores previstos no contrato. Por isso, a comparação deve considerar o custo e as características de cada alternativa."],
-    ["Que tipos de projetos você atende?", "Projetos relacionados a imóveis, construção, reformas, terrenos, veículos, formação de patrimônio, geração de renda e necessidades empresariais."],
-    ["Como funciona a primeira conversa?", "Você me apresenta o que pretende realizar, seu momento e suas prioridades. A partir daí, começamos a identificar quais caminhos merecem ser analisados."],
-    ["Qual é sua relação com a Ademicon?", "Sou Consultor Autorizado Ademicon e utilizo seu portfólio na estruturação e execução dos projetos em que atuo. Minha credencial pode ser verificada diretamente no site oficial da Ademicon."],
-  ].map(([name, text]) => ({ "@type": "Question", name, acceptedAnswer: { "@type": "Answer", text } })),
+    [
+      "Por que conversar com você antes de tomar uma decisão?",
+      "Prazo, custo, disponibilidade de recursos e objetivo podem mudar completamente a forma de estruturar um projeto. Minha função é ajudar você a enxergar essas variáveis antes de assumir um compromisso.",
+    ],
+    [
+      "Você trabalha somente com consórcio?",
+      "Meu trabalho começa pelo seu objetivo, não pelo produto. Primeiro entendo seu projeto e estruturo a estratégia. O consórcio é uma das ferramentas que utilizo profissionalmente por meio do portfólio da Ademicon.",
+    ],
+    [
+      "Consórcio tem juros?",
+      "O consórcio não possui juros de financiamento. Existem custos próprios da modalidade, como taxa de administração e outros valores previstos no contrato. Por isso, a comparação deve considerar o custo e as características de cada alternativa.",
+    ],
+    [
+      "Que tipos de projetos você atende?",
+      "Projetos relacionados a imóveis, construção, reformas, terrenos, veículos, formação de patrimônio, geração de renda e necessidades empresariais.",
+    ],
+    [
+      "Como funciona a primeira conversa?",
+      "Você me apresenta o que pretende realizar, seu momento e suas prioridades. A partir daí, começamos a identificar quais caminhos merecem ser analisados.",
+    ],
+    [
+      "Qual é sua relação com a Ademicon?",
+      "Sou Consultor Autorizado Ademicon e utilizo seu portfólio na estruturação e execução dos projetos em que atuo. Minha credencial pode ser verificada diretamente no site oficial da Ademicon.",
+    ],
+  ].map(([name, text]) => ({
+    "@type": "Question",
+    name,
+    acceptedAnswer: { "@type": "Answer", text },
+  })),
 };
 
 export const Route = createFileRoute("/")({

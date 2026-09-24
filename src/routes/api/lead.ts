@@ -9,7 +9,10 @@ const TO = [{ email: "contato@alexmartins.cc" }];
 function str(value: unknown, max = 500): string {
   if (typeof value === "number") return String(value);
   if (typeof value !== "string") return "";
-  return value.replace(/[\u0000-\u001f\u007f]/g, " ").trim().slice(0, max);
+  return value
+    .replace(/[\u0000-\u001f\u007f]/g, " ")
+    .trim()
+    .slice(0, max);
 }
 
 function escapeHtml(value: string): string {
